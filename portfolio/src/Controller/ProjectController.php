@@ -20,9 +20,15 @@ final class ProjectController extends AbstractController
     #[Route('/project/{id}', name: 'project.show', requirements: ['id' => '\d+'])]
     public function show(int $id, ProjectsRepository $projectsRepository): Response
     {
+        $project = $projectsRepository->find($id);
+
+        if (!$project) {
+            throw $this->createNotFoundException('Project not found');
+        }
+
         return $this->render('project/show.html.twig', [
             'controller_name' => 'ProjectController',
-            'id' => $id,
+            'project' => $project,
         ]);
     }
 }

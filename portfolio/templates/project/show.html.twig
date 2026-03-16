@@ -18,17 +18,7 @@
 	</style>
 
 	<div class="example-wrapper">
-		<h1>Hello
-			{{ controller_name }}! ✅</h1>
-
-		This friendly message is coming from:
-		<ul>
-			<li>Your controller at
-				<code>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/src/Controller/ProjectController.php</code>
-			</li>
-			<li>Your template at
-				<code>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates/project/index.html.twig</code>
-			</li>
-		</ul>
+		<h1>{{ project.title }}</h1>
+		<p>{{ project.description }}</p>
 	</div>
 {% endblock %}
