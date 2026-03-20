@@ -17,7 +17,7 @@
 	<body>
 		<nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="{{ url("home") }}">Monsite</a>
+				<a class="navbar-brand" href="{{ url("home") }}">YoanSAN</a>
 				<div class="">
 					<ul class="navbar-nav">
 						<li class="nav-item">
@@ -29,10 +29,17 @@
 						<li class="nav-item">
 							<a class="nav-link {{ app.current_route starts with 'project.' ? 'active' : '' }}" href="{{ url("project.index") }}">Projets</a>
 						</li>
+						<li>
+							<a class="nav-link {{ app.current_route == 'contact' ? 'active' : '' }}" href="{{ url("contact") }}">Contact</a>
+						</li>
 					</div>
 				</nav>
-				{% block body %}{% endblock %}
-			</body>
-		</html>
+				<div class="container my-3 col-6">
+					<div class="container my-4">{% include 'partials/flash.html.twig' %}
+					</div>
+					{% block body %}{% endblock %}
+				</div>
+			</div>
+		</body>
 	</body>
 </html>

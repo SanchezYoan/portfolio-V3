@@ -1,7 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!
+{% block title %}Accueil - Portfolio
 {% endblock %}
+
+{# {% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %} #}
 
 {% block body %}
 	<style>
@@ -18,12 +23,12 @@
 	</style>
 
 	<div class="example-wrapper">
-		<h1>Hello
+		<h1>Bonjour
 			{{ controller_name }}! ✅</h1>
 
 		<div class="card mb-3">
 			<div class="card-body">
-				<h5 class="card-title">Welcome to my portfolio website!</h5>
+				<h5 class="card-title">Bienvenue sur mon portfolio!</h5>
 
 			</div>
 		{% endblock %}
