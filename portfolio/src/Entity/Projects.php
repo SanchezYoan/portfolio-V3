@@ -6,8 +6,11 @@ use App\Repository\ProjectsRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ProjectsRepository::class)]
+#[Vich\Uploadable]
 class Projects
 {
     #[ORM\Id]
@@ -39,8 +42,9 @@ class Projects
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $demo_url = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $thumbnailFile = null;
+    #[Vich\UploadableField(mapping: 'projects', fileNameProperty: 'image')]
+    #[Assert\Image()]
+    private ?File $thumbnailFile = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
@@ -154,9 +158,13 @@ class Projects
         return $this->thumbnailFile;
     }
 
-    public function setThumbnailFile(?string $thumbnailFile): static
+    public function setThumbnailFile(?File $thumbnailFile): static
     {
         $this->thumbnailFile = $thumbnailFile;
+
+        if (null !== $thumbnailFile) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
 
         return $this;
     }
