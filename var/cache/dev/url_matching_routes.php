@@ -15,6 +15,13 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/admin' => [[['_route' => 'admin.home', '_controller' => 'App\\Controller\\Admin\\AdminProjectController::home'], null, null, null, true, false, null]],
+        '/admin/project' => [[['_route' => 'admin.project.index', '_controller' => 'App\\Controller\\Admin\\AdminProjectController::projectIndex'], null, null, null, false, false, null]],
+        '/admin/project/new' => [[['_route' => 'admin.project.new', '_controller' => 'App\\Controller\\Admin\\AdminProjectController::new'], null, null, null, false, false, null]],
+        '/contact' => [[['_route' => 'contact', '_controller' => 'App\\Controller\\ContactController::index'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/profil' => [[['_route' => 'profil.index', '_controller' => 'App\\Controller\\ProfilController::index'], null, null, null, false, false, null]],
+        '/project' => [[['_route' => 'project.index', '_controller' => 'App\\Controller\\ProjectController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -36,6 +43,12 @@ return [
                         .')'
                     .')'
                 .')'
+                .'|/admin/project/(?'
+                    .'|(\\d+)(*:225)'
+                    .'|([0-9]+)/edit(*:246)'
+                    .'|([0-9]+)/delete(*:269)'
+                .')'
+                .'|/project/(\\d+)(*:292)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -46,8 +59,12 @@ return [
         148 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        191 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        225 => [[['_route' => 'admin.project.show', '_controller' => 'App\\Controller\\Admin\\AdminProjectController::show'], ['id'], null, null, false, true, null]],
+        246 => [[['_route' => 'admin.project.edit', '_controller' => 'App\\Controller\\Admin\\AdminProjectController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        269 => [[['_route' => 'admin.project.delete', '_controller' => 'App\\Controller\\Admin\\AdminProjectController::delete'], ['id'], ['POST' => 0, 'DELETE' => 1], null, false, false, null]],
+        292 => [
+            [['_route' => 'project.show', '_controller' => 'App\\Controller\\ProjectController::show'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

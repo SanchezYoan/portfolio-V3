@@ -21,8 +21,8 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '2203a247e6fda86070a5e4e07aed533a' => __DIR__ . '/..' . '/symfony/clock/Resources/now.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
+        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
     );
 
@@ -35,6 +35,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         array (
             'Webmozart\\Assert\\' => 17,
         ),
+        'V' =>
+        array (
+            'Vich\\UploaderBundle\\' => 20,
+        ),
         'T' =>
         array (
             'Twig\\Extra\\TwigExtraBundle\\' => 27,
@@ -42,8 +46,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         ),
         'S' =>
         array (
+            'Symfony\\UX\\TwigComponent\\' => 25,
             'Symfony\\UX\\Turbo\\' => 17,
             'Symfony\\UX\\StimulusBundle\\' => 26,
+            'Symfony\\UX\\Icons\\' => 17,
             'Symfony\\Runtime\\Symfony\\Component\\' => 34,
             'Symfony\\Polyfill\\Php85\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -128,6 +134,7 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         'M' =>
         array (
             'Monolog\\' => 8,
+            'Metadata\\' => 9,
         ),
         'E' =>
         array (
@@ -172,6 +179,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
+        'Vich\\UploaderBundle\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/vich/uploader-bundle/src',
+        ),
         'Twig\\Extra\\TwigExtraBundle\\' =>
         array (
             0 => __DIR__ . '/..' . '/twig/extra-bundle',
@@ -180,6 +191,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
+        'Symfony\\UX\\TwigComponent\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/symfony/ux-twig-component/src',
+        ),
         'Symfony\\UX\\Turbo\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/ux-turbo/src',
@@ -187,6 +202,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         'Symfony\\UX\\StimulusBundle\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/stimulus-bundle/src',
+        ),
+        'Symfony\\UX\\Icons\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/symfony/ux-icons/src',
         ),
         'Symfony\\Runtime\\Symfony\\Component\\' =>
         array (
@@ -499,6 +518,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         'Monolog\\' =>
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Metadata\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/jms/metadata/src',
         ),
         'Egulias\\EmailValidator\\' =>
         array (

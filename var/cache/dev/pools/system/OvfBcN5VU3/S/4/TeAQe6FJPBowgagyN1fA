@@ -1,0 +1,8 @@
+<?php //ux.twig_component.component_properties
+
+return [PHP_INT_MAX, [
+    'Symfony\\UX\\Icons\\Twig\\UXIconComponent' => [
+        'properties' => [],
+        'methods' => [],
+    ],
+]];
