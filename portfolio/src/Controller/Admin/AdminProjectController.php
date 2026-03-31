@@ -35,7 +35,7 @@ final class AdminProjectController extends AbstractController {
         $project = $projectsRepository->find($id);
 
         if (!$project) {
-            throw $this->createNotFoundException('Project not found');
+            throw $this->createNotFoundException('Project non trouvé');
         }
 
         return $this->render('admin/project/show.html.twig', [
@@ -55,6 +55,7 @@ final class AdminProjectController extends AbstractController {
             $data = $form->getData();
             $em->persist($data);
             $em->flush();
+            $this->addFlash('success', 'Projet créé avec succès');
             return $this->redirectToRoute('admin.project.index');
         }
 
@@ -64,7 +65,7 @@ final class AdminProjectController extends AbstractController {
         ]);
     }
 
-    #[Route('/project/edit/{id}', name:'admin.project.edit', requirements: ['id' => Requirement::DIGITS], methods: ['GET', 'POST'])]
+    #[Route('/project/{id}/edit', name:'admin.project.edit', requirements: ['id' => Requirement::DIGITS], methods: ['GET', 'POST'])]
     public function edit(Request $request, EntityManagerInterface $em, Projects $project): Response
     {
         $form = $this->createForm(ProjectType::class, $project);
@@ -75,6 +76,7 @@ final class AdminProjectController extends AbstractController {
             $data = $form->getData();
             $em->persist($data);
             $em->flush();
+            $this->addFlash('success', 'Projet mis à jour avec succès');
             return $this->redirectToRoute('admin.project.index');
         }
 
@@ -83,19 +85,20 @@ final class AdminProjectController extends AbstractController {
             'form' => $form,
         ]);
     }
-    #[Route('Project/delete/{id}', name:'admin.project.delete', requirements: ['id' => Requirement::DIGITS])]
-    public function delete(int $id, ProjectsRepository $projectsRepository): Response
+    #[Route('/project/{id}/delete', name:'admin.project.delete', requirements: ['id' => Requirement::DIGITS], methods: ['POST', 'DELETE'])]
+    public function delete(Projects $project, EntityManagerInterface $em): Response
     {
-        $project = $projectsRepository->find($id);
 
         if (!$project) {
-            throw $this->createNotFoundException('Project not found');
+            throw $this->createNotFoundException('Project non trouvé');
         }
 
-        $projectsRepository->remove($project, true);
+        $em->remove($project);
+
+        $em->flush();
+
+        $this->addFlash('success', 'Projet supprimé avec succès');
 
         return $this->redirectToRoute('admin.project.index');
     }
-
-
 }
