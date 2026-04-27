@@ -119,6 +119,7 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
             'Symfony\\Bridge\\Twig\\' => 20,
             'Symfony\\Bridge\\Monolog\\' => 23,
             'Symfony\\Bridge\\Doctrine\\' => 24,
+            'SymfonyCasts\\Bundle\\VerifyEmail\\' => 32,
         ),
         'P' =>
         array (
@@ -482,6 +483,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         'Symfony\\Bridge\\Doctrine\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/doctrine-bridge',
+        ),
+        'SymfonyCasts\\Bundle\\VerifyEmail\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/symfonycasts/verify-email-bundle/src',
         ),
         'Psr\\Log\\' =>
         array (

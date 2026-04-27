@@ -107,22 +107,6 @@ class __TwigTemplate_d8f06c64973f121cd05f4ae3bc53c71d extends Template
             yield "</div>
     ";
         }
-        // line 10
-        yield "
-    ";
-        // line 11
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 12
-            yield "        <div class=\"mb-3\">
-            You are logged in as ";
-            // line 13
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13), "userIdentifier", [], "any", false, false, false, 13), "html", null, true);
-            yield ", <a href=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\LogoutUrlExtension']->getLogoutPath(), "html", null, true);
-            yield "\">Logout</a>
-        </div>
-    ";
-        }
         // line 16
         yield "
     <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
@@ -179,7 +163,7 @@ class __TwigTemplate_d8f06c64973f121cd05f4ae3bc53c71d extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  138 => 22,  132 => 19,  127 => 16,  119 => 13,  116 => 12,  114 => 11,  111 => 10,  105 => 8,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  122 => 22,  116 => 19,  111 => 16,  105 => 8,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -193,12 +177,12 @@ class __TwigTemplate_d8f06c64973f121cd05f4ae3bc53c71d extends Template
     {% if error %}
         <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-
+{# 
     {% if app.user %}
         <div class=\"mb-3\">
             You are logged in as {{ app.user.userIdentifier }}, <a href=\"{{ logout_path() }}\">Logout</a>
         </div>
-    {% endif %}
+    {% endif %} #}
 
     <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
     <label for=\"inputUsername\">Username</label>

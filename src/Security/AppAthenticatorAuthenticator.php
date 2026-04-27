@@ -15,15 +15,18 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordC
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\SecurityRequestAttributes;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
+use App\Repository\UserRepository;
 
 class AppAthenticatorAuthenticator extends AbstractLoginFormAuthenticator
 {
+    
     use TargetPathTrait;
 
-    public const LOGIN_ROUTE = 'app_login';
+    public const LOGIN_ROUTE = 'security.login';
 
-    public function __construct(private UrlGeneratorInterface $urlGenerator)
+    public function __construct(private UrlGeneratorInterface $urlGenerator, private UserRepository $userRepository)
     {
+    
     }
 
     public function authenticate(Request $request): Passport
@@ -33,7 +36,10 @@ class AppAthenticatorAuthenticator extends AbstractLoginFormAuthenticator
         $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $username);
 
         return new Passport(
-            new UserBadge($username),
+            // findByUsernameOrEmail trouve un utilisateur par son username ou son email
+            new UserBadge($username, fn (string $identifier) =>
+                $this->userRepository->findByUsernameOrEmail($identifier)
+            ),
             new PasswordCredentials($request->getPayload()->getString('password')),
             [
                 new CsrfTokenBadge('authenticate', $request->getPayload()->getString('_csrf_token')),
@@ -48,9 +54,7 @@ class AppAthenticatorAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        // For example:
-        // return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        return new RedirectResponse($this->urlGenerator->generate('project.index'));
     }
 
     protected function getLoginUrl(Request $request): string

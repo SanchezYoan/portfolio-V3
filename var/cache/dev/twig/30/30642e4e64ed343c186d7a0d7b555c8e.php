@@ -77,8 +77,8 @@ class __TwigTemplate_3b5ba82171449a9fa7d59be95967e843 extends Template
         // line 20
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("home");
         yield "\">YoanSAN</a>
-\t\t\t\t<div class=\"\">
-\t\t\t\t\t<ul class=\"navbar-nav\">
+\t\t\t\t<div class=\"d-flex justify-content-between align-items-center w-100\">
+\t\t\t\t\t<ul class=\"navbar-nav me-3\">
 \t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t<a class=\"nav-link ";
         // line 24
@@ -111,19 +111,60 @@ class __TwigTemplate_3b5ba82171449a9fa7d59be95967e843 extends Template
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("contact");
         yield "\">Contact</a>
 \t\t\t\t\t\t</li>
+
 \t\t\t\t\t</ul>
+\t\t\t\t\t<ul class=\"navbar-nav\">
+\t\t\t\t\t\t";
+        // line 38
+        if ((($tmp =  !$this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 39
+            yield "\t\t\t\t\t\t<div class=\"d-flex gap-2\">
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-secondary\">
+\t\t\t\t\t\t\t\t<a class=\"text-decoration-none text-white\" href=\"";
+            // line 42
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("security.login");
+            yield "\">Connexion</a>
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success\">
+\t\t\t\t\t\t\t\t<a class=\"text-decoration-none text-white\" href=\"";
+            // line 47
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("security.register");
+            yield "\">Inscription</a>
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t";
+        }
+        // line 51
+        yield "\t\t\t\t\t\t";
+        if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 52
+            yield "\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-danger\">
+\t\t\t\t\t\t\t\t<a class=\"text-decoration-none text-white\" href=\"";
+            // line 54
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\LogoutUrlExtension']->getLogoutPath(), "html", null, true);
+            yield "\">Déconnexion</a>
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t";
+        }
+        // line 58
+        yield "\t\t\t\t\t</ul>
 \t\t\t\t</div>
 \t\t\t\t</nav>
 \t\t\t\t<div class=\"container my-3 col-6\">
 \t\t\t\t\t<div class=\"container my-4\">";
-        // line 39
-        yield from $this->load("partials/flash.html.twig", 39)->unwrap()->yield($context);
-        // line 40
+        // line 62
+        yield from $this->load("partials/flash.html.twig", 62)->unwrap()->yield($context);
+        // line 63
         yield "\t\t\t\t\t</div>
 \t\t\t\t\t";
-        // line 41
+        // line 64
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 43
+        // line 66
         yield "\t\t\t\t</div>
 \t\t\t</div>
 \t</body>
@@ -238,7 +279,7 @@ class __TwigTemplate_3b5ba82171449a9fa7d59be95967e843 extends Template
         yield from [];
     }
 
-    // line 41
+    // line 64
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -251,7 +292,7 @@ class __TwigTemplate_3b5ba82171449a9fa7d59be95967e843 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 42
+        // line 65
         yield "\t\t\t\t\t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -283,7 +324,7 @@ class __TwigTemplate_3b5ba82171449a9fa7d59be95967e843 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  255 => 42,  242 => 41,  228 => 13,  215 => 12,  204 => 15,  201 => 12,  188 => 11,  166 => 9,  142 => 6,  127 => 43,  125 => 41,  122 => 40,  120 => 39,  109 => 33,  101 => 30,  93 => 27,  85 => 24,  78 => 20,  72 => 16,  70 => 11,  67 => 10,  65 => 9,  62 => 8,  60 => 6,  53 => 1,);
+        return array (  296 => 65,  283 => 64,  269 => 13,  256 => 12,  245 => 15,  242 => 12,  229 => 11,  207 => 9,  183 => 6,  168 => 66,  166 => 64,  163 => 63,  161 => 62,  155 => 58,  148 => 54,  144 => 52,  141 => 51,  134 => 47,  126 => 42,  121 => 39,  119 => 38,  109 => 33,  101 => 30,  93 => 27,  85 => 24,  78 => 20,  72 => 16,  70 => 11,  67 => 10,  65 => 9,  62 => 8,  60 => 6,  53 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -308,8 +349,8 @@ class __TwigTemplate_3b5ba82171449a9fa7d59be95967e843 extends Template
 \t\t<nav class=\"navbar bg-primary navbar-expand-lg\" data-bs-theme=\"dark\">
 \t\t\t<div class=\"container-fluid\">
 \t\t\t\t<a class=\"navbar-brand\" href=\"{{ url(\"home\") }}\">YoanSAN</a>
-\t\t\t\t<div class=\"\">
-\t\t\t\t\t<ul class=\"navbar-nav\">
+\t\t\t\t<div class=\"d-flex justify-content-between align-items-center w-100\">
+\t\t\t\t\t<ul class=\"navbar-nav me-3\">
 \t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t<a class=\"nav-link {{ app.current_route == 'home' ? 'active' : '' }}\" href=\"{{ url(\"home\") }}\">Acceuil</a>
 \t\t\t\t\t\t</li>
@@ -322,6 +363,29 @@ class __TwigTemplate_3b5ba82171449a9fa7d59be95967e843 extends Template
 \t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<a class=\"nav-link {{ app.current_route == 'contact' ? 'active' : '' }}\" href=\"{{ url(\"contact\") }}\">Contact</a>
 \t\t\t\t\t\t</li>
+
+\t\t\t\t\t</ul>
+\t\t\t\t\t<ul class=\"navbar-nav\">
+\t\t\t\t\t\t{% if not is_granted('ROLE_USER') %}
+\t\t\t\t\t\t<div class=\"d-flex gap-2\">
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-secondary\">
+\t\t\t\t\t\t\t\t<a class=\"text-decoration-none text-white\" href=\"{{ url(\"security.login\") }}\">Connexion</a>
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success\">
+\t\t\t\t\t\t\t\t<a class=\"text-decoration-none text-white\" href=\"{{ url(\"security.register\") }}\">Inscription</a>
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t{% if is_granted('ROLE_USER') %}
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-danger\">
+\t\t\t\t\t\t\t\t<a class=\"text-decoration-none text-white\" href=\"{{ logout_path() }}\">Déconnexion</a>
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t{% endif %}
 \t\t\t\t\t</ul>
 \t\t\t\t</div>
 \t\t\t\t</nav>
