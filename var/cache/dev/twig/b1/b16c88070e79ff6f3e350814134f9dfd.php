@@ -111,15 +111,19 @@ class __TwigTemplate_d8fea35eed66d501405824402064e8c2 extends Template
 \t\t}
 \t</style>
 
+\t<a href=\"";
+        // line 20
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.project.index");
+        yield "\">Retour</a>
 \t<div class=\"example-wrapper\">
 \t\t";
-        // line 21
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), 'form_start');
+        // line 22
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), 'form_start');
         yield "
      
 \t\t";
-        // line 23
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), 'form_end');
+        // line 24
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), 'form_end');
         yield "
 \t</div>
 ";
@@ -153,7 +157,7 @@ class __TwigTemplate_d8fea35eed66d501405824402064e8c2 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  122 => 23,  117 => 21,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
+        return array (  126 => 24,  121 => 22,  116 => 20,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -177,6 +181,7 @@ class __TwigTemplate_d8fea35eed66d501405824402064e8c2 extends Template
 \t\t}
 \t</style>
 
+\t<a href=\"{{ path('admin.project.index') }}\">Retour</a>
 \t<div class=\"example-wrapper\">
 \t\t{{ form_start(form) }}
      

@@ -111,14 +111,18 @@ class __TwigTemplate_6827c93a3774d5d5e79fc36a932b8188 extends Template
 \t\t}
 \t</style>
 
+\t<a href=\"";
+        // line 20
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.project.index");
+        yield "\">Retour</a>
 \t<div class=\"example-wrapper\">
 \t\t<h1>";
-        // line 21
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["project"]) || array_key_exists("project", $context) ? $context["project"] : (function () { throw new RuntimeError('Variable "project" does not exist.', 21, $this->source); })()), "title", [], "any", false, false, false, 21), "html", null, true);
+        // line 22
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["project"]) || array_key_exists("project", $context) ? $context["project"] : (function () { throw new RuntimeError('Variable "project" does not exist.', 22, $this->source); })()), "title", [], "any", false, false, false, 22), "html", null, true);
         yield "</h1>
 \t\t<p>";
-        // line 22
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["project"]) || array_key_exists("project", $context) ? $context["project"] : (function () { throw new RuntimeError('Variable "project" does not exist.', 22, $this->source); })()), "description", [], "any", false, false, false, 22), "html", null, true);
+        // line 23
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["project"]) || array_key_exists("project", $context) ? $context["project"] : (function () { throw new RuntimeError('Variable "project" does not exist.', 23, $this->source); })()), "description", [], "any", false, false, false, 23), "html", null, true);
         yield "</p>
 \t</div>
 ";
@@ -152,7 +156,7 @@ class __TwigTemplate_6827c93a3774d5d5e79fc36a932b8188 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  121 => 22,  117 => 21,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
+        return array (  125 => 23,  121 => 22,  116 => 20,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -176,6 +180,7 @@ class __TwigTemplate_6827c93a3774d5d5e79fc36a932b8188 extends Template
 \t\t}
 \t</style>
 
+\t<a href=\"{{ path('admin.project.index') }}\">Retour</a>
 \t<div class=\"example-wrapper\">
 \t\t<h1>{{ project.title }}</h1>
 \t\t<p>{{ project.description }}</p>

@@ -72,7 +72,7 @@ class __TwigTemplate_ea30b69175905b6781e1072f925ae4e5 extends Template
         yield "\t</head>
 \t<body>
 \t\t<nav class=\"navbar bg-primary navbar-expand-lg\" data-bs-theme=\"dark\">
-\t\t\t<div class=\"container-fluid\">
+\t\t\t<div class=\"container-fluid d-flex justify-content-between w-100\">
 \t\t\t\t<a class=\"navbar-brand\" href=\"";
         // line 20
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("admin.home");
@@ -98,18 +98,29 @@ class __TwigTemplate_ea30b69175905b6781e1072f925ae4e5 extends Template
         yield "\">Projets</a>
 \t\t\t\t\t</li>
 \t\t\t\t</ul>
+\t\t\t\t<ul class=\"navbar-nav\">
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-danger\">
+\t\t\t\t\t\t\t<a class=\"text-decoration-none text-white\" href=\"";
+        // line 36
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\LogoutUrlExtension']->getLogoutPath(), "html", null, true);
+        yield "\">Déconnexion</a>
+\t\t\t\t\t\t</button>
+\t\t\t\t\t</li>
+\t\t\t\t</ul>
+\t\t\t\t
 \t\t\t</div>
 \t\t</nav>
 \t\t<div class=\"container my-3 col-6\">
 \t\t\t<div class=\"container my-4\">";
-        // line 36
-        yield from $this->load("partials/flash.html.twig", 36)->unwrap()->yield($context);
-        // line 37
+        // line 44
+        yield from $this->load("partials/flash.html.twig", 44)->unwrap()->yield($context);
+        // line 45
         yield "\t\t\t</div>
 \t\t\t";
-        // line 38
+        // line 46
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 41
+        // line 49
         yield "\t\t</div>
 \t</body>
 </html>
@@ -223,7 +234,7 @@ class __TwigTemplate_ea30b69175905b6781e1072f925ae4e5 extends Template
         yield from [];
     }
 
-    // line 38
+    // line 46
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -236,7 +247,7 @@ class __TwigTemplate_ea30b69175905b6781e1072f925ae4e5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 39
+        // line 47
         yield "\t\t\t<h3>Bienvenue dans l'interface d'administration</h3>
 \t\t\t";
         
@@ -269,7 +280,7 @@ class __TwigTemplate_ea30b69175905b6781e1072f925ae4e5 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  240 => 39,  227 => 38,  213 => 13,  200 => 12,  189 => 15,  186 => 12,  173 => 11,  151 => 9,  127 => 6,  113 => 41,  111 => 38,  108 => 37,  106 => 36,  95 => 30,  92 => 29,  85 => 24,  78 => 20,  72 => 16,  70 => 11,  67 => 10,  65 => 9,  62 => 8,  60 => 6,  53 => 1,);
+        return array (  251 => 47,  238 => 46,  224 => 13,  211 => 12,  200 => 15,  197 => 12,  184 => 11,  162 => 9,  138 => 6,  124 => 49,  122 => 46,  119 => 45,  117 => 44,  106 => 36,  95 => 30,  92 => 29,  85 => 24,  78 => 20,  72 => 16,  70 => 11,  67 => 10,  65 => 9,  62 => 8,  60 => 6,  53 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -292,7 +303,7 @@ class __TwigTemplate_ea30b69175905b6781e1072f925ae4e5 extends Template
 \t</head>
 \t<body>
 \t\t<nav class=\"navbar bg-primary navbar-expand-lg\" data-bs-theme=\"dark\">
-\t\t\t<div class=\"container-fluid\">
+\t\t\t<div class=\"container-fluid d-flex justify-content-between w-100\">
 \t\t\t\t<a class=\"navbar-brand\" href=\"{{ url(\"admin.home\") }}\">Administrateur</a>
 \t\t\t\t
 \t\t\t\t<ul class=\"navbar-nav\">
@@ -306,6 +317,14 @@ class __TwigTemplate_ea30b69175905b6781e1072f925ae4e5 extends Template
 \t\t\t\t\t\t<a class=\"nav-link {{ app.current_route starts with 'project.' ? 'active' : '' }}\" href=\"{{ url(\"admin.project.index\") }}\">Projets</a>
 \t\t\t\t\t</li>
 \t\t\t\t</ul>
+\t\t\t\t<ul class=\"navbar-nav\">
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-danger\">
+\t\t\t\t\t\t\t<a class=\"text-decoration-none text-white\" href=\"{{ logout_path() }}\">Déconnexion</a>
+\t\t\t\t\t\t</button>
+\t\t\t\t\t</li>
+\t\t\t\t</ul>
+\t\t\t\t
 \t\t\t</div>
 \t\t</nav>
 \t\t<div class=\"container my-3 col-6\">

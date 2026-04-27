@@ -129,7 +129,7 @@ class __TwigTemplate_d8f06c64973f121cd05f4ae3bc53c71d extends Template
     </div>
 
     <button class=\"btn btn-lg btn-primary\" type=\"submit\">
-        Sign in
+        Se connecter
     </button>
 </form>
 ";
@@ -198,7 +198,7 @@ class __TwigTemplate_d8f06c64973f121cd05f4ae3bc53c71d extends Template
     </div>
 
     <button class=\"btn btn-lg btn-primary\" type=\"submit\">
-        Sign in
+        Se connecter
     </button>
 </form>
 {% endblock %}", "security/login.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/templates/security/login.html.twig");
