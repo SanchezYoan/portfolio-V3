@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.project_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</parameter>
+    <parameter key="kernel.project_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.runtime_mode">%env(query_string:default:container.runtime_mode:APP_RUNTIME_MODE)%</parameter>
@@ -9,9 +9,9 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev</parameter>
-    <parameter key="kernel.cache_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/log</parameter>
+    <parameter key="kernel.build_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/var/log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
@@ -31,75 +31,75 @@
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/framework-bundle</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/doctrine/doctrine-bundle</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/doctrine/doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/doctrine/doctrine-migrations-bundle</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/doctrine/doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/debug-bundle</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/debug-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/twig-bundle</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/twig-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="WebProfilerBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/web-profiler-bundle</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/web-profiler-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebProfilerBundle</parameter>
       </parameter>
       <parameter key="StimulusBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/stimulus-bundle</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/stimulus-bundle</parameter>
         <parameter key="namespace">Symfony\UX\StimulusBundle</parameter>
       </parameter>
       <parameter key="TurboBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-turbo</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-turbo</parameter>
         <parameter key="namespace">Symfony\UX\Turbo</parameter>
       </parameter>
       <parameter key="TwigExtraBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/twig/extra-bundle</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/twig/extra-bundle</parameter>
         <parameter key="namespace">Twig\Extra\TwigExtraBundle</parameter>
       </parameter>
       <parameter key="SecurityBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-bundle</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
       <parameter key="MonologBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/monolog-bundle/src</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/monolog-bundle/src</parameter>
         <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/maker-bundle</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/maker-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
       <parameter key="VichUploaderBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle</parameter>
         <parameter key="namespace">Vich\UploaderBundle</parameter>
       </parameter>
       <parameter key="UXIconsBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-icons</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-icons</parameter>
         <parameter key="namespace">Symfony\UX\Icons</parameter>
       </parameter>
       <parameter key="TwigComponentBundle" type="collection">
-        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-twig-component</parameter>
+        <parameter key="path">/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-twig-component</parameter>
         <parameter key="namespace">Symfony\UX\TwigComponent</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
-    <parameter key="kernel.share_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/share/dev</parameter>
+    <parameter key="kernel.share_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/var/share/dev</parameter>
     <parameter key=".container.known_envs" type="collection">
       <parameter>dev</parameter>
       <parameter>test</parameter>
       <parameter>prod</parameter>
     </parameter>
-    <parameter key=".kernel.config_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/config</parameter>
+    <parameter key=".kernel.config_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/config</parameter>
     <parameter key=".kernel.bundles_definition" type="collection">
       <parameter key="Symfony\Bundle\FrameworkBundle\FrameworkBundle" type="collection">
         <parameter key="all">true</parameter>
@@ -186,19 +186,19 @@
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
     <parameter key="translator.logging">false</parameter>
-    <parameter key="translator.default_path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/translations</parameter>
+    <parameter key="translator.default_path">/Users/sanchezyoan/Documents/dev/portfolio-V3/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"/>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev</parameter>
+    <parameter key="router.cache_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/serialization.php</parameter>
     <parameter key=".serializer.named_serializers" type="collection"/>
-    <parameter key="cache.prefix.seed">_/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio.App_KernelDevDebugContainer</parameter>
+    <parameter key="cache.prefix.seed">_/Users/sanchezyoan/Documents/dev/portfolio-V3.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -215,11 +215,11 @@
       <parameter key="data-controller">csrf-protection</parameter>
     </parameter>
     <parameter key=".form.type_extension.csrf.token_id">submit</parameter>
-    <parameter key="validator.mapping.cache.file">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/profiler</parameter>
     <parameter key="doctrine.entity_managers" type="collection">
       <parameter key="default">doctrine.orm.default_entity_manager</parameter>
     </parameter>
@@ -247,7 +247,7 @@
       <parameter>form_div_layout.html.twig</parameter>
       <parameter>bootstrap_5_layout.html.twig</parameter>
     </parameter>
-    <parameter key="twig.default_path">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates</parameter>
+    <parameter key="twig.default_path">/Users/sanchezyoan/Documents/dev/portfolio-V3/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection"/>
@@ -281,7 +281,7 @@
     <parameter key="vich_uploader.mappings" type="collection">
       <parameter key="projects" type="collection">
         <parameter key="uri_prefix">/images/projects</parameter>
-        <parameter key="upload_destination">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/public/images/projects</parameter>
+        <parameter key="upload_destination">/Users/sanchezyoan/Documents/dev/portfolio-V3/public/images/projects</parameter>
         <parameter key="namer" type="collection">
           <parameter key="service">Vich\UploaderBundle\Naming\SmartUniqueNamer.projects</parameter>
           <parameter key="options" type="collection"/>
@@ -449,12 +449,24 @@
         <argument type="service" id=".service_locator.TJNRSaV.App\Controller\ProjectController"/>
       </call>
     </service>
+    <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="routing.controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.TJNRSaV.App\Controller\SecurityController"/>
+      </call>
+    </service>
     <service id="App\DTO\ContactDTO" class="App\DTO\ContactDTO" autowire="true" autoconfigure="true"/>
     <service id="App\Entity\Profil" class="App\Entity\Profil" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
     <service id="App\Entity\Projects" class="App\Entity\Projects" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
@@ -472,6 +484,13 @@
     <service id="App\Repository\ProjectsRepository" class="App\Repository\ProjectsRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Security\AppAthenticatorAuthenticator" class="App\Security\AppAthenticatorAuthenticator" autowire="true" autoconfigure="true">
+      <argument type="service" id="router.default"/>
     </service>
     <service id="App\Service\FormListenerFactory" class="App\Service\FormListenerFactory" autowire="true" autoconfigure="true"/>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
@@ -502,7 +521,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.VSHsG5b"/>
+      <argument type="service" id=".service_locator.ZQ5yb11"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -596,7 +615,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/share/dev/http_cache</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/share/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -606,7 +625,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -670,6 +689,7 @@
         <argument key="cache.security_is_csrf_token_valid_attribute_expression_language" type="service" id="cache.security_is_csrf_token_valid_attribute_expression_language" on-invalid="ignore_uninitialized"/>
         <argument key="debug.security.access.decision_manager" type="service" id="debug.security.access.decision_manager" on-invalid="ignore_uninitialized"/>
         <argument key="debug.security.firewall" type="service" id="debug.security.firewall" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.security_token_verifier" type="service" id="cache.security_token_verifier" on-invalid="ignore_uninitialized"/>
         <argument key="debug.security.firewall.authenticator.main" type="service" id="debug.security.firewall.authenticator.main" on-invalid="ignore_uninitialized"/>
         <argument key="monolog.handler.main" type="service" id="monolog.handler.main" on-invalid="ignore_uninitialized"/>
         <argument key="monolog.handler.console" type="service" id="monolog.handler.console" on-invalid="ignore_uninitialized"/>
@@ -793,6 +813,9 @@
         <argument key="debug.security.firewall" type="collection">
           <argument>reset</argument>
         </argument>
+        <argument key="cache.security_token_verifier" type="collection">
+          <argument>reset</argument>
+        </argument>
         <argument key="debug.security.firewall.authenticator.main" type="collection">
           <argument>reset</argument>
         </argument>
@@ -907,7 +930,7 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -950,7 +973,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -989,6 +1012,7 @@
         <argument>cache.security_expression_language</argument>
         <argument>cache.security_is_granted_attribute_expression_language</argument>
         <argument>cache.security_is_csrf_token_valid_attribute_expression_language</argument>
+        <argument>cache.security_token_verifier</argument>
         <argument>.ux_icons.cache</argument>
         <argument>cache.ux.twig_component</argument>
       </argument>
@@ -1040,6 +1064,7 @@
         <argument>cache.security_expression_language</argument>
         <argument>cache.security_is_granted_attribute_expression_language</argument>
         <argument>cache.security_is_csrf_token_valid_attribute_expression_language</argument>
+        <argument>cache.security_token_verifier</argument>
         <argument>.ux_icons.cache</argument>
         <argument>cache.ux.twig_component</argument>
       </argument>
@@ -1068,6 +1093,7 @@
         <argument>cache.security_expression_language</argument>
         <argument>cache.security_is_granted_attribute_expression_language</argument>
         <argument>cache.security_is_csrf_token_valid_attribute_expression_language</argument>
+        <argument>cache.security_token_verifier</argument>
         <argument>.ux_icons.cache</argument>
         <argument>cache.ux.twig_component</argument>
       </argument>
@@ -1146,7 +1172,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument>dev</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <call method="setName">
         <argument>debug:dotenv</argument>
       </call>
@@ -1390,17 +1416,17 @@
       <argument type="service" id="translator.data_collector"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/translations</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/translations</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/templates</argument>
       <argument type="collection">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations</argument>
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations</argument>
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations</argument>
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations</argument>
       </argument>
       <argument type="collection">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/twig-bridge/Resources/views/Email</argument>
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/twig-bridge/Resources/views/Form</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/twig-bridge/Resources/views/Email</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/twig-bridge/Resources/views/Form</argument>
       </argument>
       <argument type="collection"/>
       <call method="setName">
@@ -1417,17 +1443,17 @@
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
       <argument>en</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/translations</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/translations</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/templates</argument>
       <argument type="collection">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations</argument>
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations</argument>
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations</argument>
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations</argument>
       </argument>
       <argument type="collection">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/twig-bridge/Resources/views/Email</argument>
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/twig-bridge/Resources/views/Form</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/twig-bridge/Resources/views/Email</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/twig-bridge/Resources/views/Form</argument>
       </argument>
       <argument type="collection"/>
       <call method="setName">
@@ -1716,7 +1742,7 @@
       <argument/>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/pools/system</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1735,7 +1761,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument/>
       <argument>0</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/share/dev/pools/app</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/share/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1836,6 +1862,7 @@
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_is_granted_attribute_expression_language" type="service" id="cache.security_is_granted_attribute_expression_language" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_is_csrf_token_valid_attribute_expression_language" type="service" id="cache.security_is_csrf_token_valid_attribute_expression_language" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.security_token_verifier" type="service" id="cache.security_token_verifier" on-invalid="ignore_uninitialized"/>
         <argument key=".ux_icons.cache" type="service" id=".ux_icons.cache" on-invalid="ignore_uninitialized"/>
         <argument key="cache.ux.twig_component" type="service" id="cache.ux.twig_component" on-invalid="ignore_uninitialized"/>
       </argument>
@@ -1857,6 +1884,7 @@
         <argument key="cache.security_expression_language" type="service" id="cache.security_expression_language" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_is_granted_attribute_expression_language" type="service" id="cache.security_is_granted_attribute_expression_language" on-invalid="ignore_uninitialized"/>
         <argument key="cache.security_is_csrf_token_valid_attribute_expression_language" type="service" id="cache.security_is_csrf_token_valid_attribute_expression_language" on-invalid="ignore_uninitialized"/>
+        <argument key="cache.security_token_verifier" type="service" id="cache.security_token_verifier" on-invalid="ignore_uninitialized"/>
         <argument key=".ux_icons.cache" type="service" id=".ux_icons.cache" on-invalid="ignore_uninitialized"/>
         <argument key="cache.ux.twig_component" type="service" id="cache.ux.twig_component" on-invalid="ignore_uninitialized"/>
       </argument>
@@ -1910,16 +1938,16 @@
     <service id="asset_mapper.cached_mapped_asset_factory" class="Symfony\Component\AssetMapper\Factory\CachedMappedAssetFactory">
       <tag name="container.decorator" id="asset_mapper.mapped_asset_factory" inner="asset_mapper.cached_mapped_asset_factory.inner"/>
       <argument type="service" id="asset_mapper.cached_mapped_asset_factory.inner"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/asset_mapper</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/asset_mapper</argument>
       <argument>true</argument>
     </service>
     <service id="asset_mapper.repository" class="Symfony\Component\AssetMapper\AssetMapperRepository">
       <argument type="collection">
-        <argument key="/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-turbo/src/DependencyInjection/../../assets/dist">@symfony/ux-turbo</argument>
-        <argument key="/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/stimulus-bundle/src/DependencyInjection/../../assets/dist">@symfony/stimulus-bundle</argument>
+        <argument key="/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-turbo/src/DependencyInjection/../../assets/dist">@symfony/ux-turbo</argument>
+        <argument key="/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/stimulus-bundle/src/DependencyInjection/../../assets/dist">@symfony/stimulus-bundle</argument>
         <argument key="assets/"/>
       </argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <argument type="collection">
         <argument>#^(?=[^\.]).*\.d\.ts$#</argument>
         <argument>#^(?=[^\.])/?(?=[^\.]).*.*/(?=[^\.])controllers\.json$#</argument>
@@ -1931,10 +1959,10 @@
       <argument>/assets/</argument>
     </service>
     <service id="asset_mapper.local_public_assets_filesystem" class="Symfony\Component\AssetMapper\Path\LocalPublicAssetsFilesystem">
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/public</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/public</argument>
     </service>
     <service id="asset_mapper.compiled_asset_mapper_config_reader" class="Symfony\Component\AssetMapper\CompiledAssetMapperConfigReader">
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/public/assets</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/public/assets</argument>
     </service>
     <service id="asset_mapper.asset_package" class="Symfony\Component\AssetMapper\MapperAwareAssetPackage">
       <tag name="container.decorator" id="assets._default_package" inner="asset_mapper.asset_package.inner"/>
@@ -1958,7 +1986,7 @@
       <argument type="service" id="asset_mapper"/>
       <argument type="service" id="asset_mapper.importmap.generator"/>
       <argument type="service" id="asset_mapper.local_public_assets_filesystem"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <argument>true</argument>
       <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
       <call method="setName">
@@ -1973,7 +2001,7 @@
       <tag name="container.no_preload"/>
       <argument type="service" id="asset_mapper"/>
       <argument type="service" id="asset_mapper.repository"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <call method="setName">
         <argument>debug:asset-map</argument>
       </call>
@@ -2002,7 +2030,7 @@
       <argument type="service" id="monolog.logger.asset_mapper"/>
     </service>
     <service id="asset_mapper.importmap.config_reader" class="Symfony\Component\AssetMapper\ImportMap\ImportMapConfigReader">
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/importmap.php</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/importmap.php</argument>
       <argument type="service" id="asset_mapper.importmap.remote_package_storage"/>
     </service>
     <service id="asset_mapper.importmap.manager" class="Symfony\Component\AssetMapper\ImportMap\ImportMapManager">
@@ -2017,7 +2045,7 @@
       <argument type="service" id="asset_mapper.importmap.config_reader"/>
     </service>
     <service id="asset_mapper.importmap.remote_package_storage" class="Symfony\Component\AssetMapper\ImportMap\RemotePackageStorage">
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/assets/vendor</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/assets/vendor</argument>
     </service>
     <service id="asset_mapper.importmap.remote_package_downloader" class="Symfony\Component\AssetMapper\ImportMap\RemotePackageDownloader">
       <argument type="service" id="asset_mapper.importmap.remote_package_storage"/>
@@ -2054,7 +2082,7 @@
       <tag name="container.no_preload"/>
       <argument type="service" id="asset_mapper.importmap.manager"/>
       <argument type="service" id="asset_mapper.importmap.version_checker"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <call method="setName">
         <argument>importmap:require</argument>
       </call>
@@ -2089,7 +2117,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="asset_mapper.importmap.remote_package_downloader"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <call method="setName">
         <argument>importmap:install</argument>
       </call>
@@ -2307,337 +2335,337 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/translations</argument>
+        <argument key="cache_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.af.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.af.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.af.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.af.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.af.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.af.xlf</argument>
           </argument>
           <argument key="ar" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.ar.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.ar.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.ar.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.ar.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.ar.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.ar.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.ar.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.ar.yaml</argument>
           </argument>
           <argument key="az" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.az.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.az.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.az.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.az.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.az.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.az.xlf</argument>
           </argument>
           <argument key="be" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.be.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.be.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.be.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.be.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.be.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.be.xlf</argument>
           </argument>
           <argument key="bg" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.bg.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.bg.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.bg.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.bg.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.bg.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.bg.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.bg.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.bg.yaml</argument>
           </argument>
           <argument key="bs" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.bs.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.bs.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.bs.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.bs.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.bs.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.bs.xlf</argument>
           </argument>
           <argument key="ca" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.ca.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.ca.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.ca.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.ca.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.ca.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.ca.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.ca.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.ca.yaml</argument>
           </argument>
           <argument key="cs" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.cs.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.cs.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.cs.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.cs.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.cs.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.cs.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.cs.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.cs.yaml</argument>
           </argument>
           <argument key="cy" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.cy.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.cy.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.cy.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.cy.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.cy.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.cy.xlf</argument>
           </argument>
           <argument key="da" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.da.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.da.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.da.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.da.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.da.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.da.xlf</argument>
           </argument>
           <argument key="de" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.de.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.de.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.de.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.de.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.de.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.de.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.de.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.de.yaml</argument>
           </argument>
           <argument key="el" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.el.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.el.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.el.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.el.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.el.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.el.xlf</argument>
           </argument>
           <argument key="en" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.en.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.en.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.en.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.en.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.en.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.en.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.en.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.en.yaml</argument>
           </argument>
           <argument key="es" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.es.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.es.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.es.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.es.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.es.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.es.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.es.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.es.yaml</argument>
           </argument>
           <argument key="et" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.et.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.et.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.et.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.et.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.et.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.et.xlf</argument>
           </argument>
           <argument key="eu" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.eu.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.eu.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.eu.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.eu.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.eu.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.eu.xlf</argument>
           </argument>
           <argument key="fa" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.fa.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.fa.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.fa.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.fa.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.fa.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.fa.xlf</argument>
           </argument>
           <argument key="fi" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.fi.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.fi.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.fi.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.fi.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.fi.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.fi.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.fi.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.fi.yaml</argument>
           </argument>
           <argument key="fr" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.fr.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.fr.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.fr.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.fr.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.fr.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.fr.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.fr.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.fr.yaml</argument>
           </argument>
           <argument key="gl" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.gl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.gl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.gl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.gl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.gl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.gl.xlf</argument>
           </argument>
           <argument key="he" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.he.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.he.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.he.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.he.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.he.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.he.xlf</argument>
           </argument>
           <argument key="hr" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.hr.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.hr.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.hr.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.hr.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.hr.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.hr.xlf</argument>
           </argument>
           <argument key="hu" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.hu.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.hu.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.hu.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.hu.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.hu.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.hu.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.hu.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.hu.yaml</argument>
           </argument>
           <argument key="hy" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.hy.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.hy.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.hy.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.hy.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.hy.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.hy.xlf</argument>
           </argument>
           <argument key="id" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.id.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.id.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.id.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.id.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.id.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.id.xlf</argument>
           </argument>
           <argument key="it" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.it.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.it.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.it.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.it.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.it.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.it.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.it.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.it.yaml</argument>
           </argument>
           <argument key="ja" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.ja.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.ja.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.ja.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.ja.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.ja.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.ja.xlf</argument>
           </argument>
           <argument key="lb" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.lb.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.lb.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.lb.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.lb.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.lb.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.lb.xlf</argument>
           </argument>
           <argument key="lt" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.lt.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.lt.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.lt.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.lt.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.lt.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.lt.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.lt.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.lt.yaml</argument>
           </argument>
           <argument key="lv" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.lv.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.lv.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.lv.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.lv.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.lv.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.lv.xlf</argument>
           </argument>
           <argument key="mk" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.mk.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.mk.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.mk.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.mk.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.mk.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.mk.xlf</argument>
           </argument>
           <argument key="mn" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.mn.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.mn.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.mn.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.mn.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.mn.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.mn.xlf</argument>
           </argument>
           <argument key="my" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.my.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.my.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.my.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.my.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.my.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.my.xlf</argument>
           </argument>
           <argument key="nb" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.nb.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.nb.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.nb.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.nb.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.nb.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.nb.xlf</argument>
           </argument>
           <argument key="nl" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.nl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.nl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.nl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.nl.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.nl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.nl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.nl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.nl.yaml</argument>
           </argument>
           <argument key="nn" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.nn.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.nn.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.nn.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.nn.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.nn.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.nn.xlf</argument>
           </argument>
           <argument key="no" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.no.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.no.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.no.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.no.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.no.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.no.xlf</argument>
           </argument>
           <argument key="pl" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.pl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.pl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.pl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.pl.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.pl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.pl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.pl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.pl.yaml</argument>
           </argument>
           <argument key="pt" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.pt.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.pt.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.pt.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.pt.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.pt.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.pt.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.pt.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.pt.yaml</argument>
           </argument>
           <argument key="pt_BR" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.pt_BR.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.pt_BR.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.pt_BR.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.pt_BR.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.pt_BR.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.pt_BR.xlf</argument>
           </argument>
           <argument key="ro" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.ro.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.ro.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.ro.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.ro.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.ro.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.ro.xlf</argument>
           </argument>
           <argument key="ru" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.ru.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.ru.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.ru.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.ru.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.ru.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.ru.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.ru.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.ru.yaml</argument>
           </argument>
           <argument key="sk" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.sk.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.sk.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.sk.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.sk.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.sk.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.sk.xlf</argument>
           </argument>
           <argument key="sl" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.sl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.sl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.sl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.sl.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.sl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.sl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.sl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.sl.yaml</argument>
           </argument>
           <argument key="sq" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.sq.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.sq.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.sq.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.sq.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.sq.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.sq.xlf</argument>
           </argument>
           <argument key="sr_Cyrl" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.sr_Cyrl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.sr_Cyrl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.sr_Cyrl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.sr_Cyrl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.sr_Cyrl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.sr_Cyrl.xlf</argument>
           </argument>
           <argument key="sr_Latn" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.sr_Latn.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.sr_Latn.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.sr_Latn.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.sr_Latn.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.sr_Latn.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.sr_Latn.xlf</argument>
           </argument>
           <argument key="sv" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.sv.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.sv.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.sv.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.sv.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.sv.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.sv.xlf</argument>
           </argument>
           <argument key="th" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.th.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.th.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.th.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.th.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.th.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.th.xlf</argument>
           </argument>
           <argument key="tl" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.tl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.tl.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.tl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.tl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.tl.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.tl.xlf</argument>
           </argument>
           <argument key="tr" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.tr.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.tr.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.tr.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.tr.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.tr.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.tr.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.tr.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.tr.yaml</argument>
           </argument>
           <argument key="uk" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.uk.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.uk.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.uk.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.uk.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.uk.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.uk.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.uk.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.uk.yaml</argument>
           </argument>
           <argument key="ur" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.ur.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.ur.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.ur.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.ur.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.ur.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.ur.xlf</argument>
           </argument>
           <argument key="uz" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.uz.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.uz.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.uz.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.uz.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.uz.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.uz.xlf</argument>
           </argument>
           <argument key="vi" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.vi.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.vi.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.vi.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.vi.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.vi.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.vi.xlf</argument>
           </argument>
           <argument key="zh_CN" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.zh_CN.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.zh_CN.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.zh_CN.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.zh_CN.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.zh_CN.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.zh_CN.xlf</argument>
           </argument>
           <argument key="zh_TW" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations/validators.zh_TW.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations/validators.zh_TW.xlf</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations/security.zh_TW.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations/validators.zh_TW.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations/validators.zh_TW.xlf</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations/security.zh_TW.xlf</argument>
           </argument>
           <argument key="vn" type="collection">
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations/messages.vn.yaml</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations/messages.vn.yaml</argument>
           </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/validator/Resources/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/form/Resources/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-core/Resources/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/framework-bundle/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/doctrine/doctrine-bundle/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/doctrine/doctrine-migrations-bundle/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/debug-bundle/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/twig-bundle/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/web-profiler-bundle/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/stimulus-bundle/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-turbo/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/twig/extra-bundle/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-bundle/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/monolog-bundle/src/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/maker-bundle/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-icons/translations</argument>
-          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-twig-component/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/validator/Resources/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/form/Resources/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-core/Resources/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/framework-bundle/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/doctrine/doctrine-bundle/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/doctrine/doctrine-migrations-bundle/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/debug-bundle/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/twig-bundle/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/web-profiler-bundle/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/stimulus-bundle/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-turbo/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/twig/extra-bundle/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-bundle/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/monolog-bundle/src/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/maker-bundle/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-icons/translations</argument>
+          <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-twig-component/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2998,7 +3026,7 @@
     <service id="debug.file_link_formatter" class="Symfony\Component\ErrorHandler\ErrorRenderer\FileLinkFormatter">
       <argument>%env(default::SYMFONY_IDE)%</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <argument type="service_closure" id="debug.file_link_formatter.url_format"/>
     </service>
     <service id="debug.stopwatch" class="Symfony\Component\Stopwatch\Stopwatch" public="true">
@@ -3601,6 +3629,14 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>kernel.response</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.rememberme.response_listener"/>
+          <argument>onKernelResponse</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>console.command</argument>
         <argument type="collection">
           <argument type="service_closure" id="monolog.handler.console"/>
@@ -3686,7 +3722,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.VSHsG5b"/>
+      <argument type="service" id=".service_locator.ZQ5yb11"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3765,6 +3801,7 @@
         <argument>App\Controller\HomeController</argument>
         <argument>App\Controller\ProfilController</argument>
         <argument>App\Controller\ProjectController</argument>
+        <argument>App\Controller\SecurityController</argument>
       </argument>
     </service>
     <service id="routing.loader.attribute.directory" class="Symfony\Component\Routing\Loader\AttributeDirectoryLoader">
@@ -3794,7 +3831,7 @@
       <argument type="service" id=".service_locator.xdLQ5FJ.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev</argument>
+        <argument key="cache_dir">/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -3845,7 +3882,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -3872,7 +3909,7 @@
       <argument type="service" id="property_info.reflection_extractor" on-invalid="null"/>
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
       <argument>APP_SECRET</argument>
     </service>
@@ -3885,7 +3922,7 @@
       <argument>base64:default::SYMFONY_DECRYPTION_SECRET</argument>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/.env.dev.local</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/.env.dev.local</argument>
     </service>
     <service id="serializer.mapping.class_discriminator_resolver" class="Symfony\Component\Serializer\Mapping\ClassDiscriminatorFromClassMetadata">
       <argument type="service" id="serializer.mapping.class_metadata_factory"/>
@@ -3995,10 +4032,10 @@
       <argument type="collection">
         <argument type="service" id="serializer.mapping.attribute_loader"/>
       </argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/serialization.php</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/serialization.php</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -4222,7 +4259,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/sessions</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -4455,10 +4492,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/validation.php</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/validation.php</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -5217,7 +5254,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/profiler</argument>
+      <argument>file:/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.reset" method="?reset"/>
@@ -5298,7 +5335,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/App_KernelDevDebugContainer</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id=".virtual_request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -5374,6 +5411,10 @@
       <call method="addInstance">
         <argument>cache.security_is_csrf_token_valid_attribute_expression_language</argument>
         <argument type="service" id="cache.security_is_csrf_token_valid_attribute_expression_language"/>
+      </call>
+      <call method="addInstance">
+        <argument>cache.security_token_verifier</argument>
+        <argument type="service" id="cache.security_token_verifier"/>
       </call>
       <call method="addInstance">
         <argument>.ux_icons.cache</argument>
@@ -5729,7 +5770,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.IS_OB40"/>
+      <argument type="service" id=".service_locator.Qxuj8UZ"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5978,12 +6019,12 @@
     </service>
     <service id="doctrine.orm.default_attribute_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AttributeDriver">
       <argument type="collection">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/src/Entity</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/src/Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_xml_metadata_driver" class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver">
       <argument type="collection">
-        <argument key="/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/config/doctrine">Vich\UploaderBundle\Entity</argument>
+        <argument key="/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/config/doctrine">Vich\UploaderBundle\Entity</argument>
       </argument>
       <argument>.orm.xml</argument>
       <argument>true</argument>
@@ -6053,7 +6094,7 @@
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration">
       <call method="addMigrationsDirectory">
         <argument>DoctrineMigrations</argument>
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/migrations</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/migrations</argument>
       </call>
       <call method="setAllOrNothing">
         <argument>false</argument>
@@ -6285,7 +6326,7 @@
         <argument key="source" type="service">
           <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
             <argument>UTF-8</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
             <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
           </service>
         </argument>
@@ -6307,7 +6348,7 @@
         <argument key="source" type="service">
           <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
             <argument>UTF-8</argument>
-            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+            <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
             <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
           </service>
         </argument>
@@ -6372,7 +6413,7 @@
       <tag name="kernel.reset" method="?resetGlobals"/>
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
-        <argument key="cache">/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/twig</argument>
+        <argument key="cache">/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -6506,10 +6547,10 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
       <argument type="collection">
-        <argument key="/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/twig-bridge/Resources/views/Email">email</argument>
-        <argument key="/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/twig-bridge/Resources/views/Form">null</argument>
+        <argument key="/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/twig-bridge/Resources/views/Email">email</argument>
+        <argument key="/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/twig-bridge/Resources/views/Form">null</argument>
       </argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/templates</argument>
       <argument type="collection">
         <argument>*.twig</argument>
       </argument>
@@ -6524,92 +6565,92 @@
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/doctrine/doctrine-bundle/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/doctrine/doctrine-bundle/templates</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/doctrine/doctrine-bundle/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/doctrine/doctrine-bundle/templates</argument>
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/doctrine/doctrine-migrations-bundle/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/doctrine/doctrine-migrations-bundle/templates</argument>
         <argument>DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/doctrine/doctrine-migrations-bundle/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/doctrine/doctrine-migrations-bundle/templates</argument>
         <argument>!DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/debug-bundle/Resources/views</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/debug-bundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/debug-bundle/Resources/views</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/debug-bundle/Resources/views</argument>
         <argument>!Debug</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/web-profiler-bundle/Resources/views</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/web-profiler-bundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/web-profiler-bundle/Resources/views</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/web-profiler-bundle/Resources/views</argument>
         <argument>!WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-turbo/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-turbo/templates</argument>
         <argument>Turbo</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-turbo/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-turbo/templates</argument>
         <argument>!Turbo</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-bundle/Resources/views</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-bundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/security-bundle/Resources/views</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/security-bundle/Resources/views</argument>
         <argument>!Security</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/maker-bundle/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/maker-bundle/templates</argument>
         <argument>Maker</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/maker-bundle/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/maker-bundle/templates</argument>
         <argument>!Maker</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/templates</argument>
         <argument>VichUploader</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/templates</argument>
         <argument>!VichUploader</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-twig-component/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-twig-component/templates</argument>
         <argument>TwigComponent</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-twig-component/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-twig-component/templates</argument>
         <argument>!TwigComponent</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/templates</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/twig-bridge/Resources/views/Email</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/twig-bridge/Resources/views/Email</argument>
         <argument>email</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/twig-bridge/Resources/views/Email</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/twig-bridge/Resources/views/Email</argument>
         <argument>!email</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/twig-bridge/Resources/views/Form</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/twig-bridge/Resources/views/Form</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader"/>
@@ -6714,9 +6755,9 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="twig"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <argument>%kernel.bundles_metadata%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/templates</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
       <call method="setName">
         <argument>debug:twig</argument>
@@ -6765,7 +6806,7 @@
       <argument type="service" id="twig"/>
       <argument>%data_collector.templates%</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
     </service>
     <service id="web_profiler.controller.router" class="Symfony\Bundle\WebProfilerBundle\Controller\RouterController" public="true">
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -6808,7 +6849,7 @@
     <service id="twig.extension.code" class="Symfony\Bundle\WebProfilerBundle\Profiler\CodeExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <argument>UTF-8</argument>
     </service>
     <service id="web_profiler.debug_toolbar" class="Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener">
@@ -6831,7 +6872,7 @@
       <argument type="service" id="stimulus.helper"/>
     </service>
     <service id="stimulus.asset_mapper.ux_package_reader" class="Symfony\UX\StimulusBundle\Ux\UxPackageReader">
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
     </service>
     <service id="stimulus.ux_controllers_twig_extension" class="Symfony\UX\StimulusBundle\Twig\UxControllersTwigExtension">
       <tag name="twig.extension"/>
@@ -6841,15 +6882,15 @@
       <argument type="service" id="stimulus.asset_mapper.controllers_map_generator"/>
       <argument type="service" id="asset_mapper"/>
       <argument type="service" id="stimulus.asset_mapper.ux_package_reader"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
     </service>
     <service id="stimulus.asset_mapper.controllers_map_generator" class="Symfony\UX\StimulusBundle\AssetMapper\ControllersMapGenerator">
       <argument type="service" id="asset_mapper"/>
       <argument type="service" id="stimulus.asset_mapper.ux_package_reader"/>
       <argument type="collection">
-        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/assets/controllers</argument>
+        <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/assets/controllers</argument>
       </argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/assets/controllers.json</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/assets/controllers.json</argument>
       <argument type="service" id="stimulus.asset_mapper.auto_import_locator" on-invalid="null"/>
     </service>
     <service id="stimulus.asset_mapper.auto_import_locator" class="Symfony\UX\StimulusBundle\AssetMapper\AutoImportLocator">
@@ -6908,7 +6949,7 @@
       <argument type="service" id=".service_locator.rAuPNI6"/>
       <argument type="collection">
         <argument key="dev">null</argument>
-        <argument key="main">null</argument>
+        <argument key="main" type="service" id=".service_locator.wxwq60C"/>
       </argument>
     </service>
     <service id="security.user_value_resolver" class="Symfony\Component\Security\Http\Controller\UserValueResolver">
@@ -7004,6 +7045,14 @@
       <argument type="service" id="request_stack" on-invalid="null"/>
       <argument type="service" id="router.default" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
+      <call method="registerListener">
+        <argument>main</argument>
+        <argument>app_logout</argument>
+        <argument>logout</argument>
+        <argument>_csrf_token</argument>
+        <argument>null</argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.route_loader.logout" class="Symfony\Bundle\SecurityBundle\Routing\LogoutRouteLoader">
       <tag name="routing.route_loader"/>
@@ -7118,7 +7167,7 @@
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.untracked_token_storage"/>
       <argument type="iterator">
-        <argument type="service" id="security.user.provider.concrete.users_in_memory"/>
+        <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
       </argument>
       <argument type="abstract">Provider Key</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -7244,7 +7293,7 @@
     </service>
     <service id="security.listener.user_provider" class="Symfony\Component\Security\Http\EventListener\UserProviderListener">
       <tag name="kernel.event_listener" event="Symfony\Component\Security\Http\Event\CheckPassportEvent" priority="1024" method="checkPassport"/>
-      <argument type="service" id="security.user.provider.concrete.users_in_memory"/>
+      <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
     </service>
     <service id="security.listener.user_provider.abstract" class="Symfony\Component\Security\Http\EventListener\UserProviderListener" abstract="true">
       <argument type="abstract">user provider</argument>
@@ -7472,7 +7521,10 @@
       <argument type="service" id=".service_locator.Bz.C4As"/>
       <argument type="service" id=".service_locator.GW5y7PS"/>
       <argument type="collection">
-        <argument key="main" type="collection"/>
+        <argument key="main" type="collection">
+          <argument type="service" id="debug.App\Security\AppAthenticatorAuthenticator"/>
+          <argument type="service" id="debug.security.authenticator.remember_me.main"/>
+        </argument>
       </argument>
       <argument>false</argument>
       <call method="setName">
@@ -7482,8 +7534,11 @@
         <argument>Display information about your security firewall(s)</argument>
       </call>
     </service>
-    <service id="security.user.provider.concrete.users_in_memory" class="Symfony\Component\Security\Core\User\InMemoryUserProvider">
-      <argument type="collection"/>
+    <service id="security.user.provider.concrete.app_user_provider" class="Symfony\Bridge\Doctrine\Security\User\EntityUserProvider">
+      <argument type="service" id="doctrine"/>
+      <argument>App\Entity\User</argument>
+      <argument>username</argument>
+      <argument>null</argument>
     </service>
     <service id="security.firewall.map.config.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig">
       <argument>dev</argument>
@@ -7520,18 +7575,30 @@
       <argument>null</argument>
       <argument>true</argument>
       <argument>false</argument>
-      <argument>security.user.provider.concrete.users_in_memory</argument>
+      <argument>security.user.provider.concrete.app_user_provider</argument>
       <argument>main</argument>
+      <argument>App\Security\AppAthenticatorAuthenticator</argument>
       <argument>null</argument>
       <argument>null</argument>
+      <argument type="collection">
+        <argument>remember_me</argument>
+        <argument>App\Security\AppAthenticatorAuthenticator</argument>
+      </argument>
       <argument>null</argument>
-      <argument type="collection"/>
-      <argument>null</argument>
-      <argument>null</argument>
+      <argument type="collection">
+        <argument key="path">app_logout</argument>
+        <argument key="enable_csrf">null</argument>
+        <argument key="csrf_token_id">logout</argument>
+        <argument key="csrf_parameter">_csrf_token</argument>
+        <argument key="target">/</argument>
+        <argument key="invalidate_session">true</argument>
+        <argument key="clear_site_data" type="collection"/>
+        <argument key="delete_cookies" type="collection"/>
+      </argument>
     </service>
     <service id="security.listener.main.user_provider" class="Symfony\Component\Security\Http\EventListener\UserProviderListener">
       <tag name="kernel.event_listener" dispatcher="debug.security.event_dispatcher.main" event="Symfony\Component\Security\Http\Event\CheckPassportEvent" priority="2048" method="checkPassport"/>
-      <argument type="service" id="security.user.provider.concrete.users_in_memory"/>
+      <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
     </service>
     <service id="security.user_checker.chain.main" class="Symfony\Component\Security\Core\User\ChainUserChecker">
       <argument type="tagged_iterator" tag="security.user_checker.main"/>
@@ -7541,7 +7608,7 @@
       <tag name="container.hot_path"/>
       <argument type="service" id="security.untracked_token_storage"/>
       <argument type="iterator">
-        <argument type="service" id="security.user.provider.concrete.users_in_memory"/>
+        <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
       </argument>
       <argument>main</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -7556,9 +7623,143 @@
       <tag name="kernel.event_subscriber" dispatcher="debug.security.event_dispatcher.main"/>
       <argument type="service" id="security.authentication.session_strategy"/>
     </service>
+    <service id="security.logout_listener.main" class="Symfony\Component\Security\Http\Firewall\LogoutListener">
+      <argument type="service" id="security.token_storage"/>
+      <argument type="service" id="security.http_utils"/>
+      <argument type="service" id="debug.security.event_dispatcher.main"/>
+      <argument type="collection">
+        <argument key="csrf_parameter">_csrf_token</argument>
+        <argument key="csrf_token_id">logout</argument>
+        <argument key="logout_path">app_logout</argument>
+      </argument>
+    </service>
+    <service id="security.logout.listener.default.main" class="Symfony\Component\Security\Http\EventListener\DefaultLogoutListener">
+      <tag name="kernel.event_subscriber" dispatcher="debug.security.event_dispatcher.main"/>
+      <argument type="service" id="security.http_utils"/>
+      <argument>/</argument>
+    </service>
+    <service id="security.logout.listener.session.main" class="Symfony\Component\Security\Http\EventListener\SessionLogoutListener">
+      <tag name="kernel.event_subscriber" dispatcher="debug.security.event_dispatcher.main"/>
+    </service>
+    <service id="security.rememberme.response_listener" class="Symfony\Component\Security\Http\RememberMe\ResponseListener">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+    </service>
+    <service id="security.authenticator.remember_me_signature_hasher" class="Symfony\Component\Security\Core\Signature\SignatureHasher">
+      <argument type="service" id="property_accessor"/>
+      <argument type="abstract">signature properties</argument>
+      <argument>%kernel.secret%</argument>
+      <argument>null</argument>
+      <argument>null</argument>
+    </service>
+    <service id="security.authenticator.signature_remember_me_handler" class="Symfony\Component\Security\Http\RememberMe\SignatureRememberMeHandler" abstract="true">
+      <tag name="monolog.logger" channel="security"/>
+      <argument type="abstract">signature hasher</argument>
+      <argument type="abstract">user provider</argument>
+      <argument type="service" id="request_stack"/>
+      <argument type="abstract">options</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="security.authenticator.persistent_remember_me_handler" class="Symfony\Component\Security\Http\RememberMe\PersistentRememberMeHandler" abstract="true">
+      <tag name="monolog.logger" channel="security"/>
+      <argument type="abstract">token provider</argument>
+      <argument type="abstract">user provider</argument>
+      <argument type="service" id="request_stack"/>
+      <argument type="abstract">options</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+      <argument type="abstract">token verifier</argument>
+    </service>
+    <service id="security.authenticator.firewall_aware_remember_me_handler" class="Symfony\Bundle\SecurityBundle\RememberMe\FirewallAwareRememberMeHandler">
+      <argument type="service" id="security.firewall.map"/>
+      <argument type="service" id=".service_locator.WYl0woh"/>
+      <argument type="service" id="request_stack"/>
+    </service>
+    <service id="security.listener.check_remember_me_conditions" class="Symfony\Component\Security\Http\EventListener\CheckRememberMeConditionsListener" abstract="true">
+      <argument type="abstract">options</argument>
+      <argument type="service" id="monolog.logger" on-invalid="null"/>
+    </service>
+    <service id="security.listener.remember_me" class="Symfony\Component\Security\Http\EventListener\RememberMeListener" abstract="true">
+      <tag name="monolog.logger" channel="security"/>
+      <argument type="abstract">remember me handler</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="security.authenticator.remember_me" class="Symfony\Component\Security\Http\Authenticator\RememberMeAuthenticator" abstract="true">
+      <tag name="monolog.logger" channel="security"/>
+      <argument type="abstract">remember me handler</argument>
+      <argument type="service" id="security.token_storage"/>
+      <argument type="abstract">options</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="cache.security_token_verifier" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
+      <tag name="cache.pool" pruneable="false"/>
+      <tag name="kernel.reset" method="reset"/>
+      <argument type="service" id="cache.security_token_verifier.recorder_inner"/>
+      <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
+    </service>
+    <service id="security.authenticator.remember_me_signature_hasher.main" class="Symfony\Component\Security\Core\Signature\SignatureHasher">
+      <argument type="service" id="property_accessor"/>
+      <argument type="collection">
+        <argument>password</argument>
+      </argument>
+      <argument>%env(APP_SECRET)%</argument>
+      <argument>null</argument>
+      <argument>null</argument>
+    </service>
+    <service id="security.authenticator.remember_me_handler.main" class="Symfony\Component\Security\Http\RememberMe\SignatureRememberMeHandler">
+      <tag name="security.remember_me_handler" firewall="main"/>
+      <argument type="service" id="security.authenticator.remember_me_signature_hasher.main"/>
+      <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
+      <argument type="service" id="request_stack"/>
+      <argument type="collection">
+        <argument key="secret">%env(APP_SECRET)%</argument>
+        <argument key="lifetime">604800</argument>
+        <argument key="path">/</argument>
+        <argument key="user_providers" type="collection"/>
+        <argument key="catch_exceptions">true</argument>
+        <argument key="signature_properties" type="collection">
+          <argument>password</argument>
+        </argument>
+        <argument key="name">REMEMBERME</argument>
+        <argument key="domain">null</argument>
+        <argument key="secure">false</argument>
+        <argument key="httponly">true</argument>
+        <argument key="samesite">null</argument>
+        <argument key="always_remember_me">false</argument>
+        <argument key="remember_me_parameter">_remember_me</argument>
+      </argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="security.listener.check_remember_me_conditions.main" class="Symfony\Component\Security\Http\EventListener\CheckRememberMeConditionsListener">
+      <tag name="kernel.event_subscriber" dispatcher="debug.security.event_dispatcher.main"/>
+      <argument type="collection">
+        <argument key="always_remember_me">false</argument>
+        <argument key="remember_me_parameter">_remember_me</argument>
+      </argument>
+      <argument type="service" id="monolog.logger" on-invalid="null"/>
+    </service>
+    <service id="security.listener.remember_me.main" class="Symfony\Component\Security\Http\EventListener\RememberMeListener">
+      <tag name="kernel.event_subscriber" dispatcher="debug.security.event_dispatcher.main"/>
+      <argument type="service" id="security.authenticator.remember_me_handler.main"/>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="security.authenticator.remember_me.main" class="Symfony\Component\Security\Http\Authenticator\RememberMeAuthenticator">
+      <argument type="service" id="security.authenticator.remember_me_handler.main"/>
+      <argument type="service" id="security.token_storage"/>
+      <argument>REMEMBERME</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="debug.App\Security\AppAthenticatorAuthenticator" class="Symfony\Component\Security\Http\Authenticator\Debug\TraceableAuthenticator">
+      <argument type="service" id="App\Security\AppAthenticatorAuthenticator"/>
+    </service>
+    <service id="debug.security.authenticator.remember_me.main" class="Symfony\Component\Security\Http\Authenticator\Debug\TraceableAuthenticator">
+      <argument type="service" id="security.authenticator.remember_me.main"/>
+    </service>
     <service id="security.authenticator.manager.main" class="Symfony\Component\Security\Http\Authentication\AuthenticatorManager">
       <tag name="monolog.logger" channel="security"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument type="service" id="debug.App\Security\AppAthenticatorAuthenticator"/>
+        <argument type="service" id="debug.security.authenticator.remember_me.main"/>
+      </argument>
       <argument type="service" id="security.token_storage"/>
       <argument type="service" id="debug.security.event_dispatcher.main"/>
       <argument>main</argument>
@@ -7581,11 +7782,18 @@
       <argument type="service" id="security.authentication.trust_resolver"/>
       <argument type="service" id="security.http_utils"/>
       <argument>main</argument>
-      <argument>null</argument>
+      <argument type="service" id="App\Security\AppAthenticatorAuthenticator"/>
       <argument>null</argument>
       <argument>null</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument>false</argument>
+    </service>
+    <service id=".service_locator.wxwq60C" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Security\AppAthenticatorAuthenticator" type="service_closure" id="App\Security\AppAthenticatorAuthenticator"/>
+        <argument key="security.authenticator.remember_me.main" type="service_closure" id="security.authenticator.remember_me.main"/>
+      </argument>
     </service>
     <service id="security.firewall.map.context.main" class="Symfony\Bundle\SecurityBundle\Security\LazyFirewallContext">
       <argument type="iterator">
@@ -7595,7 +7803,7 @@
         <argument type="service" id="security.access_listener"/>
       </argument>
       <argument type="service" id="security.exception_listener.main"/>
-      <argument>null</argument>
+      <argument type="service" id="security.logout_listener.main"/>
       <argument type="service" id="security.firewall.map.config.main"/>
       <argument type="service" id="security.untracked_token_storage"/>
     </service>
@@ -7668,7 +7876,7 @@
     <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor"/>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
       <tag name="kernel.reset" method="reset"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/log/dev.log</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/log/dev.log</argument>
       <argument>debug</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -7691,8 +7899,8 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/templates</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder">
       <argument>App</argument>
@@ -7873,7 +8081,7 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3</argument>
       <argument type="service" id="maker.file_link_formatter"/>
     </service>
     <service id="maker.maker.make_stimulus_controller" class="Symfony\Bundle\MakerBundle\Maker\MakeStimulusController">
@@ -8025,7 +8233,7 @@
       </argument>
     </service>
     <service id="vich_uploader.metadata.cache.file_cache" class="Metadata\Cache\FileCache">
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/vich_uploader</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/vich_uploader</argument>
     </service>
     <service id="vich_uploader.metadata_factory" class="Metadata\MetadataFactory">
       <argument type="service" id="vich_uploader.metadata_driver.chain"/>
@@ -8040,7 +8248,7 @@
     </service>
     <service id="Vich\UploaderBundle\Metadata\CacheWarmer" class="Vich\UploaderBundle\Metadata\CacheWarmer">
       <tag name="kernel.cache_warmer"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/vich_uploader</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/vich_uploader</argument>
       <argument type="service" id="vich_uploader.metadata_reader"/>
     </service>
     <service id="vich_uploader.property_mapping_resolver" class="Vich\UploaderBundle\Mapping\PropertyMappingResolver">
@@ -8201,7 +8409,7 @@
     </service>
     <service id=".ux_icons.local_svg_icon_registry" class="Symfony\UX\Icons\Registry\LocalSvgIconRegistry">
       <tag name="ux_icons.registry" priority="10"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/assets/icons</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/assets/icons</argument>
       <argument type="collection"/>
     </service>
     <service id=".ux_icons.chain_registry" class="Symfony\UX\Icons\Registry\ChainIconRegistry">
@@ -8230,7 +8438,7 @@
     </service>
     <service id=".ux_icons.icon_finder" class="Symfony\UX\Icons\Twig\IconFinder">
       <argument type="service" id="twig"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/assets/icons</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/assets/icons</argument>
     </service>
     <service id=".ux_icons.cache_warmer" class="Symfony\UX\Icons\IconCacheWarmer">
       <argument type="service" id=".ux_icons.cache_icon_registry"/>
@@ -8414,10 +8622,16 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectController" class="App\Controller\ProjectController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\ProjectController.0.App\Controller\ProjectController" class="App\Controller\ProjectController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProjectController" class="App\Controller\ProjectController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\SecurityController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Profil.0.App\Entity\Profil" class="App\Entity\Profil" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Profil" class="App\Entity\Profil" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Projects.0.App\Entity\Projects" class="App\Entity\Projects" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Projects" class="App\Entity\Projects" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\User.0.App\Entity\User" class="App\Entity\User" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContactType" class="App\Form\ContactType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ContactType" class="App\Form\ContactType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProjectType" class="App\Form\ProjectType" autowire="true" abstract="true"/>
@@ -8426,6 +8640,8 @@
     <service id=".abstract.instanceof.App\Repository\ProfilRepository" class="App\Repository\ProfilRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProjectsRepository" class="App\Repository\ProjectsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ProjectsRepository" class="App\Repository\ProjectsRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Vich\UploaderBundle\Naming\NamerInterface.0.Vich\UploaderBundle\Naming\UniqidNamer" class="Vich\UploaderBundle\Naming\UniqidNamer" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.Vich\UploaderBundle\Naming\UniqidNamer" class="Vich\UploaderBundle\Naming\UniqidNamer" abstract="true"/>
     <service id=".instanceof.Vich\UploaderBundle\Naming\NamerInterface.0.Vich\UploaderBundle\Naming\PropertyNamer" class="Vich\UploaderBundle\Naming\PropertyNamer" autowire="true" abstract="true"/>
@@ -8494,6 +8710,62 @@
         <argument type="collection">
           <argument type="service_closure" id="security.listener.session.main"/>
           <argument>onSuccessfulLogin</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.logout.listener.default.main"/>
+          <argument>onLogout</argument>
+        </argument>
+        <argument>64</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.logout.listener.session.main"/>
+          <argument>onLogout</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LoginSuccessEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.listener.check_remember_me_conditions.main"/>
+          <argument>onSuccessfulLogin</argument>
+        </argument>
+        <argument>-32</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LoginSuccessEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.listener.remember_me.main"/>
+          <argument>onSuccessfulLogin</argument>
+        </argument>
+        <argument>-64</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LoginFailureEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.listener.remember_me.main"/>
+          <argument>clearCookie</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.listener.remember_me.main"/>
+          <argument>clearCookie</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\TokenDeauthenticatedEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.listener.remember_me.main"/>
+          <argument>clearCookie</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -9044,7 +9316,19 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.F9uMLyC" method="withContext"/>
     </service>
-    <service id=".service_locator.VSHsG5b" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.0MQaTBY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
+      </argument>
+    </service>
+    <service id=".service_locator.0MQaTBY.App\Controller\SecurityController::login()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\SecurityController::login()"/>
+      <argument>App\Controller\SecurityController::login()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.0MQaTBY" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZQ5yb11" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -9059,6 +9343,7 @@
         <argument key="App\Controller\ContactController::index" type="service_closure" id=".service_locator.heJ666n.App\Controller\ContactController::index()"/>
         <argument key="App\Controller\ProjectController::index" type="service_closure" id=".service_locator.F9uMLyC.App\Controller\ProjectController::index()"/>
         <argument key="App\Controller\ProjectController::show" type="service_closure" id=".service_locator.F9uMLyC.App\Controller\ProjectController::show()"/>
+        <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.0MQaTBY.App\Controller\SecurityController::login()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.1vYpZ1B.kernel::loadRoutes()"/>
         <argument key="App\Controller\Admin\AdminProjectController:projectIndex" type="service_closure" id=".service_locator.F9uMLyC.App\Controller\Admin\AdminProjectController::projectIndex()"/>
@@ -9069,6 +9354,7 @@
         <argument key="App\Controller\ContactController:index" type="service_closure" id=".service_locator.heJ666n.App\Controller\ContactController::index()"/>
         <argument key="App\Controller\ProjectController:index" type="service_closure" id=".service_locator.F9uMLyC.App\Controller\ProjectController::index()"/>
         <argument key="App\Controller\ProjectController:show" type="service_closure" id=".service_locator.F9uMLyC.App\Controller\ProjectController::show()"/>
+        <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.0MQaTBY.App\Controller\SecurityController::login()"/>
       </argument>
     </service>
     <service id=".service_locator.S9tnIXR" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -9412,11 +9698,12 @@
         <argument key="vich_uploader.listener.upload.projects" type="service_closure" id="vich_uploader.listener.upload.projects"/>
       </argument>
     </service>
-    <service id=".service_locator.IS_OB40" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Qxuj8UZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\ProfilRepository" type="service_closure" id="App\Repository\ProfilRepository"/>
         <argument key="App\Repository\ProjectsRepository" type="service_closure" id="App\Repository\ProjectsRepository"/>
+        <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
     <service id=".service_locator.W55Po6X" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -9721,6 +10008,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.TJNRSaV" method="withContext"/>
     </service>
+    <service id=".service_locator.TJNRSaV.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
+      <argument>App\Controller\SecurityController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.TJNRSaV" method="withContext"/>
+    </service>
     <service id=".service_locator.TJNRSaV.controller.helper" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="controller.helper"/>
       <argument>controller.helper</argument>
@@ -9900,6 +10193,12 @@
         <argument key="security.csrf.token_manager" type="service_closure" id="security.csrf.same_origin_token_manager" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.WYl0woh" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="main" type="service_closure" id="security.authenticator.remember_me_handler.main"/>
+      </argument>
+    </service>
     <service id=".service_locator.u0NMpz0" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -9918,7 +10217,7 @@
     <service id="asset_mapper.cached_mapped_asset_factory.inner" class="Symfony\Component\AssetMapper\Factory\MappedAssetFactory">
       <argument type="service" id="asset_mapper.public_assets_path_resolver"/>
       <argument type="service" id="asset_mapper_compiler"/>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/assets/vendor</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/assets/vendor</argument>
     </service>
     <service id="asset_mapper.asset_package.inner" class="Symfony\Component\Asset\PathPackage">
       <argument/>
@@ -9943,6 +10242,7 @@
           <argument>App\Controller\HomeController</argument>
           <argument>App\Controller\ProfilController</argument>
           <argument>App\Controller\ProjectController</argument>
+          <argument>App\Controller\SecurityController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>
@@ -11230,119 +11530,127 @@
       </argument>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
-      <argument>j38hj1xKNG</argument>
+      <argument>M1rRFXJThR</argument>
       <argument>0</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/share/dev/pools/app</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/share/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>DPwlILPW4w</argument>
+      <argument>M6LNKFaqqt</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/pools/system</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>ft4GWZNTg0</argument>
+      <argument>q2KTBuYCbY</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/pools/system</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>F5AHXV12S2</argument>
+      <argument>rPFyYF0tPF</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/pools/system</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>bLpT+ZEbh5</argument>
+      <argument>ShA+d8E2EW</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/pools/system</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.asset_mapper.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>wJsBNReoa2</argument>
+      <argument>8FtQVulMVR</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/pools/system</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
-      <argument>d6jz3wiZAe</argument>
+      <argument>CXIKLJaz+F</argument>
       <argument>0</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/share/dev/pools/app</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/share/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.http_client.pool.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
-      <argument>FKvtbMqBLK</argument>
+      <argument>g0tDocMUP0</argument>
       <argument>0</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/share/dev/pools/app</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/share/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.validator_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>L6LbwFkaDM</argument>
+      <argument>jtk2aR9ns3</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/pools/system</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.doctrine.orm.default.result.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.doctrine.orm.default.query.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.security_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>4dwnOW0BdW</argument>
+      <argument>rBn5K2+zNr</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/pools/system</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.security_is_granted_attribute_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>I1wHiRZSmj</argument>
+      <argument>JI8nByxl8p</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/pools/system</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.security_is_csrf_token_valid_attribute_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>GwEpK9-fGk</argument>
+      <argument>mAkzkBYOrF</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/pools/system</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
+      <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
+      <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
+    </service>
+    <service id="cache.security_token_verifier.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
+      <argument>3JEvOQSAkh</argument>
+      <argument>0</argument>
+      <argument>%container.build_id%</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id=".ux_icons.cache.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>T2Sy-CjOhI</argument>
+      <argument>zZIycLD8UJ</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/pools/system</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.ux.twig_component.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>OvfBcN5VU3</argument>
+      <argument>NzypaddLCU</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/var/cache/dev/pools/system</argument>
+      <argument>/Users/sanchezyoan/Documents/dev/portfolio-V3/var/cache/dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -11501,9 +11809,10 @@
     <service id="Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface" alias="security.user_password_hasher"/>
     <service id="Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface" alias="security.user_authenticator"/>
     <service id="security.firewall" alias="debug.security.firewall"/>
-    <service id="security.user_providers" alias="security.user.provider.concrete.users_in_memory"/>
-    <service id="Symfony\Component\Security\Core\User\UserProviderInterface" alias="security.user.provider.concrete.users_in_memory"/>
+    <service id="security.user_providers" alias="security.user.provider.concrete.app_user_provider"/>
+    <service id="Symfony\Component\Security\Core\User\UserProviderInterface" alias="security.user.provider.concrete.app_user_provider"/>
     <service id="security.authentication.session_strategy.main" alias="security.authentication.session_strategy"/>
+    <service id="Symfony\Component\Security\Http\RememberMe\RememberMeHandlerInterface" alias="security.authenticator.firewall_aware_remember_me_handler"/>
     <service id="security.user_checker.main" alias="security.user_checker"/>
     <service id="security.firewall.context_locator" alias=".service_locator.Bz.C4As"/>
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
@@ -11538,7 +11847,7 @@
     </service>
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.VSHsG5b"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.ZQ5yb11"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request.logger" alias="monolog.logger.request"/>
@@ -11602,6 +11911,7 @@
     <service id=".service_locator.vIjMGrp" alias=".service_locator.sV5Hrrz"/>
     <service id=".service_locator.ykAv8hZ" alias=".service_locator.oBR0Fri"/>
     <service id=".service_locator..XwZqG2" alias=".service_locator.heJ666n"/>
+    <service id=".service_locator.uBwBrvQ" alias=".service_locator.0MQaTBY"/>
     <service id=".service_locator.D6tJ4Px" alias=".service_locator.TJNRSaV"/>
   </services>
 </container>

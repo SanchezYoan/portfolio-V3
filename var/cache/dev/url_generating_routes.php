@@ -29,6 +29,8 @@ return [
     'profil.index' => [[], ['_controller' => 'App\\Controller\\ProfilController::index'], [], [['text', '/profil']], [], [], []],
     'project.index' => [[], ['_controller' => 'App\\Controller\\ProjectController::index'], [], [['text', '/project']], [], [], []],
     'project.show' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/project']], [], [], []],
+    'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
+    'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
     'App\Controller\Admin\AdminProjectController::home' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminProjectController::home'], [], [['text', '/admin/']], [], [], []],
     'App\Controller\Admin\AdminProjectController::projectIndex' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminProjectController::projectIndex'], [], [['text', '/admin/project']], [], [], []],
     'App\Controller\Admin\AdminProjectController::show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminProjectController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/admin/project']], [], [], []],
@@ -40,4 +42,6 @@ return [
     'App\Controller\ProfilController::index' => [[], ['_controller' => 'App\\Controller\\ProfilController::index'], [], [['text', '/profil']], [], [], []],
     'App\Controller\ProjectController::index' => [[], ['_controller' => 'App\\Controller\\ProjectController::index'], [], [['text', '/project']], [], [], []],
     'App\Controller\ProjectController::show' => [['id'], ['_controller' => 'App\\Controller\\ProjectController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/project']], [], [], []],
+    'App\Controller\SecurityController::login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
+    'App\Controller\SecurityController::logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
 ];

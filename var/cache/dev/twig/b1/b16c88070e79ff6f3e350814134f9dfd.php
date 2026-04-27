@@ -183,6 +183,6 @@ class __TwigTemplate_d8fea35eed66d501405824402064e8c2 extends Template
 \t\t{{ form_end(form) }}
 \t</div>
 {% endblock %}
-", "admin/project/edit.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates/admin/project/edit.html.twig");
+", "admin/project/edit.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/templates/admin/project/edit.html.twig");
     }
 }

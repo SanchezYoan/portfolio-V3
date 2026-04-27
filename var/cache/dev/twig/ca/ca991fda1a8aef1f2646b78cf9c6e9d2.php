@@ -218,6 +218,6 @@ class __TwigTemplate_35587b610d72a4817feddd7bf3160d6c extends Template
 \t\t{% endfor %}
 \t</div>
 {% endblock %}
-", "project/index.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates/project/index.html.twig");
+", "project/index.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/templates/project/index.html.twig");
     }
 }

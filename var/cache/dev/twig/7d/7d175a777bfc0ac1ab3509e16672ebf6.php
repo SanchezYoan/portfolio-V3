@@ -181,6 +181,6 @@ class __TwigTemplate_de1257fc2d4bf6ec46d1eb712fc33a4d extends Template
 \t\t<p>{{ project.description }}</p>
 \t</div>
 {% endblock %}
-", "project/show.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates/project/show.html.twig");
+", "project/show.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/templates/project/show.html.twig");
     }
 }

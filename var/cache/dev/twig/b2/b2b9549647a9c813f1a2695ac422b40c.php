@@ -102,6 +102,6 @@ unset($context[$key]);
         return new Source("{% props action -%}
 
 <turbo-stream action=\"{{ action }}\" {{- attributes }}></turbo-stream>
-", "@Turbo/components/Stream.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-turbo/templates/components/Stream.html.twig");
+", "@Turbo/components/Stream.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-turbo/templates/components/Stream.html.twig");
     }
 }

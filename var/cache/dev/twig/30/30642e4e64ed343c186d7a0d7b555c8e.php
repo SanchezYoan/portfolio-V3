@@ -334,6 +334,6 @@ class __TwigTemplate_3b5ba82171449a9fa7d59be95967e843 extends Template
 \t\t\t</div>
 \t</body>
 </html>
-", "base.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates/base.html.twig");
+", "base.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/templates/base.html.twig");
     }
 }

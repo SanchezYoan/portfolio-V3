@@ -11,10 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Form\ProjectType;
 use App\Entity\Projects;
 use Symfony\Component\Routing\Requirement\Requirement;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/admin')]
+#[IsGranted('ROLE_ADMIN')]
 final class AdminProjectController extends AbstractController {
-
     #[Route('/', name:'admin.home')]
     public function home(): Response
     {

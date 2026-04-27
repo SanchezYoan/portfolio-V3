@@ -317,6 +317,6 @@ class __TwigTemplate_ea30b69175905b6781e1072f925ae4e5 extends Template
 \t\t</div>
 \t</body>
 </html>
-", "admin/admin.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates/admin/admin.html.twig");
+", "admin/admin.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/templates/admin/admin.html.twig");
     }
 }
