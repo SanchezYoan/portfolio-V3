@@ -417,6 +417,14 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\AboutController" class="App\Controller\AboutController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="routing.controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.TJNRSaV.App\Controller\AboutController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\AdminProjectController" class="App\Controller\Admin\AdminProjectController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="routing.controller"/>
@@ -3855,6 +3863,7 @@
     <service id="routing.loader.attribute.services" class="Symfony\Component\Routing\Loader\AttributeServicesLoader">
       <tag name="routing.loader" priority="-10"/>
       <argument type="collection">
+        <argument>App\Controller\AboutController</argument>
         <argument>App\Controller\Admin\AdminProjectController</argument>
         <argument>App\Controller\ContactController</argument>
         <argument>App\Controller\HomeController</argument>
@@ -8681,6 +8690,10 @@
       <argument type="service" id="symfonycasts.verify_email.token_generator"/>
       <argument>3600</argument>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AboutController" class="App\Controller\AboutController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AboutController" class="App\Controller\AboutController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\AboutController.0.App\Controller\AboutController" class="App\Controller\AboutController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AboutController" class="App\Controller\AboutController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\AdminProjectController" class="App\Controller\Admin\AdminProjectController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\AdminProjectController" class="App\Controller\Admin\AdminProjectController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\Admin\AdminProjectController.0.App\Controller\Admin\AdminProjectController" class="App\Controller\Admin\AdminProjectController" autowire="true" abstract="true"/>
@@ -10094,6 +10107,12 @@
         <argument key="web_link.http_header_serializer" type="service_closure" id="web_link.http_header_serializer" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.TJNRSaV.App\Controller\AboutController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\AboutController"/>
+      <argument>App\Controller\AboutController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.TJNRSaV" method="withContext"/>
+    </service>
     <service id=".service_locator.TJNRSaV.App\Controller\Admin\AdminProjectController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\AdminProjectController"/>
       <argument>App\Controller\Admin\AdminProjectController</argument>
@@ -10359,6 +10378,7 @@
       <call method="allowControllers">
         <argument type="collection">
           <argument>App\Kernel</argument>
+          <argument>App\Controller\AboutController</argument>
           <argument>App\Controller\Admin\AdminProjectController</argument>
           <argument>App\Controller\ContactController</argument>
           <argument>App\Controller\HomeController</argument>

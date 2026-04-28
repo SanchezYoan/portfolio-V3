@@ -73,7 +73,7 @@ class __TwigTemplate_aa66d63d1671d7ed3350e050df6d3d86 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Hello ProfilController!";
+        yield "Profil";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -97,21 +97,27 @@ class __TwigTemplate_aa66d63d1671d7ed3350e050df6d3d86 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        yield "
 
 <div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        yield "! ✅</h1>
-
-    This friendly message is coming from:
+    <h1>Bonjour ";
+        // line 9
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 9, $this->source); })()), "username", [], "any", false, false, false, 9), "html", null, true);
+        yield "</h1>
+    Vos informations personnelles :
     <ul>
-        <li>Your controller at <code>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/src/Controller/ProfilController.php</code></li>
-        <li>Your template at <code>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates/profil/index.html.twig</code></li>
+        <li>Email : ";
+        // line 12
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 12, $this->source); })()), "email", [], "any", false, false, false, 12), "html", null, true);
+        yield "</li>
+        <li>Username : ";
+        // line 13
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 13, $this->source); })()), "username", [], "any", false, false, false, 13), "html", null, true);
+        yield "</li>
+        <li>Mot de passe
+            <input type=\"password\" value=\"********\">
+            <button type=\"button\" class=\"btn btn-primary\">Modifier</button>
+        </li>
     </ul>
 </div>
 ";
@@ -145,28 +151,28 @@ class __TwigTemplate_aa66d63d1671d7ed3350e050df6d3d86 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  115 => 13,  111 => 12,  105 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello ProfilController!{% endblock %}
+{% block title %}Profil{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+
 
 <div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
+    <h1>Bonjour {{ user.username }}</h1>
+    Vos informations personnelles :
     <ul>
-        <li>Your controller at <code>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/src/Controller/ProfilController.php</code></li>
-        <li>Your template at <code>/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates/profil/index.html.twig</code></li>
+        <li>Email : {{ user.email }}</li>
+        <li>Username : {{ user.username }}</li>
+        <li>Mot de passe
+            <input type=\"password\" value=\"********\">
+            <button type=\"button\" class=\"btn btn-primary\">Modifier</button>
+        </li>
     </ul>
 </div>
 {% endblock %}
