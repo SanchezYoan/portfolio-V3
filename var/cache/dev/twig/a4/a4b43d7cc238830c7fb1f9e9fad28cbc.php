@@ -349,6 +349,6 @@ class __TwigTemplate_cb4f99b0a881f946f70757b6e541c862 extends Template
         </tbody>
     </table>
 {% endblock %}
-", "@VichUploader/Collector/mapping_collector.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/templates/Collector/mapping_collector.html.twig");
+", "@VichUploader/Collector/mapping_collector.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/templates/Collector/mapping_collector.html.twig");
     }
 }

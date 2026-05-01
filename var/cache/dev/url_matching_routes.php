@@ -15,6 +15,7 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/about' => [[['_route' => 'about.show', '_controller' => 'App\\Controller\\AboutController::index'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin.home', '_controller' => 'App\\Controller\\Admin\\AdminProjectController::home'], null, null, null, true, false, null]],
         '/admin/project' => [[['_route' => 'admin.project.index', '_controller' => 'App\\Controller\\Admin\\AdminProjectController::projectIndex'], null, null, null, false, false, null]],
         '/admin/project/new' => [[['_route' => 'admin.project.new', '_controller' => 'App\\Controller\\Admin\\AdminProjectController::new'], null, null, null, false, false, null]],
@@ -22,6 +23,10 @@ return [
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/profil' => [[['_route' => 'profil.index', '_controller' => 'App\\Controller\\ProfilController::index'], null, null, null, false, false, null]],
         '/project' => [[['_route' => 'project.index', '_controller' => 'App\\Controller\\ProjectController::index'], null, null, null, false, false, null]],
+        '/register' => [[['_route' => 'security.register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
+        '/verify/email' => [[['_route' => 'security.verify_email', '_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'security.login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

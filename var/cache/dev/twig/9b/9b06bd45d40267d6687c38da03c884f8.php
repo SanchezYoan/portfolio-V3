@@ -198,6 +198,6 @@ class __TwigTemplate_e548ee5340c05a601d1d580a198e938d extends Template
 \t\t\t</div>
 \t\t</div>
 \t{% endblock %}
-", "home/index.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates/home/index.html.twig");
+", "home/index.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/templates/home/index.html.twig");
     }
 }

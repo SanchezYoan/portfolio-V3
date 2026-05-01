@@ -104,6 +104,6 @@ class __TwigTemplate_3e57aa328594240fb5d7450f7b2750ee extends Template
 \t\t<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
 \t</div>
 {% endfor %}
-", "partials/flash.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates/partials/flash.html.twig");
+", "partials/flash.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/templates/partials/flash.html.twig");
     }
 }

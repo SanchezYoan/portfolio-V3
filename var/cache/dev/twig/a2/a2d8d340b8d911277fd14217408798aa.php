@@ -131,6 +131,6 @@ unset($context[$key]);
 <turbo-stream action=\"after\" targets=\"{{ target }}\" {{- attributes }}>
     <template>{% block content %}{% endblock %}</template>
 </turbo-stream>
-", "@Turbo/components/Stream/After.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-turbo/templates/components/Stream/After.html.twig");
+", "@Turbo/components/Stream/After.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-turbo/templates/components/Stream/After.html.twig");
     }
 }

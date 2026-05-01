@@ -131,6 +131,6 @@ unset($context[$key]);
 <turbo-frame id=\"{{ id }}\" {{- attributes }}>
     {%- block content %}{% endblock -%}
 </turbo-frame>
-", "@Turbo/components/Frame.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-turbo/templates/components/Frame.html.twig");
+", "@Turbo/components/Frame.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-turbo/templates/components/Frame.html.twig");
     }
 }

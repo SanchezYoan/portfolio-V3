@@ -297,6 +297,6 @@ class __TwigTemplate_a11cde19846497b61fb31b5e4639712d extends Template
         {%- endif -%}
     </div>
 {%- endblock -%}
-", "@VichUploader/Form/fields.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/vich/uploader-bundle/templates/Form/fields.html.twig");
+", "@VichUploader/Form/fields.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/vich/uploader-bundle/templates/Form/fields.html.twig");
     }
 }

@@ -170,6 +170,6 @@ class __TwigTemplate_7d9749f449e8f92460b92d5eb2d9dda6 extends Template
     </ul>
 </div>
 {% endblock %}
-", "admin_project/index.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/templates/admin_project/index.html.twig");
+", "admin_project/index.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/templates/admin_project/index.html.twig");
     }
 }

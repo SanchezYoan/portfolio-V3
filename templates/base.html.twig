@@ -18,13 +18,10 @@
 		<nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="{{ url("home") }}">YoanSAN</a>
-				<div class="">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link {{ app.current_route == 'home' ? 'active' : '' }}" href="{{ url("home") }}">Acceuil</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link {{ app.current_route == 'profil' ? 'active' : '' }}" href="{{ url("profil.index") }}">Profil</a>
+				<div class="d-flex justify-content-center align-items-center w-100">
+					<ul class="navbar-nav me-3">
+						<li>
+							<a class="nav-link {{ app.current_route == 'about.show' ? 'active' : '' }}" href="{{ url("about.show") }}">À propos</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link {{ app.current_route starts with 'project.' ? 'active' : '' }}" href="{{ url("project.index") }}">Projets</a>
@@ -32,6 +29,34 @@
 						<li>
 							<a class="nav-link {{ app.current_route == 'contact' ? 'active' : '' }}" href="{{ url("contact") }}">Contact</a>
 						</li>
+
+					</ul>
+				</div>
+				<div class="d-flex justify-content-center align-items-center">
+					<ul class="navbar-nav">
+						{% if not is_granted('ROLE_USER') %}
+						<div class="d-flex gap-2">
+							<li>
+							<button type="button" class="btn btn-secondary">
+								<a class="text-decoration-none text-white" href="{{ url("security.login") }}">Connexion</a>
+							</button>
+							</li>
+							<li>
+							<button type="button" class="btn btn-success">
+								<a class="text-decoration-none text-white" href="{{ url("security.register") }}">Inscription</a>
+							</button>
+							</li>
+						{% endif %}
+						{% if is_granted('ROLE_USER') %}	
+						<div class="d-flex gap-2 align-items-center me-3">
+							<li> 
+								<a class="nav-link {{ app.current_route == 'profil' ? 'active' : '' }}" href="{{ url("profil.index") }}">{{ ux_icon('mdi:account-circle', {'width': '2rem', 'height': '2rem'}, {class: 'text-white'}) }}</a>
+							</li>
+						
+							<li>
+								<a class="text-decoration-none text-white" href="{{ logout_path() }}">Déconnexion</a>
+							</li>
+						{% endif %}
 					</ul>
 				</div>
 				</nav>

@@ -1095,6 +1095,6 @@ class __TwigTemplate_7447560e135b22e175dcf797e6cf4419 extends Template
         {% endfor %}
     </div>
 {% endblock %}
-", "@TwigComponent/Collector/twig_component.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/portfolio/vendor/symfony/ux-twig-component/templates/Collector/twig_component.html.twig");
+", "@TwigComponent/Collector/twig_component.html.twig", "/Users/sanchezyoan/Documents/dev/portfolio-V3/vendor/symfony/ux-twig-component/templates/Collector/twig_component.html.twig");
     }
 }
