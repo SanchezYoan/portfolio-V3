@@ -46,6 +46,7 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         ),
         'S' =>
         array (
+            'Symfony\\WebpackEncoreBundle\\' => 28,
             'Symfony\\UX\\TwigComponent\\' => 25,
             'Symfony\\UX\\Turbo\\' => 17,
             'Symfony\\UX\\StimulusBundle\\' => 26,
@@ -191,6 +192,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         'Twig\\' =>
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfony\\WebpackEncoreBundle\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/symfony/webpack-encore-bundle/src',
         ),
         'Symfony\\UX\\TwigComponent\\' =>
         array (
