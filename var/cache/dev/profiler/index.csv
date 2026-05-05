@@ -984,3 +984,15 @@ e3fd41,172.19.0.1,POST,http://localhost:8080/admin/project/new,1777964739,,302,r
 1872e8,172.19.0.1,GET,http://localhost:8080/admin/project,1777964739,,200,request
 8911e0,172.19.0.1,GET,http://localhost:8080/admin/,1777964745,,200,request
 5bdc29,172.19.0.1,GET,http://localhost:8080/admin/project,1777964746,,200,request
+bae311,172.19.0.1,GET,http://localhost:8080/,1777985621,,200,request
+4967fb,172.19.0.1,GET,http://localhost:8080/,1777985629,,200,request
+8b2a1e,172.19.0.1,GET,http://localhost:8080/project,1777985632,,200,request
+58b9bc,172.19.0.1,GET,http://localhost:8080/about,1777985632,,200,request
+44fc0f,172.19.0.1,GET,http://localhost:8080/project,1777985633,,200,request
+1b4a51,172.19.0.1,GET,http://localhost:8080/contact,1777985634,,200,request
+bf6262,172.19.0.1,GET,http://localhost:8080/build/assets_components_Contact_vue.js,1777985634,e0bb02,404,request
+e0bb02,172.19.0.1,GET,http://localhost:8080/build/assets_components_Contact_vue.js,1777985634,,404,request
+3d2d09,172.19.0.1,GET,http://localhost:8080/about,1777985635,,200,request
+39bde5,172.19.0.1,GET,http://localhost:8080/project,1777985636,,200,request
+5c330d,172.19.0.1,GET,http://localhost:8080/contact,1777985636,,200,request
+0eb1c5,172.19.0.1,GET,http://localhost:8080/,1777985638,,200,request
