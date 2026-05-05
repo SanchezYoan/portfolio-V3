@@ -14,8 +14,8 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* about/index.html.twig */
-class __TwigTemplate_b8ed186dce138a7b49f3a8f6bd53acfc extends Template
+/* admin/project/edit.html.twig */
+class __TwigTemplate_03a52f8f5e95750a9d43e651a204f54e extends Template
 {
     private Source $source;
     /**
@@ -38,19 +38,19 @@ class __TwigTemplate_b8ed186dce138a7b49f3a8f6bd53acfc extends Template
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
         // line 1
-        return "base.html.twig";
+        return "admin/admin.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "about/index.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/project/edit.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "about/index.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/project/edit.html.twig"));
 
-        $this->parent = $this->load("base.html.twig", 1);
+        $this->parent = $this->load("admin/admin.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -73,7 +73,8 @@ class __TwigTemplate_b8ed186dce138a7b49f3a8f6bd53acfc extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Hello AboutController!";
+        yield "Hello ProjectController!
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_b8ed186dce138a7b49f3a8f6bd53acfc extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,14 +97,35 @@ class __TwigTemplate_b8ed186dce138a7b49f3a8f6bd53acfc extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        yield "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        // line 7
+        yield "\t<style>
+\t\t.example-wrapper {
+\t\t\tmargin: 1em auto;
+\t\t\tmax-width: 800px;
+\t\t\twidth: 95%;
+\t\t\tfont: 18px / 1.5 sans-serif;
+\t\t}
+\t\t.example-wrapper code {
+\t\t\tbackground: #F5F5F5;
+\t\t\tpadding: 2px 6px;
+\t\t}
+\t</style>
 
-
-
+\t<a href=\"";
+        // line 20
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.project.index");
+        yield "\">Retour</a>
+\t<div class=\"example-wrapper\">
+\t\t";
+        // line 22
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), 'form_start');
+        yield "
+     
+\t\t";
+        // line 24
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), 'form_end');
+        yield "
+\t</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -119,7 +141,7 @@ class __TwigTemplate_b8ed186dce138a7b49f3a8f6bd53acfc extends Template
      */
     public function getTemplateName(): string
     {
-        return "about/index.html.twig";
+        return "admin/project/edit.html.twig";
     }
 
     /**
@@ -135,24 +157,37 @@ class __TwigTemplate_b8ed186dce138a7b49f3a8f6bd53acfc extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  126 => 24,  121 => 22,  116 => 20,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'admin/admin.html.twig' %}
 
-{% block title %}Hello AboutController!{% endblock %}
+{% block title %}Hello ProjectController!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+\t<style>
+\t\t.example-wrapper {
+\t\t\tmargin: 1em auto;
+\t\t\tmax-width: 800px;
+\t\t\twidth: 95%;
+\t\t\tfont: 18px / 1.5 sans-serif;
+\t\t}
+\t\t.example-wrapper code {
+\t\t\tbackground: #F5F5F5;
+\t\t\tpadding: 2px 6px;
+\t\t}
+\t</style>
 
-
-
+\t<a href=\"{{ path('admin.project.index') }}\">Retour</a>
+\t<div class=\"example-wrapper\">
+\t\t{{ form_start(form) }}
+     
+\t\t{{ form_end(form) }}
+\t</div>
 {% endblock %}
-", "about/index.html.twig", "/var/www/symfony/templates/about/index.html.twig");
+", "admin/project/edit.html.twig", "/var/www/symfony/templates/admin/project/edit.html.twig");
     }
 }

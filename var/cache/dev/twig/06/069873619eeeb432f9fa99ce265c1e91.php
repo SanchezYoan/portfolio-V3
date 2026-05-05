@@ -75,34 +75,39 @@ class __TwigTemplate_2b4b6dbf9e8fdf44f63aabd8a5b23f3b extends Template
         // line 19
         yield "\t</head>
 \t<body>
-\t\t<nav class=\"navbar bg-primary navbar-expand-lg\" data-bs-theme=\"dark\">
+\t";
+        // line 24
+        yield "
+\t";
+        // line 26
+        yield "\t\t<nav class=\"navbar bg-primary navbar-expand-lg\" data-bs-theme=\"dark\">
 \t\t\t<div class=\"container-fluid\">
 \t\t\t\t<a class=\"navbar-brand\" href=\"";
-        // line 23
+        // line 28
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("home");
         yield "\">YoanSAN</a>
 \t\t\t\t<div class=\"d-flex justify-content-center align-items-center w-100\">
 \t\t\t\t\t<ul class=\"navbar-nav me-3\">
 \t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<a class=\"nav-link ";
-        // line 27
-        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "current_route", [], "any", false, false, false, 27) == "about.show")) ? ("active") : (""));
+        // line 32
+        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "current_route", [], "any", false, false, false, 32) == "about.show")) ? ("active") : (""));
         yield "\" href=\"";
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("about.show");
         yield "\">À propos</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t<a class=\"nav-link ";
-        // line 30
-        yield (((is_string($_v0 = CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "current_route", [], "any", false, false, false, 30)) && is_string($_v1 = "project.") && str_starts_with($_v0, $_v1))) ? ("active") : (""));
+        // line 35
+        yield (((is_string($_v0 = CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 35, $this->source); })()), "current_route", [], "any", false, false, false, 35)) && is_string($_v1 = "project.") && str_starts_with($_v0, $_v1))) ? ("active") : (""));
         yield "\" href=\"";
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("project.index");
         yield "\">Projets</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<a class=\"nav-link ";
-        // line 33
-        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "current_route", [], "any", false, false, false, 33) == "contact")) ? ("active") : (""));
+        // line 38
+        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 38, $this->source); })()), "current_route", [], "any", false, false, false, 38) == "contact")) ? ("active") : (""));
         yield "\" href=\"";
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("contact");
         yield "\">Contact</a>
@@ -113,14 +118,14 @@ class __TwigTemplate_2b4b6dbf9e8fdf44f63aabd8a5b23f3b extends Template
 \t\t\t\t<div class=\"d-flex justify-content-center align-items-center\">
 \t\t\t\t\t<ul class=\"navbar-nav\">
 \t\t\t\t\t\t";
-        // line 40
+        // line 45
         if ((($tmp =  !$this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 41
+            // line 46
             yield "\t\t\t\t\t\t<div class=\"d-flex gap-2\">
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-secondary\">
 \t\t\t\t\t\t\t\t<a class=\"text-decoration-none text-white\" href=\"";
-            // line 44
+            // line 49
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("security.login");
             yield "\">Connexion</a>
 \t\t\t\t\t\t\t</button>
@@ -128,22 +133,22 @@ class __TwigTemplate_2b4b6dbf9e8fdf44f63aabd8a5b23f3b extends Template
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-success\">
 \t\t\t\t\t\t\t\t<a class=\"text-decoration-none text-white\" href=\"";
-            // line 49
+            // line 54
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("security.register");
             yield "\">Inscription</a>
 \t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t";
         }
-        // line 53
+        // line 58
         yield "\t\t\t\t\t\t";
         if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
             yield "\t
 \t\t\t\t\t\t<div class=\"d-flex gap-2 align-items-center me-3\">
 \t\t\t\t\t\t\t<li> 
 \t\t\t\t\t\t\t\t<a class=\"nav-link ";
-            // line 56
-            yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 56, $this->source); })()), "current_route", [], "any", false, false, false, 56) == "profil")) ? ("active") : (""));
+            // line 61
+            yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 61, $this->source); })()), "current_route", [], "any", false, false, false, 61) == "profil")) ? ("active") : (""));
             yield "\" href=\"";
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("profil.index");
             yield "\">";
@@ -153,29 +158,27 @@ class __TwigTemplate_2b4b6dbf9e8fdf44f63aabd8a5b23f3b extends Template
 \t\t\t\t\t\t
 \t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t<a class=\"text-decoration-none text-white\" href=\"";
-            // line 60
+            // line 65
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\LogoutUrlExtension']->getLogoutPath(), "html", null, true);
             yield "\">Déconnexion</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t";
         }
-        // line 63
+        // line 68
         yield "\t\t\t\t\t</ul>
 \t\t\t\t</div>
 \t\t\t\t</nav>
 \t\t\t\t<div class=\"container my-3 col-6\">
-\t\t\t\t\t<div id=\"vue-app\">
 \t\t\t\t\t
-\t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"container my-4\">";
-        // line 70
-        yield from $this->load("partials/flash.html.twig", 70)->unwrap()->yield($context);
-        // line 71
+        // line 73
+        yield from $this->load("partials/flash.html.twig", 73)->unwrap()->yield($context);
+        // line 74
         yield "\t\t\t\t\t</div>
 \t\t\t\t\t";
-        // line 72
-        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         // line 75
+        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+        // line 78
         yield "\t\t\t\t</div>
 \t\t\t</div>
 \t</body>
@@ -294,7 +297,7 @@ class __TwigTemplate_2b4b6dbf9e8fdf44f63aabd8a5b23f3b extends Template
         yield from [];
     }
 
-    // line 72
+    // line 75
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -307,7 +310,7 @@ class __TwigTemplate_2b4b6dbf9e8fdf44f63aabd8a5b23f3b extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 73
+        // line 76
         yield "\t\t\t\t\t
 \t\t\t\t\t";
         
@@ -340,7 +343,7 @@ class __TwigTemplate_2b4b6dbf9e8fdf44f63aabd8a5b23f3b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  311 => 73,  298 => 72,  284 => 16,  271 => 15,  260 => 18,  258 => 15,  253 => 14,  240 => 13,  218 => 10,  194 => 6,  179 => 75,  177 => 72,  174 => 71,  172 => 70,  163 => 63,  157 => 60,  146 => 56,  139 => 53,  132 => 49,  124 => 44,  119 => 41,  117 => 40,  105 => 33,  97 => 30,  89 => 27,  82 => 23,  76 => 19,  74 => 13,  68 => 11,  66 => 10,  62 => 8,  60 => 6,  53 => 1,);
+        return array (  314 => 76,  301 => 75,  287 => 16,  274 => 15,  263 => 18,  261 => 15,  256 => 14,  243 => 13,  221 => 10,  197 => 6,  182 => 78,  180 => 75,  177 => 74,  175 => 73,  168 => 68,  162 => 65,  151 => 61,  144 => 58,  137 => 54,  129 => 49,  124 => 46,  122 => 45,  110 => 38,  102 => 35,  94 => 32,  87 => 28,  83 => 26,  80 => 24,  76 => 19,  74 => 13,  68 => 11,  66 => 10,  62 => 8,  60 => 6,  53 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -365,6 +368,11 @@ class __TwigTemplate_2b4b6dbf9e8fdf44f63aabd8a5b23f3b extends Template
 \t\t{% endblock %}
 \t</head>
 \t<body>
+\t{# <div id=\"vue-app\">
+\t\t\t\t\t
+\t</div> #}
+
+\t{# Passer A vue FULL #}
 \t\t<nav class=\"navbar bg-primary navbar-expand-lg\" data-bs-theme=\"dark\">
 \t\t\t<div class=\"container-fluid\">
 \t\t\t\t<a class=\"navbar-brand\" href=\"{{ url(\"home\") }}\">YoanSAN</a>
@@ -411,9 +419,7 @@ class __TwigTemplate_2b4b6dbf9e8fdf44f63aabd8a5b23f3b extends Template
 \t\t\t\t</div>
 \t\t\t\t</nav>
 \t\t\t\t<div class=\"container my-3 col-6\">
-\t\t\t\t\t<div id=\"vue-app\">
 \t\t\t\t\t
-\t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"container my-4\">{% include 'partials/flash.html.twig' %}
 \t\t\t\t\t</div>
 \t\t\t\t\t{% block body %}
