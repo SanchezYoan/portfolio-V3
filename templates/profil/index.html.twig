@@ -3,18 +3,11 @@
 {% block title %}Profil{% endblock %}
 
 {% block body %}
-
-
-<div class="example-wrapper">
-    <h1>Bonjour {{ user.username }}</h1>
-    Vos informations personnelles :
-    <ul>
-        <li>Email : {{ user.email }}</li>
-        <li>Username : {{ user.username }}</li>
-        <li>Mot de passe
-            <input type="password" value="********">
-            <button type="button" class="btn btn-primary">Modifier</button>
-        </li>
-    </ul>
-</div>
+    <div id="vue-page"
+         data-component="Profil"
+         data-props="{{ {'user': {
+             'username': user.username,
+             'email': user.email
+         }}|json_encode }}">
+    </div>
 {% endblock %}
