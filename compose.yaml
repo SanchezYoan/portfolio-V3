@@ -18,6 +18,7 @@ services:
     environment:
       APP_ENV: dev
       DATABASE_URL: mysql://root:root@database:3306/portfolio_db?serverVersion=12.2.2-MariaDB&charset=utf8mb4
+      MAILER_DSN: smtp://mailer:1025
     depends_on:
       database:
         condition: service_healthy

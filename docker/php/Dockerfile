@@ -31,6 +31,9 @@ RUN npm ci
 # Copie du projet
 COPY . .
 
+# Build des assets Vue.js
+RUN npm run build
+
 RUN composer dump-autoload --optimize
 
 # Permissions
