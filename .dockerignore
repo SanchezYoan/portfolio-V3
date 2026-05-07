@@ -1,0 +1,28 @@
+# Git
+.git
+.gitignore
+
+# Docker
+.dockerignore
+docker/php/Dockerfile
+
+# Node
+node_modules/
+
+# PHP deps (injectés par le stage vendor)
+vendor/
+
+# Symfony cache & logs
+var/
+
+# Build output (généré dans le stage assets)
+public/build/
+
+# Dev & CI
+.github/
+.claude/
+dev.py
+style-preview.html
+
+# Docs
+*.md
