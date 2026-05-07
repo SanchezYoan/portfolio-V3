@@ -1,0 +1,77 @@
+stages:
+  - build
+
+variables:
+  DOCKER_BUILDKIT: "1"
+  # GitLab injecte CI_REGISTRY_IMAGE automatiquement → registry.gitlab.com/<namespace>/<project>
+  APP_IMAGE: "$CI_REGISTRY_IMAGE/app"
+  NGINX_IMAGE: "$CI_REGISTRY_IMAGE/nginx"
+
+# ── Ancre commune aux deux jobs ──────────────────────────────
+.docker_job:
+  image: docker:27
+  services:
+    - name: docker:27-dind
+      alias: docker
+  variables:
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_CERTDIR: /certs
+  before_script:
+    # CI_REGISTRY_USER / CI_REGISTRY_PASSWORD sont fournis automatiquement par GitLab
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"  # MR : build sans push
+    - if: $CI_COMMIT_BRANCH == "main"                   # main : build + push latest + SHA
+    - if: $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+/          # tag semver : build + push version
+
+# ── Image PHP-FPM ────────────────────────────────────────────
+build:app:
+  extends: .docker_job
+  stage: build
+  script:
+    # Récupère le cache depuis latest (silencieux si l'image n'existe pas encore)
+    - docker pull $APP_IMAGE:latest || true
+    - |
+      docker build \
+        --target app \
+        --cache-from $APP_IMAGE:latest \
+        --build-arg BUILDKIT_INLINE_CACHE=1 \
+        --tag $APP_IMAGE:$CI_COMMIT_SHORT_SHA \
+        .
+    # Push conditionnel selon le contexte
+    - |
+      if [ -n "$CI_COMMIT_TAG" ]; then
+        docker tag $APP_IMAGE:$CI_COMMIT_SHORT_SHA $APP_IMAGE:$CI_COMMIT_TAG
+        docker tag $APP_IMAGE:$CI_COMMIT_SHORT_SHA $APP_IMAGE:latest
+        docker push $APP_IMAGE:$CI_COMMIT_TAG
+        docker push $APP_IMAGE:latest
+      elif [ "$CI_COMMIT_BRANCH" = "main" ]; then
+        docker tag $APP_IMAGE:$CI_COMMIT_SHORT_SHA $APP_IMAGE:latest
+        docker push $APP_IMAGE:$CI_COMMIT_SHORT_SHA
+        docker push $APP_IMAGE:latest
+      fi
+
+# ── Image nginx ──────────────────────────────────────────────
+build:nginx:
+  extends: .docker_job
+  stage: build
+  script:
+    - docker pull $NGINX_IMAGE:latest || true
+    - |
+      docker build \
+        --target nginx \
+        --cache-from $NGINX_IMAGE:latest \
+        --build-arg BUILDKIT_INLINE_CACHE=1 \
+        --tag $NGINX_IMAGE:$CI_COMMIT_SHORT_SHA \
+        .
+    - |
+      if [ -n "$CI_COMMIT_TAG" ]; then
+        docker tag $NGINX_IMAGE:$CI_COMMIT_SHORT_SHA $NGINX_IMAGE:$CI_COMMIT_TAG
+        docker tag $NGINX_IMAGE:$CI_COMMIT_SHORT_SHA $NGINX_IMAGE:latest
+        docker push $NGINX_IMAGE:$CI_COMMIT_TAG
+        docker push $NGINX_IMAGE:latest
+      elif [ "$CI_COMMIT_BRANCH" = "main" ]; then
+        docker tag $NGINX_IMAGE:$CI_COMMIT_SHORT_SHA $NGINX_IMAGE:latest
+        docker push $NGINX_IMAGE:$CI_COMMIT_SHORT_SHA
+        docker push $NGINX_IMAGE:latest
+      fi
