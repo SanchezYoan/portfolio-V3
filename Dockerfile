@@ -41,7 +41,7 @@ COPY --from=vendor /app/vendor ./vendor/
 COPY --from=assets /app/public/build ./public/build/
 
 # Régénère le classmap avec les fichiers src/ disponibles, puis nettoie composer
-RUN composer dump-autoload --optimize --no-dev --classmap-authoritative \
+RUN composer dump-autoload --optimize --no-dev \
     && rm /usr/bin/composer \
     && mkdir -p var/cache var/log \
     && chown -R www-data:www-data var/
