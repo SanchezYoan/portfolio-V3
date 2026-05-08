@@ -32,13 +32,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get purge -y --auto-remove \
     && rm -rf /var/lib/apt/lists/*
 
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
 WORKDIR /var/www/symfony
 
 COPY . .
 COPY --from=vendor /app/vendor ./vendor/
 COPY --from=assets /app/public/build ./public/build/
 
-RUN mkdir -p var/cache var/log && chown -R www-data:www-data var/
+# Régénère le classmap avec les fichiers src/ disponibles, puis nettoie composer
+RUN composer dump-autoload --optimize --no-dev --classmap-authoritative \
+    && rm /usr/bin/composer \
+    && mkdir -p var/cache var/log \
+    && chown -R www-data:www-data var/
 
 EXPOSE 9000
 CMD ["php-fpm"]
