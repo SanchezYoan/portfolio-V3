@@ -6,11 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 final class ProfilControllerTest extends WebTestCase
 {
-    public function testIndex(): void
+    public function testProfilRequiresAuthentication(): void
     {
         $client = static::createClient();
         $client->request('GET', '/profil');
 
-        self::assertResponseIsSuccessful();
+        // Doit rediriger vers la page de login
+        self::assertResponseRedirects('/login');
     }
 }

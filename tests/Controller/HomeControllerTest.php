@@ -6,11 +6,20 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 final class HomeControllerTest extends WebTestCase
 {
-    public function testIndex(): void
+    public function testHomePageIsAccessible(): void
     {
         $client = static::createClient();
-        $client->request('GET', '/home');
+        $client->request('GET', '/');
 
         self::assertResponseIsSuccessful();
+    }
+
+    public function testHomePageContainsExpectedContent(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/');
+
+        self::assertResponseIsSuccessful();
+        self::assertSelectorExists('#vue-page');
     }
 }
