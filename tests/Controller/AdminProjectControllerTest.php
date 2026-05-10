@@ -6,11 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 final class AdminProjectControllerTest extends WebTestCase
 {
-    public function testIndex(): void
+    public function testAdminRequiresAuthentication(): void
     {
         $client = static::createClient();
         $client->request('GET', '/admin/project');
 
-        self::assertResponseIsSuccessful();
+        // Doit rediriger vers la page de login
+        self::assertResponseRedirects('/login');
     }
 }
