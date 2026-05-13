@@ -42,7 +42,7 @@ def containers_running():
     return bool(result.stdout.strip())
 
 
-def wait_healthy(service, timeout=60):
+def wait_healthy(service, timeout=120):
     """Attend qu'un service passe à l'état 'healthy' (healthcheck Docker).
     Interroge toutes les secondes jusqu'au timeout."""
     print(f"⏳ Attente que '{service}' soit healthy...", flush=True)
@@ -59,15 +59,31 @@ def wait_healthy(service, timeout=60):
     return False
 
 
+def wait_app_ready(timeout=90):
+    """Attend que le container app soit running et que PHP-FPM soit démarré
+    (en cherchant 'ready to handle connections' dans les logs)."""
+    print("⏳ Attente que 'app' soit prêt (migrations + PHP-FPM)...", flush=True)
+    for _ in range(timeout):
+        result = subprocess.run(
+            COMPOSE + ["logs", "--tail=20", "app"],
+            capture_output=True, text=True
+        )
+        if "ready to handle connections" in result.stdout:
+            print("✅ 'app' est prêt.", flush=True)
+            return True
+        time.sleep(1)
+    print(f"❌ Timeout: 'app' n'est pas prêt après {timeout}s.", flush=True)
+    return False
+
+
 def cmd_up():
     """Démarre tous les containers en arrière-plan, attend que database et app
-    soient healthy, puis lance le watch mode webpack."""
+    soient prêts, puis lance le watch mode webpack."""
     print("🚀 Démarrage des containers...", flush=True)
     run(COMPOSE + ["up", "-d"])
-    # La DB doit être healthy avant que app puisse faire ses migrations
-    wait_healthy("database")
-    # App (PHP-FPM) doit être prêt avant de lancer le build webpack
-    wait_healthy("app")
+    # Docker Compose gère déjà le wait DB via depends_on/service_healthy
+    # On attend juste que l'entrypoint (migrations + cache) soit terminé
+    wait_app_ready()
     print("🌐 Site disponible sur http://localhost:8080", flush=True)
     cmd_watch()
 
@@ -79,13 +95,10 @@ def cmd_down():
 
 
 def cmd_build():
-    """Lance un build webpack production one-shot dans le container app.
+    """Lance un build webpack production one-shot en local.
     Utile quand on ne veut pas rester en watch mode."""
-    if not containers_running():
-        print("⚠️  Les containers ne tournent pas. Lance 'python3 dev.py up' d'abord.")
-        sys.exit(1)
     print("🔨 Build production...", flush=True)
-    code = stream(COMPOSE + ["exec", "app", "npm", "run", "build"])
+    code = stream(["npm", "run", "build"])
     if code == 0:
         print("✅ Build terminé — recharge http://localhost:8080", flush=True)
     else:
@@ -94,22 +107,22 @@ def cmd_build():
 
 
 def cmd_watch():
-    """Lance webpack en mode watch dans le container app.
+    """Lance webpack en mode watch en local.
     Chaque modification dans assets/ déclenche un rebuild automatique."""
     if not containers_running():
         print("⚠️  Les containers ne tournent pas. Lance 'python3 dev.py up' d'abord.")
         sys.exit(1)
     print("👀 Watch mode actif — rebuild automatique à chaque sauvegarde dans assets/", flush=True)
     print("   (Ctrl+C pour arrêter)\n", flush=True)
-    stream(COMPOSE + ["exec", "app", "npm", "run", "watch"])
+    stream(["npm", "run", "watch"])
 
 
 def cmd_restart():
     """Reconstruit l'image du container app (utile après un changement de Dockerfile
-    ou de dépendances PHP/JS) puis relance le watch mode."""
+    ou de dépendances PHP) puis relance le watch mode."""
     print("🔄 Rebuild du container app...", flush=True)
     run(COMPOSE + ["up", "-d", "--build", "app"])
-    wait_healthy("app")
+    wait_app_ready()
     cmd_watch()
 
 
