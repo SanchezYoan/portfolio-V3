@@ -71,8 +71,8 @@ COPY --from=vendor /app/vendor ./vendor/
 # Assets compilés par Webpack Encore
 COPY --from=assets /app/public/build ./public/build/
 
-# Sauvegarde des assets pour les restaurer au démarrage (après volume mount)
-RUN cp -r public/build /tmp/build_backup
+# Sauvegarde du vendor et des assets pour les restaurer au démarrage (après volume mount)
+RUN cp -r vendor /tmp/vendor_backup && cp -r public/build /tmp/build_backup
 
 # Prépare les répertoires de cache/log
 RUN mkdir -p var/cache var/log \

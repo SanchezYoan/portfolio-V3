@@ -6,15 +6,26 @@ echo "========================================"
 echo "  Portfolio — Démarrage automatique"
 echo "========================================"
 
-# ── 1. Assets webpack ─────────────────────────────────────────
+# ── 1. Vendor PHP ─────────────────────────────────────────────
 echo ""
-echo "[1/4] Restauration des assets webpack..."
+echo "[1/5] Vérification des dépendances PHP..."
+if [ ! -f /var/www/symfony/vendor/autoload.php ]; then
+  echo "      vendor/ absent, restauration depuis l'image..."
+  cp -rf /tmp/vendor_backup/. /var/www/symfony/vendor/
+  echo "      vendor/ restauré."
+else
+  echo "      vendor/ déjà présent."
+fi
+
+# ── 2. Assets webpack ─────────────────────────────────────────
+echo ""
+echo "[2/5] Restauration des assets webpack..."
 cp -rf /tmp/build_backup/. /var/www/symfony/public/build/
 echo "      Assets copiés dans public/build/"
 
 # ── 2. Attente de la base de données ──────────────────────────
 echo ""
-echo "[2/4] Attente de la base de données..."
+echo "[3/5] Attente de la base de données..."
 until php -r "
   \$url = parse_url(getenv('DATABASE_URL'));
   \$host = \$url['host'] ?? 'database';
@@ -31,13 +42,13 @@ echo "      Base de données disponible."
 
 # ── 3. Migrations ─────────────────────────────────────────────
 echo ""
-echo "[3/4] Exécution des migrations Doctrine..."
+echo "[4/5] Exécution des migrations Doctrine..."
 php bin/console doctrine:migrations:migrate --no-interaction
 echo "      Migrations terminées."
 
 # ── 4. Cache ──────────────────────────────────────────────────
 echo ""
-echo "[4/4] Nettoyage du cache Symfony..."
+echo "[5/5] Nettoyage du cache Symfony..."
 php bin/console cache:clear --no-interaction
 echo "      Cache effacé."
 
