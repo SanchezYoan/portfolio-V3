@@ -9,9 +9,17 @@ services:
     environment:
       APP_ENV: ${APP_ENV}
       DATABASE_URL: ${DATABASE_URL}
+      MAILER_DSN: ${MAILER_DSN}
     depends_on:
       database:
         condition: service_healthy
+      mailer:
+        condition: service_started
+
+  mailer:
+    image: axllent/mailpit:latest
+    ports:
+      - "8026:8025"  # Interface web
 
   nginx:
     build:
@@ -35,9 +43,10 @@ services:
 
     healthcheck:
       test: ["CMD", "mariadb-admin", "ping", "-h", "localhost"]
+      interval: 5s
       timeout: 5s
-      retries: 10
-      start_period: 20s
+      retries: 20
+      start_period: 30s
 
     volumes:
       - database_data:/var/lib/mysql:rw
