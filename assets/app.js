@@ -2,6 +2,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/app.css';
 import { createApp } from 'vue';
+import { MotionPlugin } from '@vueuse/motion';
 
 const componentMap = {
     Home: () => import('./components/Home.vue'),
@@ -27,5 +28,5 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const props = el.dataset.props ? JSON.parse(el.dataset.props) : {};
     const { default: Component } = await loader();
-    createApp(Component, props).mount(el);
+    createApp(Component, props).use(MotionPlugin).mount(el);
 });
