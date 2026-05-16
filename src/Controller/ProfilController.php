@@ -39,6 +39,9 @@ final class ProfilController extends AbstractController
             return $this->json(['error' => 'Non authentifié.'], 401);
         }
 
+        // Recharger depuis la DB pour avoir le vrai hash bcrypt (pas le CRC32C de session)
+        $em->refresh($user);
+
         $data            = json_decode($request->getContent(), true);
         $currentPassword = $data['currentPassword'] ?? '';
         $newPassword     = $data['newPassword'] ?? '';
