@@ -1,6 +1,6 @@
 <template>
     <div class="example-wrapper">
-        <h1 class="mb-4">Nous contacter</h1>
+        <h1 class="mb-4">Contactez moi</h1>
         <form method="post" action="/contact" @submit.prevent="submit">
             <input type="hidden" name="contact[_token]" :value="csrfToken" />
             <div class="row">

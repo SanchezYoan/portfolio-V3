@@ -84,9 +84,9 @@ defineProps({
 });
 
 const editing         = ref(false);
+const loading         = ref(false);
 const currentPassword = ref('');
 const newPassword     = ref('');
-const loading         = ref(false);
 const errorMessage    = ref('');
 const successMessage  = ref('');
 
@@ -115,7 +115,7 @@ async function updatePassword() {
         const data = await res.json();
 
         if (res.ok) {
-            successMessage.value = data.message;
+            successMessage.value = "mot de passe modifié";
             reset();
         } else {
             errorMessage.value = data.error;
