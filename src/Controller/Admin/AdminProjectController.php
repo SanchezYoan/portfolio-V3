@@ -2,8 +2,11 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\ProjectImage;
+use App\Repository\ProjectImageRepository;
 use App\Repository\ProjectsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Doctrine\ORM\EntityManagerInterface;
@@ -56,6 +59,7 @@ final class AdminProjectController extends AbstractController {
             $data = $form->getData();
             $em->persist($data);
             $em->flush();
+            $this->handleGalleryImages($request, $data, $em);
             $this->addFlash('success', 'Projet créé avec succès');
             return $this->redirectToRoute('admin.project.index');
         }
@@ -77,6 +81,7 @@ final class AdminProjectController extends AbstractController {
             $data = $form->getData();
             $em->persist($data);
             $em->flush();
+            $this->handleGalleryImages($request, $data, $em);
             $this->addFlash('success', 'Projet mis à jour avec succès');
             return $this->redirectToRoute('admin.project.index');
         }
@@ -86,6 +91,54 @@ final class AdminProjectController extends AbstractController {
             'form' => $form,
         ]);
     }
+
+    #[Route('/project/{projectId}/image/{imageId}/delete', name: 'admin.project.image.delete', requirements: ['projectId' => Requirement::DIGITS, 'imageId' => Requirement::DIGITS], methods: ['POST'])]
+    public function deleteImage(int $projectId, int $imageId, ProjectImageRepository $imageRepo, EntityManagerInterface $em): JsonResponse
+    {
+        $image = $imageRepo->find($imageId);
+
+        if (!$image || $image->getProject()->getId() !== $projectId) {
+            return $this->json(['error' => 'Image non trouvée.'], 404);
+        }
+
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/images/projects/' . $image->getImage();
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
+
+        $em->remove($image);
+        $em->flush();
+
+        return $this->json(['success' => true]);
+    }
+
+    private function handleGalleryImages(Request $request, Projects $project, EntityManagerInterface $em): void
+    {
+        $uploadedFiles = $request->files->get('new_images', []);
+
+        if (!is_array($uploadedFiles)) {
+            $uploadedFiles = [$uploadedFiles];
+        }
+
+        $uploadDir = $this->getParameter('kernel.project_dir') . '/public/images/projects';
+
+        foreach ($uploadedFiles as $file) {
+            if (!$file || !$file->isValid()) {
+                continue;
+            }
+
+            $filename = uniqid('img_', true) . '.' . $file->guessExtension();
+            $file->move($uploadDir, $filename);
+
+            $projectImage = new ProjectImage();
+            $projectImage->setImage($filename);
+            $projectImage->setProject($project);
+            $em->persist($projectImage);
+        }
+
+        $em->flush();
+    }
+
     #[Route('/project/{id}/delete', name:'admin.project.delete', requirements: ['id' => Requirement::DIGITS], methods: ['POST', 'DELETE'])]
     public function delete(Projects $project, EntityManagerInterface $em): Response
     {
