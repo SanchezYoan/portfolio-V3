@@ -79,6 +79,10 @@ RUN mkdir -p var/cache var/log \
     && chown -R www-data:www-data var/ \
     && rm /usr/bin/composer
 
+# PHP upload limits
+RUN echo "upload_max_filesize=20M" > /usr/local/etc/php/conf.d/uploads.ini \
+ && echo "post_max_size=25M" >> /usr/local/etc/php/conf.d/uploads.ini
+
 # PHP-FPM listen on all interfaces so nginx can reach it
 RUN echo "listen = 0.0.0.0:9000" > /usr/local/etc/php-fpm.d/zz-docker.conf
 

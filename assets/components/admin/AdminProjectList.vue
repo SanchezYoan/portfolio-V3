@@ -8,7 +8,7 @@
             <p class="text-muted">Aucun projet trouvé.</p>
         </div>
         <div v-for="project in projects" :key="project.id" class="card mb-3">
-            <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #1e293b; color: #f1f5f9;">
                 <h5 class="mb-0">{{ project.title }}</h5>
                 <div class="d-flex gap-2">
                     <a :href="'/admin/project/' + project.id" class="btn btn-primary btn-sm">Voir</a>
