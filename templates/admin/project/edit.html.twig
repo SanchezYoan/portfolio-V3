@@ -14,8 +14,10 @@
                  'results': project.results,
                  'learnings': project.learnings,
                  'githubUrl': project.githubUrl,
-                 'demoUrl': project.demoUrl
+                 'demoUrl': project.demoUrl,
+                 'thumbnailUrl': project.image ? '/images/projects/' ~ project.image : null
              },
+             'images': project.images|map(img => {'id': img.id, 'url': '/images/projects/' ~ img.image}),
              'csrfToken': form._token.vars.value,
              'actionUrl': project.id ? url('admin.project.edit', {id: project.id}) : url('admin.project.new')
          }|json_encode }}">

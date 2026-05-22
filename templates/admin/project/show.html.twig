@@ -12,6 +12,8 @@
              'results': project.results,
              'learnings': project.learnings,
              'githubUrl': project.githubUrl,
+             'thumbnailUrl': project.image ? '/images/projects/' ~ project.image : null,
+             'images': project.images|map(img => {'id': img.id, 'url': '/images/projects/' ~ img.image}),
              'demoUrl': project.demoUrl
          }}|json_encode }}">
     </div>

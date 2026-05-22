@@ -42,7 +42,7 @@ def containers_running():
     return bool(result.stdout.strip())
 
 
-def wait_healthy(service, timeout=120):
+def wait_healthy(service, timeout=60):
     """Attend qu'un service passe à l'état 'healthy' (healthcheck Docker).
     Interroge toutes les secondes jusqu'au timeout."""
     print(f"⏳ Attente que '{service}' soit healthy...", flush=True)
@@ -81,8 +81,9 @@ def cmd_up():
     soient prêts, puis lance le watch mode webpack."""
     print("🚀 Démarrage des containers...", flush=True)
     run(COMPOSE + ["up", "-d"])
-    # Docker Compose gère déjà le wait DB via depends_on/service_healthy
-    # On attend juste que l'entrypoint (migrations + cache) soit terminé
+    # La DB doit être healthy avant que app puisse faire ses migrations
+    wait_healthy("database")
+    # App (PHP-FPM) doit avoir terminé ses migrations avant de lancer webpack
     wait_app_ready()
     print("🌐 Site disponible sur http://localhost:8080", flush=True)
     cmd_watch()

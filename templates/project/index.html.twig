@@ -12,7 +12,8 @@
             'results': project.results,
             'learnings': project.learnings,
             'githubUrl': project.githubUrl,
-            'demoUrl': project.demoUrl
+            'demoUrl': project.demoUrl,
+            'thumbnailUrl': project.image ? '/images/projects/' ~ project.image : null
         }]) %}
     {% endfor %}
     <div id="vue-page"
