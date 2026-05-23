@@ -5,14 +5,14 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -26,7 +26,17 @@ class RegistrationFormType extends AbstractType
                     ),
                 ],
             ])
-            ->add('username')
+            ->add('username', TextType::class, [
+                'constraints' => [
+                    new NotBlank(message: 'Entrez un nom d\'utilisateur'),
+                    new Length(
+                        min: 3,
+                        minMessage: 'Le nom d\'utilisateur doit contenir au moins {{ limit }} caractères',
+                        max: 30,
+                        maxMessage: 'Le nom d\'utilisateur ne peut pas dépasser {{ limit }} caractères',
+                    ),
+                ],
+            ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
@@ -51,12 +61,6 @@ class RegistrationFormType extends AbstractType
                     new IsTrue(
                         message: 'Vous devez accepter nos conditions.',
                     ),
-                ],
-            ])
-            ->add('button', SubmitType::class, [
-                'label' => 'S\'inscrire',
-                'attr' => [
-                    'class' => 'btn btn-primary d-block w-100',
                 ],
             ])
         ;
