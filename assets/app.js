@@ -16,6 +16,7 @@ const componentMap = {
     AdminProjectList: () => import('./components/admin/AdminProjectList.vue'),
     AdminProjectShow: () => import('./components/admin/AdminProjectShow.vue'),
     AdminProjectEdit: () => import('./components/admin/AdminProjectEdit.vue'),
+    AdminAccountList: () => import('./components/admin/AdminAccountList.vue'),
 };
 
 document.addEventListener('DOMContentLoaded', async () => {

@@ -1,0 +1,19 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block title %}Accounts - Administration{% endblock %}
+
+{% block body %}
+    {% set accounts_data = [] %}
+    {% for account in accounts %}
+        {% set accounts_data = accounts_data|merge([{
+            'id': account.id,
+            'username': account.username,
+            'email': account.email,
+            'roles': account.roles
+        }]) %}
+    {% endfor %}
+    <div id="vue-page"
+         data-component="AdminAccountList"
+         data-props="{{ {'accounts': accounts_data}|json_encode }}">
+    </div>
+{% endblock %}
