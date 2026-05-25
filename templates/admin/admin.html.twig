@@ -18,12 +18,12 @@
 					<li class="nav-item">
 						<a class="nav-link {{ app.current_route starts with 'admin.project.' ? 'active' : '' }}" href="{{ url('admin.project.index') }}">Projets</a>
 					</li>
-				</ul>
-				<ul class="navbar-nav">
 					<li class="nav-item">
 						<a class="nav-link {{ app.current_route == 'admin.account.index' ? 'active' : '' }}" href="{{ url('admin.account.index') }}">Comptes</a>
 					</li>
 				</ul>
+				
+		
 				<ul class="navbar-nav">
 					<li class="nav-item">
 						<button type="button" class="btn btn-danger">

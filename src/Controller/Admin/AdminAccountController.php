@@ -3,7 +3,6 @@
 namespace App\Controller\Admin;
 
 use App\Repository\UserRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -25,15 +24,12 @@ final class AdminAccountController extends AbstractController {
 
 
     #[Route('/account/{id}', name: 'admin.account.show', requirements: ['id' => '\d+'])]
-    public function show(int $id, EntityManagerInterface $entityManager, UserRepository $userRepository): Response
+    public function show(int $id, UserRepository $userRepository): Response
     {
-        // TODO: Get account by id
         $user = $userRepository->find($id);
         $userRoles = $user->getRoles();
-        
-        
+
         return $this->render('admin/account/show.html.twig', [
-            'id' => $id,
             'user' => $user,
             'userRoles' => $userRoles,
         ]);
