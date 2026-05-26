@@ -8,7 +8,17 @@
          data-props="{{ {
              'csrfToken': registrationForm._token.vars.value,
              'actionUrl': url('security.register'),
-             'flashErrors': app.flashes('verify_email_error')
+             'flashErrors': app.flashes('verify_email_error'),
+             'errors': {
+                 'email':        registrationForm.email.vars.errors|map(e => e.message),
+                 'username':     registrationForm.username.vars.errors|map(e => e.message),
+                 'plainPassword': registrationForm.plainPassword.vars.errors|map(e => e.message),
+                 'agreeTerms':   registrationForm.agreeTerms.vars.errors|map(e => e.message)
+             },
+             'values': {
+                 'email':    registrationForm.email.vars.value,
+                 'username': registrationForm.username.vars.value
+             }
          }|json_encode }}">
     </div>
 {% endblock %}

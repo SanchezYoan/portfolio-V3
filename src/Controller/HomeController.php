@@ -10,12 +10,14 @@ use Symfony\Component\Routing\Attribute\Route;
 final class HomeController extends AbstractController
 {
     #[Route('/', name: 'home')]
-    public function index(Request $request): Response
+    public function index(): Response
     {
+        return $this->render('home/index.html.twig');
+    }
 
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-            // 'name' => $request->attributes->get('name', 'yoan'),
-        ]);
+    #[Route('/cgu', name: 'cgu')]
+    public function cgu(): Response
+    {
+        return $this->render('legal/cgu.html.twig');
     }
 }
