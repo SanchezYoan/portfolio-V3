@@ -9,21 +9,17 @@
 
         <div class="project-body">
 
-            <!-- Titre -->
             <h1 class="project-title">{{ project.title }}</h1>
 
-            <!-- Description -->
             <p v-if="project.description" class="project-description">{{ project.description }}</p>
 
             <hr class="project-divider" />
 
-            <!-- Résultats -->
             <div v-if="project.results" class="project-section">
                 <h5 class="project-section__label">Résultats</h5>
                 <p class="project-section__text">{{ project.results }}</p>
             </div>
 
-            <!-- Compétences -->
             <div v-if="project.learnings" class="project-section">
                 <h5 class="project-section__label">Compétences acquises</h5>
                 <p class="project-section__text">{{ project.learnings }}</p>
@@ -44,7 +40,6 @@
                 </div>
             </div>
 
-            <!-- Liens -->
             <div v-if="project.githubUrl || project.demoUrl" class="project-links">
                 <a v-if="project.githubUrl" :href="project.githubUrl" target="_blank" class="btn btn-dark btn-sm">GitHub</a>
                 <a v-if="project.demoUrl" :href="project.demoUrl" target="_blank" class="btn btn-success btn-sm">Demo</a>
@@ -79,7 +74,6 @@ function openLightbox(url) {
 </script>
 
 <style scoped>
-/* ── Cover ─────────────────────────────────────── */
 .project-card__cover {
     width: 100%;
     max-height: 320px;
@@ -88,12 +82,10 @@ function openLightbox(url) {
     margin-bottom: 1.5rem;
 }
 
-/* ── Body ──────────────────────────────────────── */
 .project-body {
     padding: 0 0.5rem;
 }
 
-/* ── Titre ─────────────────────────────────────── */
 .project-title {
     font-size: 1.8rem;
     font-weight: 700;
@@ -101,7 +93,6 @@ function openLightbox(url) {
     margin-bottom: 0.5rem;
 }
 
-/* ── Description ───────────────────────────────── */
 .project-description {
     font-size: 1rem;
     color: #94a3b8;
@@ -109,13 +100,11 @@ function openLightbox(url) {
     margin-bottom: 0;
 }
 
-/* ── Séparateur ────────────────────────────────── */
 .project-divider {
     border-color: rgba(255, 255, 255, 0.1);
     margin: 1.5rem 0;
 }
 
-/* ── Sections ──────────────────────────────────── */
 .project-section {
     margin-bottom: 1.5rem;
 }
@@ -133,13 +122,11 @@ function openLightbox(url) {
     margin: 0;
 }
 
-/* ── Liens ─────────────────────────────────────── */
 .project-links {
     display: flex;
     gap: 0.5rem;
 }
 
-/* ── Galerie ───────────────────────────────────── */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -161,7 +148,6 @@ function openLightbox(url) {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* ── Lightbox ──────────────────────────────────── */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -204,7 +190,6 @@ function openLightbox(url) {
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* ── Transitions ───────────────────────────────── */
 .lightbox-enter-active,
 .lightbox-leave-active {
     transition: opacity 0.25s ease;
