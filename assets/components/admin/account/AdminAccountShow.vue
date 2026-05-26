@@ -10,22 +10,27 @@
             </div>
         </div>
 
-        <div class="project-body">
-            <h1 class="project-title">{{ username }}</h1>
+        <div class="account-card">
 
-            <hr class="project-divider" />
-
-            <div class="project-section">
-                <h5 class="project-section__label">Email</h5>
-                <p class="project-section__text">{{ email }}</p>
+            <!-- Avatar + nom -->
+            <div class="account-card__header">
+                <div class="account-avatar">{{ username.charAt(0).toUpperCase() }}</div>
+                <div>
+                    <h1 class="account-title">{{ username }}</h1>
+                    <p class="account-email">{{ email }}</p>
+                </div>
             </div>
 
-            <div class="project-section">
-                <h5 class="project-section__label">Rôles</h5>
+            <hr class="account-divider" />
+
+            <!-- Rôles -->
+            <div class="account-section">
+                <h5 class="account-section__label">Rôles</h5>
                 <div class="d-flex gap-2 flex-wrap">
                     <span v-for="role in roles" :key="role" class="role-badge">{{ role }}</span>
                 </div>
             </div>
+
         </div>
     </div>
 </template>
@@ -46,35 +51,71 @@ function confirmDelete(event) {
 </script>
 
 <style scoped>
-.project-body { padding: 0 0.5rem; }
+/* ── Card ──────────────────────────────────────── */
+.account-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    padding: 2rem;
+}
 
-.project-title {
-    font-size: 1.8rem;
+/* ── Header ────────────────────────────────────── */
+.account-card__header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.account-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a78bfa22, #60a5fa22);
+    border: 2px solid rgba(167, 139, 250, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #a78bfa, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    flex-shrink: 0;
+}
+
+.account-title {
+    font-size: 1.5rem;
     font-weight: 700;
     color: #f1f5f9;
-    margin-bottom: 0.5rem;
-}
-
-.project-divider {
-    border-color: rgba(255, 255, 255, 0.1);
-    margin: 1.5rem 0;
-}
-
-.project-section { margin-bottom: 1.5rem; }
-
-.project-section__label {
-    font-weight: 600;
-    color: #e2e8f0;
-    margin-bottom: 0.4rem;
-}
-
-.project-section__text {
-    font-size: 0.95rem;
-    color: #94a3b8;
-    line-height: 1.6;
     margin: 0;
 }
 
+.account-email {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* ── Divider ───────────────────────────────────── */
+.account-divider {
+    border-color: rgba(255, 255, 255, 0.08);
+    margin: 1.5rem 0;
+}
+
+/* ── Section ───────────────────────────────────── */
+.account-section { margin-bottom: 1rem; }
+
+.account-section__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    margin-bottom: 0.6rem;
+}
+
+/* ── Badges rôles ──────────────────────────────── */
 .role-badge {
     padding: 0.25rem 0.75rem;
     border-radius: 999px;
