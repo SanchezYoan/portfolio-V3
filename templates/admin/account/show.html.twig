@@ -1,0 +1,16 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block title %}profil{% endblock %}
+
+{% block body %}
+
+    <div id="vue-page"
+         data-component="AdminAccountShow"
+         data-props="{{ {
+             'id': user.id,
+             'username': user.username,
+             'email': user.email,
+             'roles': userRoles
+         }|json_encode }}">
+    </div>
+{% endblock %}

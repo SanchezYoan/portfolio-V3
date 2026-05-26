@@ -1,8 +1,11 @@
 <template>
-    <div class="project-wrapper">
-        <a href="/project" class="btn btn-outline-secondary mb-4">← Retour aux projets</a>
+    <div>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <a href="/admin/project" class="btn btn-outline-secondary">← Retour</a>
+            <a :href="'/admin/project/' + project.id + '/edit'" class="btn btn-success">Modifier</a>
+        </div>
 
-        <img v-if="project.thumbnailUrl" :src="project.thumbnailUrl" :alt="project.title" class="project-cover" />
+        <img v-if="project.thumbnailUrl" :src="project.thumbnailUrl" :alt="project.title" class="project-card__cover" />
 
         <div class="project-body">
 
@@ -71,13 +74,7 @@ function openLightbox(url) {
 </script>
 
 <style scoped>
-.project-wrapper {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-}
-
-.project-cover {
+.project-card__cover {
     width: 100%;
     max-height: 320px;
     object-fit: cover;
@@ -130,7 +127,6 @@ function openLightbox(url) {
     gap: 0.5rem;
 }
 
-/* ── Galerie ───────────────────────────────────── */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -142,17 +138,16 @@ function openLightbox(url) {
     width: 120px;
     object-fit: cover;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #dee2e6;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .gallery__thumb:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* ── Lightbox ──────────────────────────────────── */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -195,7 +190,6 @@ function openLightbox(url) {
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* ── Transitions ───────────────────────────────── */
 .lightbox-enter-active,
 .lightbox-leave-active {
     transition: opacity 0.25s ease;

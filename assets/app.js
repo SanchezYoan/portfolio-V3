@@ -5,6 +5,7 @@ import { createApp } from 'vue';
 import { MotionPlugin } from '@vueuse/motion';
 
 const componentMap = {
+    // User
     Home: () => import('./components/Home.vue'),
     About: () => import('./components/About.vue'),
     ProjectList: () => import('./components/ProjectList.vue'),
@@ -13,9 +14,13 @@ const componentMap = {
     Login: () => import('./components/Login.vue'),
     Profil: () => import('./components/Profil.vue'),
     Register: () => import('./components/Register.vue'),
-    AdminProjectList: () => import('./components/admin/AdminProjectList.vue'),
-    AdminProjectShow: () => import('./components/admin/AdminProjectShow.vue'),
-    AdminProjectEdit: () => import('./components/admin/AdminProjectEdit.vue'),
+    // Admin
+    AdminProjectList: () => import('./components/admin/projet/AdminProjectList.vue'),
+    AdminProjectShow: () => import('./components/admin/projet/AdminProjectShow.vue'),
+    AdminProjectEdit: () => import('./components/admin/projet/AdminProjectEdit.vue'),
+    AdminAccountList: () => import('./components/admin/account/AdminAccountList.vue'),
+    AdminAccountShow: () => import('./components/admin/account/AdminAccountShow.vue'),
+    AdminAccountEdit: () => import('./components/admin/account/AdminAccountEdit.vue'),
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
