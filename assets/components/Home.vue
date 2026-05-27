@@ -86,7 +86,14 @@ const stack = [
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    position: relative;
 }
+
+.hero, .stack, .about-teaser {
+    position: relative;
+    z-index: 1;
+}
+
 
 /* ── Hero ───────────────────────────────────────── */
 .hero {

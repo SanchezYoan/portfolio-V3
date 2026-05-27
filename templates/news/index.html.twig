@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actualités Tech{% endblock %}
+
+{% block body %}
+    <div id="vue-page"
+         data-component="NewsFeed"
+         data-props="{{ {'apiUrl': path('api_news')}|json_encode }}">
+    </div>
+{% endblock %}
