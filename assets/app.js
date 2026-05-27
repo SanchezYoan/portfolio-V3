@@ -3,6 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/app.css';
 import { createApp } from 'vue';
 import { MotionPlugin } from '@vueuse/motion';
+import { initParticles } from './particles.js';
+
+initParticles();
 
 const componentMap = {
     // User
@@ -14,6 +17,7 @@ const componentMap = {
     Login: () => import('./components/Login.vue'),
     Profil: () => import('./components/Profil.vue'),
     Register: () => import('./components/Register.vue'),
+    NewsFeed: () => import('./components/NewsFeed.vue'),
     // Admin
     AdminProjectList: () => import('./components/admin/projet/AdminProjectList.vue'),
     AdminProjectShow: () => import('./components/admin/projet/AdminProjectShow.vue'),
