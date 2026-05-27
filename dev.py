@@ -47,13 +47,20 @@ def wait_healthy(service, timeout=60):
     Interroge toutes les secondes jusqu'au timeout."""
     print(f"⏳ Attente que '{service}' soit healthy...", flush=True)
     for _ in range(timeout):
-        result = subprocess.run(
-            ["docker", "compose", "ps", "--status", "healthy", "-q", service],
+        # Récupère le nom du container via docker compose ps
+        name_result = subprocess.run(
+            COMPOSE + ["ps", "-q", service],
             capture_output=True, text=True
         )
-        if result.stdout.strip():
-            print(f"✅ '{service}' est prêt.", flush=True)
-            return True
+        container_id = name_result.stdout.strip()
+        if container_id:
+            health_result = subprocess.run(
+                ["docker", "inspect", "--format", "{{.State.Health.Status}}", container_id],
+                capture_output=True, text=True
+            )
+            if health_result.stdout.strip() == "healthy":
+                print(f"✅ '{service}' est prêt.", flush=True)
+                return True
         time.sleep(1)
     print(f"❌ Timeout: '{service}' n'est pas healthy après {timeout}s.", flush=True)
     return False
