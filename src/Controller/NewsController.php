@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class NewsController extends AbstractController
 {
-    #[Route('/news', name: 'app_news')]
+    #[Route('/news', name: 'news.index')]
     public function index(): Response
     {
         return $this->render('news/index.html.twig');

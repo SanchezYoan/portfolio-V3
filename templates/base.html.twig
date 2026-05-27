@@ -22,6 +22,10 @@
 					   href="{{ url('project.index') }}">Projets</a>
 				</li>
 				<li>
+					<a class="site-nav__link {{ app.current_route == 'news.index' ? 'site-nav__link--active' : '' }}"
+					   href="{{ url('news.index') }}">Actu</a>
+				</li>
+				<li>
 					<a class="site-nav__link {{ app.current_route == 'contact' ? 'site-nav__link--active' : '' }}"
 					   href="{{ url('contact') }}">Contact</a>
 				</li>
