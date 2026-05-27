@@ -1,0 +1,23 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block title %}Modifier compte - Administration{% endblock %}
+
+{% block body %}
+    <div id="vue-page"
+         data-component="AdminAccountEdit"
+         data-props="{{ {
+             'user': {
+                 'id': user.id,
+                 'username': user.username,
+                 'email': user.email
+             },
+             'csrfToken': form._token.vars.value,
+             'actionUrl': url('admin.account.edit', {id: user.id}),
+             'errors': {
+                 'username': form.username.vars.errors|map(e => e.message),
+                 'email':    form.email.vars.errors|map(e => e.message),
+                 'password': form.plainPassword.vars.errors|map(e => e.message)
+             }
+         }|json_encode }}">
+    </div>
+{% endblock %}

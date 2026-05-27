@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conditions Générales d'Utilisation{% endblock %}
+
+{% block body %}
+<div class="cgu-wrapper">
+
+    <h1 class="cgu-title">Conditions Générales d'Utilisation</h1>
+    <p class="cgu-date">Dernière mise à jour : mai 2026</p>
+
+    <section class="cgu-section">
+        <h2>1. Présentation du site</h2>
+        <p>
+            Le site <strong>sanchez-yoan.fr</strong> est un portfolio personnel développé et maintenu par Yoan Sanchez,
+            développeur fullstack. Il présente ses projets, ses compétences et publie des actualités sur son activité professionnelle.
+        </p>
+    </section>
+
+    <section class="cgu-section">
+        <h2>2. Inscription et compte utilisateur</h2>
+        <p>
+            L'inscription est ouverte à toute personne souhaitant suivre les actualités publiées sur ce site.
+            En créant un compte, vous vous engagez à fournir des informations exactes (adresse email valide, nom d'utilisateur).
+        </p>
+        <p>
+            Chaque compte est personnel et ne peut être partagé. Vous êtes responsable de la confidentialité de votre mot de passe.
+        </p>
+    </section>
+
+    <section class="cgu-section">
+        <h2>3. Données personnelles (RGPD)</h2>
+        <p>Les données collectées lors de l'inscription sont :</p>
+        <ul>
+            <li>Adresse email</li>
+            <li>Nom d'utilisateur</li>
+            <li>Mot de passe (chiffré, jamais stocké en clair)</li>
+        </ul>
+        <p>
+            Ces données sont utilisées <strong>uniquement</strong> pour la gestion de votre compte et l'envoi d'actualités.
+            Elles ne sont ni revendues, ni transmises à des tiers.
+        </p>
+        <p>
+            Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données.
+            Pour exercer ces droits, contactez : <a href="mailto:contact@sanchez-yoan.fr">contact@sanchez-yoan.fr</a>.
+        </p>
+    </section>
+
+    <section class="cgu-section">
+        <h2>4. Suppression du compte</h2>
+        <p>
+            Vous pouvez supprimer votre compte à tout moment depuis votre espace personnel.
+            La suppression entraîne l'effacement définitif de vos données.
+        </p>
+    </section>
+
+    <section class="cgu-section">
+        <h2>5. Propriété intellectuelle</h2>
+        <p>
+            Le contenu publié sur ce site (projets, textes, images) est la propriété exclusive de Yoan Sanchez.
+            Toute reproduction sans autorisation est interdite.
+        </p>
+    </section>
+
+    <section class="cgu-section">
+        <h2>6. Modification des CGU</h2>
+        <p>
+            Ces conditions peuvent être mises à jour à tout moment. La date de dernière modification est indiquée en haut de cette page.
+        </p>
+    </section>
+
+    <a href="{{ path('security.register') }}" class="btn-back">← Retour à l'inscription</a>
+
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .cgu-wrapper {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            color: #94a3b8;
+        }
+        .cgu-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 0.25rem;
+        }
+        .cgu-date {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 2.5rem;
+        }
+        .cgu-section {
+            margin-bottom: 2rem;
+        }
+        .cgu-section h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 0.75rem;
+        }
+        .cgu-section p, .cgu-section li {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .cgu-section ul {
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .cgu-section a {
+            color: #a78bfa;
+        }
+        .btn-back {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #a78bfa;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+{% endblock %}
