@@ -11,9 +11,20 @@
                 :href="'/project/' + project.id"
                 class="project-card"
                 :class="`project-card--${index % 3}`"
+                @mouseenter="startCycle(project)"
+                @mouseleave="stopCycle(project)"
             >
                 <div class="project-card__thumb">
-                    <img v-if="project.thumbnailUrl" :src="project.thumbnailUrl" :alt="project.title" />
+                    <template v-if="allImages(project).length > 0">
+                        <img
+                            v-for="(url, i) in allImages(project)"
+                            :key="url"
+                            :src="url"
+                            :alt="project.title"
+                            class="project-card__slide"
+                            :class="{ 'project-card__slide--active': i === (activeIndex[project.id] ?? 0) }"
+                        />
+                    </template>
                     <div v-else class="project-card__placeholder">{{ project.title.charAt(0) }}</div>
                 </div>
                 <div class="project-card__body">
@@ -27,12 +38,39 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
 defineProps({
-    projects: {
-        type: Array,
-        default: () => [],
-    },
+    projects: { type: Array, default: () => [] },
 });
+
+const activeIndex = ref({});
+const timers      = ref({});
+
+function allImages(project) {
+    const imgs = [];
+    if (project.thumbnailUrl) imgs.push(project.thumbnailUrl);
+    if (project.images) imgs.push(...project.images);
+    return imgs;
+}
+
+function startCycle(project) {
+    const imgs = allImages(project);
+    if (imgs.length <= 1) return;
+
+    activeIndex.value[project.id] = 0;
+    let i = 0;
+
+    timers.value[project.id] = setInterval(() => {
+        i = (i + 1) % imgs.length;
+        activeIndex.value[project.id] = i;
+    }, 1400);
+}
+
+function stopCycle(project) {
+    clearInterval(timers.value[project.id]);
+    activeIndex.value[project.id] = 0;
+}
 </script>
 
 <style scoped>
@@ -90,6 +128,7 @@ defineProps({
 
 /* ── Thumbnail ─────────────────────────────────── */
 .project-card__thumb {
+    position: relative;
     width: 100%;
     height: 180px;
     overflow: hidden;
@@ -99,15 +138,18 @@ defineProps({
     justify-content: center;
 }
 
-.project-card__thumb img {
+.project-card__slide {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.7s ease;
 }
 
-.project-card:hover .project-card__thumb img {
-    transform: scale(1.05);
+.project-card__slide--active {
+    opacity: 1;
 }
 
 .project-card__placeholder {

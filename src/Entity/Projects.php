@@ -57,9 +57,16 @@ class Projects
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    /**
+     * @var Collection<int, ProjectDocument>
+     */
+    #[ORM\OneToMany(targetEntity: ProjectDocument::class, mappedBy: 'project', orphanRemoval: true)]
+    private Collection $projectDocuments;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
+        $this->projectDocuments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -222,6 +229,36 @@ class Projects
     public function removeImage(ProjectImage $image): static
     {
         $this->images->removeElement($image);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ProjectDocument>
+     */
+    public function getProjectDocuments(): Collection
+    {
+        return $this->projectDocuments;
+    }
+
+    public function addProjectDocument(ProjectDocument $projectDocument): static
+    {
+        if (!$this->projectDocuments->contains($projectDocument)) {
+            $this->projectDocuments->add($projectDocument);
+            $projectDocument->setProject($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProjectDocument(ProjectDocument $projectDocument): static
+    {
+        if ($this->projectDocuments->removeElement($projectDocument)) {
+            // set the owning side to null (unless already changed)
+            if ($projectDocument->getProject() === $this) {
+                $projectDocument->setProject(null);
+            }
+        }
 
         return $this;
     }

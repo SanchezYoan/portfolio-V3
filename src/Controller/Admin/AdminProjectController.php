@@ -2,7 +2,9 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\ProjectDocument;
 use App\Entity\ProjectImage;
+use App\Repository\ProjectDocumentRepository;
 use App\Repository\ProjectImageRepository;
 use App\Repository\ProjectsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -60,6 +62,7 @@ final class AdminProjectController extends AbstractController {
             $em->persist($data);
             $em->flush();
             $this->handleGalleryImages($request, $data, $em);
+            $this->handleDocuments($request, $data, $em);
             $this->addFlash('success', 'Projet créé avec succès');
             return $this->redirectToRoute('admin.project.index');
         }
@@ -82,6 +85,7 @@ final class AdminProjectController extends AbstractController {
             $em->persist($data);
             $em->flush();
             $this->handleGalleryImages($request, $data, $em);
+            $this->handleDocuments($request, $data, $em);
             $this->addFlash('success', 'Projet mis à jour avec succès');
             return $this->redirectToRoute('admin.project.index');
         }
@@ -134,6 +138,55 @@ final class AdminProjectController extends AbstractController {
             $projectImage->setImage($filename);
             $projectImage->setProject($project);
             $em->persist($projectImage);
+        }
+
+        $em->flush();
+    }
+
+    #[Route('/project/{projectId}/document/{docId}/delete', name: 'admin.project.document.delete', requirements: ['projectId' => Requirement::DIGITS, 'docId' => Requirement::DIGITS], methods: ['POST'])]
+    public function deleteDocument(int $projectId, int $docId, ProjectDocumentRepository $docRepo, EntityManagerInterface $em): JsonResponse
+    {
+        $document = $docRepo->find($docId);
+
+        if (!$document || $document->getProject()->getId() !== $projectId) {
+            return $this->json(['error' => 'Document non trouvé.'], 404);
+        }
+
+        $filePath = $this->getParameter('kernel.project_dir') . '/public/documents/projects/' . $document->getFilename();
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
+
+        $em->remove($document);
+        $em->flush();
+
+        return $this->json(['success' => true]);
+    }
+
+    private function handleDocuments(Request $request, Projects $project, EntityManagerInterface $em): void
+    {
+        $uploadedFiles = $request->files->get('new_documents', []);
+
+        if (!is_array($uploadedFiles)) {
+            $uploadedFiles = [$uploadedFiles];
+        }
+
+        $uploadDir = $this->getParameter('kernel.project_dir') . '/public/documents/projects';
+
+        foreach ($uploadedFiles as $file) {
+            if (!$file || !$file->isValid()) {
+                continue;
+            }
+
+            $originalName = $file->getClientOriginalName();
+            $filename     = uniqid('doc_', true) . '.' . $file->guessExtension();
+            $file->move($uploadDir, $filename);
+
+            $doc = new ProjectDocument();
+            $doc->setFilename($filename);
+            $doc->setOriginalName($originalName);
+            $doc->setProject($project);
+            $em->persist($doc);
         }
 
         $em->flush();

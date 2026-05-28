@@ -18,6 +18,7 @@
                  'thumbnailUrl': project.image ? '/images/projects/' ~ project.image : null
              },
              'images': project.images|map(img => {'id': img.id, 'url': '/images/projects/' ~ img.image}),
+             'documents': project.projectDocuments|map(doc => {'id': doc.id, 'originalName': doc.originalName, 'filename': doc.filename}),
              'csrfToken': form._token.vars.value,
              'actionUrl': project.id ? url('admin.project.edit', {id: project.id}) : url('admin.project.new')
          }|json_encode }}">
