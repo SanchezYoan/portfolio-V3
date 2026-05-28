@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Enum\CategoryEnum;
 use App\Repository\ProjectsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -47,6 +48,9 @@ class Projects
     #[Vich\UploadableField(mapping: 'projects', fileNameProperty: 'image')]
     #[Assert\Image()]
     private ?File $thumbnailFile = null;
+
+    #[ORM\Column(type: 'string', enumType: CategoryEnum::class)]
+    private CategoryEnum $category = CategoryEnum::Personnel;
 
     #[ORM\OneToMany(mappedBy: 'project', targetEntity: ProjectImage::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
     private Collection $images;
@@ -167,6 +171,17 @@ class Projects
     {
         $this->demo_url = $demo_url;
 
+        return $this;
+    }
+
+    public function getCategory(): CategoryEnum
+    {
+        return $this->category;
+    }
+
+    public function setCategory(CategoryEnum $category): static
+    {
+        $this->category = $category;
         return $this;
     }
 

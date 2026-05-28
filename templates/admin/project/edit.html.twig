@@ -15,7 +15,8 @@
                  'learnings': project.learnings,
                  'githubUrl': project.githubUrl,
                  'demoUrl': project.demoUrl,
-                 'thumbnailUrl': project.image ? '/images/projects/' ~ project.image : null
+                 'thumbnailUrl': project.image ? '/images/projects/' ~ project.image : null,
+                 'category': project.category ? project.category.value : 'personnel'
              },
              'images': project.images|map(img => {'id': img.id, 'url': '/images/projects/' ~ img.image}),
              'documents': project.projectDocuments|map(doc => {'id': doc.id, 'originalName': doc.originalName, 'filename': doc.filename}),

@@ -27,6 +27,16 @@
                 <input id="proj-learnings" type="text" name="project[learnings]" class="form-control" :value="project.learnings" />
             </div>
 
+            <!-- Catégorie -->
+            <div class="mb-3">
+                <label class="form-label">Catégorie</label>
+                <select name="project[category]" class="form-select">
+                    <option v-for="cat in categories" :key="cat.value" :value="cat.value" :selected="project.category === cat.value">
+                        {{ cat.label }}
+                    </option>
+                </select>
+            </div>
+
             <!-- Image principale (thumbnail) -->
             <div class="mb-3">
                 <label for="proj-image" class="form-label">Image principale (couverture)</label>
@@ -122,6 +132,12 @@
 
 <script setup>
 import { ref } from 'vue';
+
+const categories = [
+    { value: 'professionnel', label: 'Professionnel' },
+    { value: 'personnel',     label: 'Personnel' },
+    { value: 'academique',    label: 'Académique' },
+];
 
 const props = defineProps({
     project:    { type: Object, default: () => ({}) },

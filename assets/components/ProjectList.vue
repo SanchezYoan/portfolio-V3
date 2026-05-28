@@ -2,11 +2,22 @@
     <div class="projects-wrapper">
         <h2 class="projects-title">Mes projets</h2>
 
-        <p v-if="projects.length === 0" class="text-muted">Aucun projet trouvé.</p>
+        <!-- Filtres -->
+        <div class="projects-filters">
+            <button
+                v-for="cat in categories"
+                :key="cat.value"
+                class="filter-btn"
+                :class="{ 'filter-btn--active': activeFilter === cat.value }"
+                @click="activeFilter = cat.value"
+            >{{ cat.label }}</button>
+        </div>
+
+        <p v-if="filteredProjects.length === 0" class="text-muted">Aucun projet dans cette catégorie.</p>
 
         <div class="projects-grid">
             <a
-                v-for="(project, index) in projects"
+                v-for="(project, index) in filteredProjects"
                 :key="project.id"
                 :href="'/project/' + project.id"
                 class="project-card"
@@ -28,6 +39,7 @@
                     <div v-else class="project-card__placeholder">{{ project.title.charAt(0) }}</div>
                 </div>
                 <div class="project-card__body">
+                    <span class="project-card__category">{{ project.categoryLabel }}</span>
                     <h3 class="project-card__title">{{ project.title }}</h3>
                     <p class="project-card__desc">{{ project.description }}</p>
                     <span class="project-card__link">Voir le projet →</span>
@@ -38,11 +50,26 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
-defineProps({
+const props = defineProps({
     projects: { type: Array, default: () => [] },
 });
+
+const categories = [
+    { value: 'all',           label: 'Tous' },
+    { value: 'professionnel', label: 'Professionnel' },
+    { value: 'personnel',     label: 'Personnel' },
+    { value: 'academique',    label: 'Académique' },
+];
+
+const activeFilter = ref('all');
+
+const filteredProjects = computed(() =>
+    activeFilter.value === 'all'
+        ? props.projects
+        : props.projects.filter(p => p.category === activeFilter.value)
+);
 
 const activeIndex = ref({});
 const timers      = ref({});
@@ -85,6 +112,38 @@ function stopCycle(project) {
     font-weight: 700;
     color: #f1f5f9;
     margin-bottom: 2rem;
+}
+
+/* ── Filtres ───────────────────────────────────── */
+.projects-filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: rgba(167, 139, 250, 0.4);
+    color: #f1f5f9;
+}
+
+.filter-btn--active {
+    background: rgba(167, 139, 250, 0.15);
+    border-color: rgba(167, 139, 250, 0.5);
+    color: #f1f5f9;
+    font-weight: 600;
 }
 
 /* ── Grille ────────────────────────────────────── */
@@ -168,6 +227,14 @@ function stopCycle(project) {
     flex-direction: column;
     gap: 0.5rem;
     flex: 1;
+}
+
+.project-card__category {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #a78bfa;
 }
 
 .project-card__title {
