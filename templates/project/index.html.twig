@@ -13,7 +13,10 @@
             'learnings': project.learnings,
             'githubUrl': project.githubUrl,
             'demoUrl': project.demoUrl,
-            'thumbnailUrl': project.image ? '/images/projects/' ~ project.image : null
+            'thumbnailUrl': project.image ? '/images/projects/' ~ project.image : null,
+            'images': project.images|map(img => '/images/projects/' ~ img.image),
+            'category': project.category.value,
+            'categoryLabel': project.category.label()
         }]) %}
     {% endfor %}
     <div id="vue-page"

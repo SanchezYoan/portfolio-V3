@@ -37,6 +37,24 @@
                 </div>
             </div>
 
+            <!-- Pièces jointes -->
+            <div v-if="project.documents && project.documents.length > 0" class="project-section">
+                <h5 class="project-section__label">Pièces jointes</h5>
+                <div class="attachments">
+                    <a
+                        v-for="doc in project.documents"
+                        :key="doc.id"
+                        :href="doc.url"
+                        :download="doc.originalName"
+                        class="attachment"
+                    >
+                        <span class="attachment__icon">📄</span>
+                        <span class="attachment__name">{{ doc.originalName }}</span>
+                        <span class="attachment__action">↓</span>
+                    </a>
+                </div>
+            </div>
+
             <div v-if="project.githubUrl || project.demoUrl" class="project-links">
                 <a v-if="project.githubUrl" :href="project.githubUrl" target="_blank" class="btn btn-dark btn-sm">GitHub</a>
                 <a v-if="project.demoUrl" :href="project.demoUrl" target="_blank" class="btn btn-success btn-sm">Demo</a>
@@ -128,6 +146,52 @@ function openLightbox(url) {
 .project-links {
     display: flex;
     gap: 0.5rem;
+}
+
+/* ── Pièces jointes ────────────────────────────── */
+.attachments {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.attachment {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(167, 139, 250, 0.07);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    width: 50%;
+}
+
+.attachment:hover {
+    background: rgba(167, 139, 250, 0.12);
+    border-color: rgba(167, 139, 250, 0.4);
+}
+
+.attachment__icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.attachment__name {
+    flex: 1;
+    font-size: 0.9rem;
+    color: #f1f5f9;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.attachment__action {
+    font-size: 1.3rem;
+    color: #a78bfa;
+    flex-shrink: 0;
+    font-weight: 600;
 }
 
 /* ── Galerie ───────────────────────────────────── */
