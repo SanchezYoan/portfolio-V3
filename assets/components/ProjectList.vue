@@ -59,8 +59,8 @@ const props = defineProps({
 const categories = [
     { value: 'all',           label: 'Tous' },
     { value: 'professionnel', label: 'Professionnel' },
-    { value: 'personnel',     label: 'Personnel' },
     { value: 'academique',    label: 'Académique' },
+    { value: 'personnel',     label: 'Personnel' },
 ];
 
 const activeFilter = ref('all');
