@@ -14,7 +14,8 @@
              'githubUrl': project.githubUrl,
              'demoUrl': project.demoUrl,
              'thumbnailUrl': project.image ? '/images/projects/' ~ project.image : null,
-             'images': project.images|map(img => {'id': img.id, 'url': '/images/projects/' ~ img.image})
+             'images': project.images|map(img => {'id': img.id, 'url': '/images/projects/' ~ img.image}),
+             'documents': project.projectDocuments|map(doc => {'id': doc.id, 'originalName': doc.originalName, 'url': '/documents/projects/' ~ doc.filename})
          }}|json_encode }}">
     </div>
 {% endblock %}

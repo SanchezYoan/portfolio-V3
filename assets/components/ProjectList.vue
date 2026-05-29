@@ -2,21 +2,44 @@
     <div class="projects-wrapper">
         <h2 class="projects-title">Mes projets</h2>
 
-        <p v-if="projects.length === 0" class="text-muted">Aucun projet trouvé.</p>
+        <!-- Filtres -->
+        <div class="projects-filters">
+            <button
+                v-for="cat in categories"
+                :key="cat.value"
+                class="filter-btn"
+                :class="{ 'filter-btn--active': activeFilter === cat.value }"
+                @click="activeFilter = cat.value"
+            >{{ cat.label }}</button>
+        </div>
+
+        <p v-if="filteredProjects.length === 0" class="text-muted">Aucun projet dans cette catégorie.</p>
 
         <div class="projects-grid">
             <a
-                v-for="(project, index) in projects"
+                v-for="(project, index) in filteredProjects"
                 :key="project.id"
                 :href="'/project/' + project.id"
                 class="project-card"
                 :class="`project-card--${index % 3}`"
+                @mouseenter="startCycle(project)"
+                @mouseleave="stopCycle(project)"
             >
                 <div class="project-card__thumb">
-                    <img v-if="project.thumbnailUrl" :src="project.thumbnailUrl" :alt="project.title" />
+                    <template v-if="allImages(project).length > 0">
+                        <img
+                            v-for="(url, i) in allImages(project)"
+                            :key="url"
+                            :src="url"
+                            :alt="project.title"
+                            class="project-card__slide"
+                            :class="{ 'project-card__slide--active': i === (activeIndex[project.id] ?? 0) }"
+                        />
+                    </template>
                     <div v-else class="project-card__placeholder">{{ project.title.charAt(0) }}</div>
                 </div>
                 <div class="project-card__body">
+                    <span class="project-card__category">{{ project.categoryLabel }}</span>
                     <h3 class="project-card__title">{{ project.title }}</h3>
                     <p class="project-card__desc">{{ project.description }}</p>
                     <span class="project-card__link">Voir le projet →</span>
@@ -27,12 +50,54 @@
 </template>
 
 <script setup>
-defineProps({
-    projects: {
-        type: Array,
-        default: () => [],
-    },
+import { ref, computed } from 'vue';
+
+const props = defineProps({
+    projects: { type: Array, default: () => [] },
 });
+
+const categories = [
+    { value: 'all',           label: 'Tous' },
+    { value: 'professionnel', label: 'Professionnel' },
+    { value: 'academique',    label: 'Académique' },
+    { value: 'personnel',     label: 'Personnel' },
+];
+
+const activeFilter = ref('all');
+
+const filteredProjects = computed(() =>
+    activeFilter.value === 'all'
+        ? props.projects
+        : props.projects.filter(p => p.category === activeFilter.value)
+);
+
+const activeIndex = ref({});
+const timers      = ref({});
+
+function allImages(project) {
+    const imgs = [];
+    if (project.thumbnailUrl) imgs.push(project.thumbnailUrl);
+    if (project.images) imgs.push(...project.images);
+    return imgs;
+}
+
+function startCycle(project) {
+    const imgs = allImages(project);
+    if (imgs.length <= 1) return;
+
+    activeIndex.value[project.id] = 0;
+    let i = 0;
+
+    timers.value[project.id] = setInterval(() => {
+        i = (i + 1) % imgs.length;
+        activeIndex.value[project.id] = i;
+    }, 1400);
+}
+
+function stopCycle(project) {
+    clearInterval(timers.value[project.id]);
+    activeIndex.value[project.id] = 0;
+}
 </script>
 
 <style scoped>
@@ -47,6 +112,38 @@ defineProps({
     font-weight: 700;
     color: #f1f5f9;
     margin-bottom: 2rem;
+}
+
+/* ── Filtres ───────────────────────────────────── */
+.projects-filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: rgba(167, 139, 250, 0.4);
+    color: #f1f5f9;
+}
+
+.filter-btn--active {
+    background: rgba(167, 139, 250, 0.15);
+    border-color: rgba(167, 139, 250, 0.5);
+    color: #f1f5f9;
+    font-weight: 600;
 }
 
 /* ── Grille ────────────────────────────────────── */
@@ -90,6 +187,7 @@ defineProps({
 
 /* ── Thumbnail ─────────────────────────────────── */
 .project-card__thumb {
+    position: relative;
     width: 100%;
     height: 180px;
     overflow: hidden;
@@ -99,15 +197,18 @@ defineProps({
     justify-content: center;
 }
 
-.project-card__thumb img {
+.project-card__slide {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.7s ease;
 }
 
-.project-card:hover .project-card__thumb img {
-    transform: scale(1.05);
+.project-card__slide--active {
+    opacity: 1;
 }
 
 .project-card__placeholder {
@@ -126,6 +227,14 @@ defineProps({
     flex-direction: column;
     gap: 0.5rem;
     flex: 1;
+}
+
+.project-card__category {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #a78bfa;
 }
 
 .project-card__title {
