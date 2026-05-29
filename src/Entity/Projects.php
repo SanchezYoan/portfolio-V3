@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Enum\CategoryEnum;
 use App\Repository\ProjectsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -48,6 +49,9 @@ class Projects
     #[Assert\Image()]
     private ?File $thumbnailFile = null;
 
+    #[ORM\Column(type: 'string', enumType: CategoryEnum::class)]
+    private CategoryEnum $category = CategoryEnum::Personnel;
+
     #[ORM\OneToMany(mappedBy: 'project', targetEntity: ProjectImage::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
     private Collection $images;
 
@@ -57,9 +61,16 @@ class Projects
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    /**
+     * @var Collection<int, ProjectDocument>
+     */
+    #[ORM\OneToMany(targetEntity: ProjectDocument::class, mappedBy: 'project', orphanRemoval: true)]
+    private Collection $projectDocuments;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
+        $this->projectDocuments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -163,6 +174,17 @@ class Projects
         return $this;
     }
 
+    public function getCategory(): CategoryEnum
+    {
+        return $this->category;
+    }
+
+    public function setCategory(CategoryEnum $category): static
+    {
+        $this->category = $category;
+        return $this;
+    }
+
     public function getThumbnailFile(): ?File
     {
         return $this->thumbnailFile;
@@ -222,6 +244,36 @@ class Projects
     public function removeImage(ProjectImage $image): static
     {
         $this->images->removeElement($image);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ProjectDocument>
+     */
+    public function getProjectDocuments(): Collection
+    {
+        return $this->projectDocuments;
+    }
+
+    public function addProjectDocument(ProjectDocument $projectDocument): static
+    {
+        if (!$this->projectDocuments->contains($projectDocument)) {
+            $this->projectDocuments->add($projectDocument);
+            $projectDocument->setProject($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProjectDocument(ProjectDocument $projectDocument): static
+    {
+        if ($this->projectDocuments->removeElement($projectDocument)) {
+            // set the owning side to null (unless already changed)
+            if ($projectDocument->getProject() === $this) {
+                $projectDocument->setProject(null);
+            }
+        }
 
         return $this;
     }

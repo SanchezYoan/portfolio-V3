@@ -27,6 +27,16 @@
                 <input id="proj-learnings" type="text" name="project[learnings]" class="form-control" :value="project.learnings" />
             </div>
 
+            <!-- Catégorie -->
+            <div class="mb-3">
+                <label class="form-label">Catégorie</label>
+                <select name="project[category]" class="form-select">
+                    <option v-for="cat in categories" :key="cat.value" :value="cat.value" :selected="project.category === cat.value">
+                        {{ cat.label }}
+                    </option>
+                </select>
+            </div>
+
             <!-- Image principale (thumbnail) -->
             <div class="mb-3">
                 <label for="proj-image" class="form-label">Image principale (couverture)</label>
@@ -71,6 +81,39 @@
                 <div class="form-text">Vous pouvez sélectionner plusieurs images à la fois.</div>
             </div>
 
+            <!-- Documents -->
+            <div class="mb-3">
+                <label class="form-label">Documents</label>
+
+                <!-- Documents existants -->
+                <div v-if="projectDocuments.length > 0" class="d-flex flex-column gap-2 mb-3">
+                    <div
+                        v-for="doc in projectDocuments"
+                        :key="doc.id"
+                        class="d-flex align-items-center justify-content-between p-2"
+                        style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;"
+                    >
+                        <span style="color: #f1f5f9; font-size: 0.9rem;">📄 {{ doc.originalName }}</span>
+                        <button
+                            type="button"
+                            class="btn btn-danger btn-sm"
+                            @click="deleteDocument(doc)"
+                        >✕</button>
+                    </div>
+                </div>
+                <p v-else class="text-muted small">Aucun document.</p>
+
+                <!-- Upload de nouveaux documents -->
+                <input
+                    type="file"
+                    name="new_documents[]"
+                    class="form-control"
+                    accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt"
+                    multiple
+                />
+                <div class="form-text">PDF, Word, Excel, PowerPoint... Plusieurs fichiers acceptés.</div>
+            </div>
+
             <div class="mb-3">
                 <label for="proj-github" class="form-label">GitHub URL</label>
                 <input id="proj-github" type="url" name="project[github_url]" class="form-control" :value="project.githubUrl" />
@@ -90,26 +133,46 @@
 <script setup>
 import { ref } from 'vue';
 
+const categories = [
+    { value: 'professionnel', label: 'Professionnel' },
+    { value: 'personnel',     label: 'Personnel' },
+    { value: 'academique',    label: 'Académique' },
+];
+
 const props = defineProps({
     project:    { type: Object, default: () => ({}) },
     csrfToken:  { type: String, required: true },
     actionUrl:  { type: String, required: true },
     images:     { type: Array, default: () => [] },
+    documents:  { type: Array, default: () => [] },
 });
 
-const galleryImages = ref([...props.images]);
-const deleteError   = ref('');
+const galleryImages    = ref([...props.images]);
+const projectDocuments = ref([...props.documents]);
+const deleteError      = ref('');
 
 async function deleteImage(img) {
     if (!confirm('Supprimer cette image ?')) return;
 
     try {
-        const res = await fetch(`/admin/project/${props.project.id}/image/${img.id}/delete`, {
-            method: 'POST',
-        });
-
+        const res = await fetch(`/admin/project/${props.project.id}/image/${img.id}/delete`, { method: 'POST' });
         if (res.ok) {
             galleryImages.value = galleryImages.value.filter(i => i.id !== img.id);
+        } else {
+            deleteError.value = 'Erreur lors de la suppression.';
+        }
+    } catch {
+        deleteError.value = 'Erreur réseau.';
+    }
+}
+
+async function deleteDocument(doc) {
+    if (!confirm('Supprimer ce document ?')) return;
+
+    try {
+        const res = await fetch(`/admin/project/${props.project.id}/document/${doc.id}/delete`, { method: 'POST' });
+        if (res.ok) {
+            projectDocuments.value = projectDocuments.value.filter(d => d.id !== doc.id);
         } else {
             deleteError.value = 'Erreur lors de la suppression.';
         }
