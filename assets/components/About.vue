@@ -37,7 +37,7 @@
           une application, de la déployer et d'administrer l'infrastructure qui la supporte
           — je cherche un poste où mettre cette polyvalence à l'épreuve.
         </p>
-        <a href="/cv.pdf" download class="btn-cv">
+        <a href="/documents/about/cv_sanchez_yoan.pdf" download class="btn-cv">
           <DownloadIcon :size="18" />
           Télécharger mon CV
         </a>
@@ -56,7 +56,7 @@ import SkillsShowcase from './SkillsShowcase.vue';
 import { Download as DownloadIcon } from 'lucide-vue-next';
 
 // Remplace par le chemin de ta photo ex: '/images/photo.jpg'
-const photoUrl = null;
+const photoUrl = "/documents/about/profil.png";
 </script>
 
 <style scoped>
