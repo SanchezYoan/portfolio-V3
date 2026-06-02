@@ -16,15 +16,15 @@
             </div>
             <div class="mb-3">
                 <label for="proj-description" class="form-label">Description</label>
-                <input id="proj-description" type="text" name="project[description]" class="form-control" :value="project.description" />
+                <textarea id="proj-description" name="project[description]" class="form-control textarea-tall" >{{ project.description }}</textarea>
             </div>
             <div class="mb-3">
                 <label for="proj-results" class="form-label">Résultats</label>
-                <input id="proj-results" type="text" name="project[results]" class="form-control" :value="project.results" />
+                <textarea id="proj-results" name="project[results]" class="form-control textarea-short" >{{ project.results }}</textarea>
             </div>
             <div class="mb-3">
                 <label for="proj-learnings" class="form-label">Compétences acquises</label>
-                <input id="proj-learnings" type="text" name="project[learnings]" class="form-control" :value="project.learnings" />
+                <textarea id="proj-learnings" name="project[learnings]" class="form-control textarea-short" >{{ project.learnings }}</textarea>
             </div>
 
             <!-- Catégorie -->
@@ -181,3 +181,8 @@ async function deleteDocument(doc) {
     }
 }
 </script>
+
+<style scoped>
+.textarea-tall  { min-height: 260px; resize: vertical; font-size: 0.9rem; line-height: 1.6; }
+.textarea-short { min-height: 80px;  resize: vertical; font-size: 0.9rem; line-height: 1.6; }
+</style>

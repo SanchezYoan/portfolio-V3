@@ -37,10 +37,18 @@
           une application, de la déployer et d'administrer l'infrastructure qui la supporte
           — je cherche un poste où mettre cette polyvalence à l'épreuve.
         </p>
-        <a href="/cv.pdf" download class="btn-cv">
-          <DownloadIcon :size="18" />
-          Télécharger mon CV
-        </a>
+        <div class="about-actions">
+          <a href="https://www.linkedin.com/in/yoan-san/" target="_blank" rel="noopener" class="btn-social btn-social--linkedin" aria-label="LinkedIn">
+            <LinkedinIcon :size="20" />
+          </a>
+          <a href="https://github.com/SanchezYoan" target="_blank" rel="noopener" class="btn-social btn-social--github" aria-label="GitHub">
+            <GithubIcon :size="20" />
+          </a>
+          <a href="/documents/about/cv_sanchez_yoan.pdf" download class="btn-cv">
+            <DownloadIcon :size="18" />
+            Télécharger mon CV
+          </a>
+        </div>
       </div>
 
     </div>
@@ -48,15 +56,73 @@
     <!-- Section compétences animée -->
     <SkillsShowcase />
 
+    <!-- Section compétences BTS SIO SISR -->
+    <div class="bts-section">
+      <h2 class="bts-section__title">Compétences <span>BTS SIO SISR</span></h2>
+      <div class="bts-grid">
+        <div v-for="cat in btsSkills" :key="cat.title" class="bts-card">
+          <div class="bts-card__header">
+            <component :is="cat.icon" :size="18" class="bts-card__icon" />
+            <h3 class="bts-card__title">{{ cat.title }}</h3>
+          </div>
+          <div class="bts-card__tags">
+            <span v-for="tag in cat.tags" :key="tag" class="bts-tag">{{ tag }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script setup>
 import SkillsShowcase from './SkillsShowcase.vue';
-import { Download as DownloadIcon } from 'lucide-vue-next';
+import {
+  Download as DownloadIcon,
+  Linkedin as LinkedinIcon,
+  Github as GithubIcon,
+  Server,
+  HeadphonesIcon,
+  Globe,
+  Kanban,
+  CloudCog,
+  TrendingUp,
+} from 'lucide-vue-next';
 
-// Remplace par le chemin de ta photo ex: '/images/photo.jpg'
-const photoUrl = null;
+const photoUrl = "/documents/about/profil.png";
+
+const btsSkills = [
+  {
+    icon: Server,
+    title: 'Gérer le patrimoine informatique',
+    tags: ['Active Directory', 'Windows Server', 'Linux', 'Virtualisation', 'NAS / Synology'],
+  },
+  {
+    icon: HeadphonesIcon,
+    title: 'Répondre aux incidents et aux demandes d\'assistance',
+    tags: ['Remote Desktop', 'Monitoring', 'Zabbix', 'Mantis (Ticketing)', 'Wireshark'],
+  },
+  {
+    icon: Globe,
+    title: 'Développer la présence en ligne de l\'organisation',
+    tags: ['PHP', 'Next.js', 'React.js', 'JavaScript', 'HTML5'],
+  },
+  {
+    icon: Kanban,
+    title: 'Travailler en mode projet',
+    tags: ['Méthodes agiles', 'JIRA', 'Plan d\'architecture', 'CI/CD', 'Outils de développement'],
+  },
+  {
+    icon: CloudCog,
+    title: 'Mettre à disposition des utilisateurs un service informatique',
+    tags: ['Azure / Azure DevOps', 'AWS', 'Bash', 'PowerShell', 'Sécurisation d\'un réseau'],
+  },
+  {
+    icon: TrendingUp,
+    title: 'Organiser son développement professionnel',
+    tags: ['Veille technologique', 'Autonomie', 'Documentation', 'Montée en compétences', 'Communication'],
+  },
+];
 </script>
 
 <style scoped>
@@ -207,5 +273,127 @@ const photoUrl = null;
 .btn-cv:hover {
   opacity: 0.9;
   transform: translateY(-2px);
+}
+
+/* Actions row */
+.about-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-social:hover {
+  transform: translateY(-2px);
+}
+
+.btn-social--linkedin:hover {
+  color: #0a66c2;
+  border-color: #0a66c2;
+  background: rgba(10, 102, 194, 0.1);
+}
+
+.btn-social--github:hover {
+  color: #f1f5f9;
+  border-color: rgba(241, 245, 249, 0.4);
+  background: rgba(241, 245, 249, 0.08);
+}
+
+/* ── BTS SIO SISR ──────────────────────────────── */
+.bts-section {
+  margin-top: 3rem;
+}
+
+.bts-section__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 1.5rem;
+}
+
+.bts-section__title span {
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .bts-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .bts-grid { grid-template-columns: 1fr; }
+}
+
+.bts-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.bts-card:hover {
+  border-color: rgba(52, 211, 153, 0.4);
+  background: rgba(52, 211, 153, 0.05);
+}
+
+.bts-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.bts-card__icon {
+  color: #a78bfa;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bts-card__title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.bts-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.bts-tag {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #94a3b8;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(148, 163, 184, 0.06);
 }
 </style>
