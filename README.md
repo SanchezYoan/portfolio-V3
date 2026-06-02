@@ -4,7 +4,7 @@ Portfolio personnel fullstack administrable, déployable via Docker.
 
 ## Stack
 
-Backend: PHP 8.4, Symfony 8, Doctrine ORM, MariaDB 10.11 |
+Backend: PHP 8.4, Symfony 7, Doctrine ORM, MariaDB 10.11 |
 Frontend: Vue.js 3, Bootstrap 5, Webpack Encore |
 DevOps: Docker, Nginx, PHP-FPM, GitLab CI |
 Outils: VichUploader, Mailpit, Python 3 (script dev) |
