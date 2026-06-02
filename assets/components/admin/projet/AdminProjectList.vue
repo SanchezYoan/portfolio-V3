@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <p class="card-text">{{ project.description }}</p>
+                <p class="card-text description-excerpt">{{ excerpt(project.description) }}</p>
             </div>
         </div>
     </div>
@@ -40,6 +40,14 @@ defineProps({
     projects: { type: Array, default: () => [] },
     csrfToken: { type: String, required: true },
 });
+
+function excerpt(text, maxLength = 120) {
+    if (!text) return '';
+    const firstLine = text.split('\n')[0].trim();
+    return firstLine.length > maxLength
+        ? firstLine.slice(0, maxLength) + '…'
+        : firstLine;
+}
 
 function confirmDelete(event) {
     if (confirm('Supprimer ce projet ?')) {
@@ -70,4 +78,10 @@ function confirmDelete(event) {
 .icon-btn--blue  { color: #60a5fa; background: rgba(96, 165, 250, 0.15); }
 .icon-btn--green { color: #34d399; background: rgba(52, 211, 153, 0.15); }
 .icon-btn--red   { color: #f87171; background: rgba(248, 113, 113, 0.15); }
+
+.description-excerpt {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 0;
+}
 </style>
