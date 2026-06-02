@@ -119,6 +119,7 @@ function openLightbox(url) {
     color: #94a3b8;
     line-height: 1.7;
     margin-bottom: 0;
+    white-space: pre-wrap;
 }
 
 .project-divider {
