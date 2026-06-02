@@ -31,8 +31,3 @@ Le script `dev.py` automatise les tâches courantes :
 ```bash
 python3 dev.py
 ```
-
-## Administration
-
-Accès sur `/admin` — réservé au rôle `ROLE_ADMIN`.  
-Attribué automatiquement à `admin@example.com` (configurable dans `src/Entity/User.php`).
