@@ -18,6 +18,10 @@
 					   href="{{ url('about.show') }}">À propos</a>
 				</li>
 				<li>
+					<a class="site-nav__link {{ app.current_route == 'entreprise.show' ? 'site-nav__link--active' : '' }}"
+					   href="{{ url('entreprise.show') }}">Entreprise</a>
+				</li>
+				<li>
 					<a class="site-nav__link {{ app.current_route starts with 'project.' ? 'site-nav__link--active' : '' }}"
 					   href="{{ url('project.index') }}">Projets</a>
 				</li>
