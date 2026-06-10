@@ -9,8 +9,14 @@
 		{{ encore_entry_link_tags('app') }}
 	</head>
 	<body>
-		<nav class="site-nav">
+		<nav class="site-nav" id="siteNav">
 			<a class="site-nav__brand" href="{{ url('home') }}">YoanSAN</a>
+
+			<button class="site-nav__burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
 
 			<ul class="site-nav__links">
 				<li>
@@ -49,6 +55,23 @@
 				{% endif %}
 			</ul>
 		</nav>
+
+		<script>
+			(function () {
+				var burger = document.getElementById('navBurger');
+				var nav    = document.getElementById('siteNav');
+				burger.addEventListener('click', function () {
+					var open = nav.classList.toggle('site-nav--open');
+					burger.setAttribute('aria-expanded', open);
+				});
+				document.addEventListener('click', function (e) {
+					if (!nav.contains(e.target)) {
+						nav.classList.remove('site-nav--open');
+						burger.setAttribute('aria-expanded', 'false');
+					}
+				});
+			})();
+		</script>
 
 		<div class="flash-wrapper">
 			{% include 'partials/flash.html.twig' %}

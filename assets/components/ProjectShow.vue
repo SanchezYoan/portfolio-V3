@@ -169,6 +169,17 @@ function openLightbox(url) {
     width: 50%;
 }
 
+@media (max-width: 640px) {
+    .attachment { width: 100%; }
+
+    .gallery__thumb {
+        width: calc(50% - 5px);
+        height: 110px;
+    }
+
+    .project-title { font-size: 1.5rem; }
+}
+
 .attachment:hover {
     background: rgba(167, 139, 250, 0.12);
     border-color: rgba(167, 139, 250, 0.4);
