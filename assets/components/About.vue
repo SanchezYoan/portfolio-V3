@@ -151,9 +151,19 @@ const btsSkills = [
   .about-hero {
     grid-template-columns: 1fr;
     text-align: center;
+    padding: 1.75rem;
   }
   .about-hero__left {
     align-items: center;
+  }
+  .about-badges {
+    justify-content: center;
+  }
+  .about-actions {
+    justify-content: center;
+  }
+  .btn-cv {
+    margin: 0 auto;
   }
 }
 

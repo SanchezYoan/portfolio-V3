@@ -4,7 +4,7 @@
         <form method="post" action="/contact" @submit.prevent="submit">
             <input type="hidden" name="contact[_token]" :value="csrfToken" />
             <div class="row">
-                <div class="col-6 mb-3">
+                <div class="col-12 col-md-6 mb-3">
                     <label for="contact-name" class="form-label">Nom</label>
                     <input
                         id="contact-name"
@@ -15,7 +15,7 @@
                         required
                     />
                 </div>
-                <div class="col-6 mb-3">
+                <div class="col-12 col-md-6 mb-3">
                     <label for="contact-email" class="form-label">Email</label>
                     <input
                         id="contact-email"
