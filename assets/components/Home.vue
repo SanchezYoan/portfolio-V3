@@ -7,11 +7,11 @@
             <h1 class="hero__title">
                 Yoan Sanchez<span class="hero__dot">.</span>
             </h1>
-            <p class="hero__role">Développeur Fullstack<br>orienté Infrastructure</p>
+            <p class="hero__role">Développeur Fullstack<br>orienté IA &amp; automatisation</p>
             <p class="hero__desc">
-                Étudiant en BTS SIO option SISR, je conçois des applications web fiables
-                et sécurisées avec Symfony, Vuejs, Docker et des infrastructures réseau adaptées
-                aux besoins métiers.
+                Étudiant en Bachelor Développement &amp; IA, je conçois des applications web fiables
+                avec Symfony et Vue.js, et j'intègre l'IA générative pour automatiser
+                les processus métiers.
             </p>
             <div class="hero__cta">
                 <a href="/project" class="btn-primary">Voir mes projets</a>
@@ -44,8 +44,8 @@
                     <span class="stat__label">ans de développement</span>
                 </div>
                 <div class="stat">
-                    <span class="stat__value">BTS</span>
-                    <span class="stat__label">SIO option SISR</span>
+                    <span class="stat__value">Bachelor</span>
+                    <span class="stat__label">Développement &amp; IA</span>
                 </div>
                 <div class="stat">
                     <span class="stat__value">{{ counter }}%</span>

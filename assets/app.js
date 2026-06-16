@@ -11,7 +11,6 @@ const componentMap = {
     // User
     Home: () => import('./components/Home.vue'),
     About: () => import('./components/About.vue'),
-    Entreprise: () => import('./components/Entreprise.vue'),
     ProjectList: () => import('./components/ProjectList.vue'),
     ProjectShow: () => import('./components/ProjectShow.vue'),
     Contact: () => import('./components/Contact.vue'),
