@@ -16,26 +16,25 @@
           <span v-else class="about-avatar__initials">YS</span>
         </div>
         <h1 class="about-name">Yoan <span>SANCHEZ</span></h1>
-        <p class="about-role">Développeur Fullstack · DevOps</p>
+        <p class="about-role">Administrateur d'Infrastructures Sécurisées · DevOps</p>
         <div class="about-badges">
-          <span class="badge badge--purple">Symfony</span>
-          <span class="badge badge--green">Vue.js</span>
-          <span class="badge badge--red">React.js</span>
+          <span class="badge badge--gray">Linux</span>
+          <span class="badge badge--purple">Proxmox</span>
+          <span class="badge badge--green">Zabbix</span>
           <span class="badge badge--blue">Docker</span>
-          <span class="badge badge--orange">Gitlab</span>
-          <span class="badge badge--gray">Proxmox</span>
+          <span class="badge badge--orange">Réseau</span>
+          <span class="badge badge--red">Symfony</span>
         </div>
       </div>
 
       <!-- Colonne droite : texte + bouton CV -->
       <div class="about-hero__right">
         <p class="about-text">
-          Développeur fullstack avec une vraie culture DevOps, j'ai construit mon profil
-          à travers des formations techniques et des projets concrets.
+          Spécialisé dans l'administration et la sécurisation des infrastructures, j'ai construit
+          mon profil à travers des formations techniques et des projets concrets.
           <br />
-          Capable de concevoir
-          une application, de la déployer et d'administrer l'infrastructure qui la supporte
-          — je cherche un poste où mettre cette polyvalence à l'épreuve.
+          De la supervision d'un parc à l'automatisation des tâches, en passant par le développement
+          fullstack — je cherche un poste où mettre cette polyvalence à l'épreuve.
         </p>
         <div class="about-actions">
           <a href="https://www.linkedin.com/in/yoan-san/" target="_blank" rel="noopener" class="btn-social btn-social--linkedin" aria-label="LinkedIn">
@@ -56,6 +55,28 @@
     <!-- Section compétences animée -->
     <SkillsShowcase />
 
+    <!-- Certifications -->
+    <div class="certs-section">
+      <h2 class="certs-section__title">Certifications <span>&amp; Diplômes</span></h2>
+      <div class="certs-grid">
+        <div
+          v-for="cert in certifications"
+          :key="cert.code"
+          class="cert-card"
+          :class="{ 'cert-card--wip': cert.status === 'en cours' }"
+        >
+          <component :is="cert.icon" :size="22" class="cert-card__icon" />
+          <div class="cert-card__body">
+            <div class="cert-card__code">{{ cert.code }}</div>
+            <div class="cert-card__title">{{ cert.title }}</div>
+          </div>
+          <span class="cert-card__status" :class="cert.status === 'en cours' ? 'is-wip' : 'is-done'">
+            {{ cert.status === 'en cours' ? 'En cours' : 'Obtenue' }}
+          </span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -65,9 +86,19 @@ import {
   Download as DownloadIcon,
   Linkedin as LinkedinIcon,
   Github as GithubIcon,
+  Award as AwardIcon,
+  Clock as ClockIcon,
+  GraduationCap as GradIcon,
 } from 'lucide-vue-next';
 
 const photoUrl = "/documents/about/profil.png";
+
+const certifications = [
+  { code: 'BTS SIO SISR', title: 'Services Informatiques aux Organisations', status: 'obtenue', icon: GradIcon },
+  { code: 'AZ-900', title: 'Azure Fundamentals', status: 'obtenue', icon: AwardIcon },
+  { code: 'AZ-204', title: 'Azure Developer Associate', status: 'obtenue', icon: AwardIcon },
+  { code: 'AZ-400', title: 'Azure DevOps Engineer Expert', status: 'en cours', icon: ClockIcon },
+];
 </script>
 
 <style scoped>
@@ -265,5 +296,103 @@ const photoUrl = "/documents/about/profil.png";
   color: #f1f5f9;
   border-color: rgba(241, 245, 249, 0.4);
   background: rgba(241, 245, 249, 0.08);
+}
+
+/* ── Certifications ────────────────────────────── */
+.certs-section {
+  margin-top: 3rem;
+}
+
+.certs-section__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 1.5rem;
+}
+
+.certs-section__title span {
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .certs-grid { grid-template-columns: 1fr; }
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.1rem 1.25rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.cert-card:hover {
+  border-color: rgba(52, 211, 153, 0.4);
+  background: rgba(52, 211, 153, 0.05);
+}
+
+.cert-card--wip:hover {
+  border-color: rgba(251, 191, 36, 0.4);
+  background: rgba(251, 191, 36, 0.05);
+}
+
+.cert-card__icon {
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+.cert-card--wip .cert-card__icon {
+  color: #fbbf24;
+}
+
+.cert-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cert-card__code {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.cert-card__title {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  line-height: 1.3;
+}
+
+.cert-card__status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.cert-card__status.is-done {
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  background: rgba(52, 211, 153, 0.1);
+}
+
+.cert-card__status.is-wip {
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  background: rgba(251, 191, 36, 0.1);
 }
 </style>

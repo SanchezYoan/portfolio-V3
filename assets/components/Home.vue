@@ -7,11 +7,11 @@
             <h1 class="hero__title">
                 Yoan Sanchez<span class="hero__dot">.</span>
             </h1>
-            <p class="hero__role">Développeur Fullstack<br>orienté IA &amp; automatisation</p>
+            <p class="hero__role">Administrateur d'Infrastructures Sécurisées<br>&amp; Devops</p>
             <p class="hero__desc">
-                Étudiant en Bachelor Développement &amp; IA, je conçois des applications web fiables
-                avec Symfony et Vue.js, et j'intègre l'IA générative pour automatiser
-                les processus métiers.
+                En formation d'Administrateur d'Infrastructures Sécurisées, je conçois, déploie et
+                supervise des infrastructures fiables — administration systèmes &amp; réseau, monitoring
+                et automatisation — avec une solide expérience du développement fullstack.
             </p>
             <div class="hero__cta">
                 <a href="/project" class="btn-primary">Voir mes projets</a>
@@ -44,8 +44,8 @@
                     <span class="stat__label">ans de développement</span>
                 </div>
                 <div class="stat">
-                    <span class="stat__value">Bachelor</span>
-                    <span class="stat__label">Développement &amp; IA</span>
+                    <span class="stat__value">RNCP 6</span>
+                    <span class="stat__label">Infrastructures Sécurisées</span>
                 </div>
                 <div class="stat">
                     <span class="stat__value">{{ counter }}%</span>
@@ -77,7 +77,7 @@ onMounted(() => {
 });
 
 const stack = [
-    'Symfony', 'Vue.js', 'React.js', 'Docker', 'MariaDB', 'MongoDB', 'Nginx', 'Gitlab',
+    'Linux', 'Proxmox', 'Zabbix', 'Docker', 'Nginx', 'Bash', 'Symfony', 'GitLab CI/CD',
 ];
 </script>
 
