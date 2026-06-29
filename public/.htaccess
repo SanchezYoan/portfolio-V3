@@ -7,7 +7,7 @@ DirectoryIndex index.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    UseCanonicalName Off
+    # UseCanonicalName Off  -- retiré : directive interdite en .htaccess sur o2switch (Apache 500). Voir mémoire deploy.
     RewriteCond %{REQUEST_URI}::$0 ^(/.+)/(.*)::\2$
     RewriteRule .* - [E=BASE:%1]
 
