@@ -43,7 +43,7 @@
           <a href="https://github.com/SanchezYoan" target="_blank" rel="noopener" class="btn-social btn-social--github" aria-label="GitHub">
             <GithubIcon :size="20" />
           </a>
-          <a href="/documents/about/cv_sanchez_yoan.pdf" download class="btn-cv">
+          <a href="/documents/about/cv_yoan_sanchez.pdf" download class="btn-cv">
             <DownloadIcon :size="18" />
             Télécharger mon CV
           </a>
